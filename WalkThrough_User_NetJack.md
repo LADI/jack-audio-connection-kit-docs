@@ -8,7 +8,7 @@ It now even supports lossy compression, so its possible to use it over internet.
 
 ## Basic terminology used in this document
  JACK::
- If you're stuck there, I suggest you read WalkThrough/User/GettingStarted first :-)
+ If you're stuck there, I suggest you read [[WalkThrough_User_GettingStarted]] first :-)
 
  NetJack::
  It is the generic name used for the functionality covered in this document.

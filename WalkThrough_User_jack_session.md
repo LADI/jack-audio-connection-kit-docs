@@ -21,7 +21,7 @@ then start `jacksmtray`
 you might want to look at this screencast:
 http://hochstrom.endofinternet.org/files/pyjacksm-cast01.ogv
 
-a developer walk through is available at WalkThrough/Dev/JackSession.
+a developer walk through is available at [[WalkThrough_Dev_JackSession]].
 
 # apps supporting jack-session
 

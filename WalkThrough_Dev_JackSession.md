@@ -259,4 +259,4 @@ now we must make sure that the -U <uuid> option specifies this parameter to jack
 	
 	
 
-see also: [wiki:WalkThrough/User/jack_session]
+see also: [[WalkThrough_User_jack_session]]

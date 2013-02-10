@@ -10,18 +10,19 @@ _Are we going to have two JACKs forever?_  No.  However nobody forsees a sane wa
 
 Here is a feature listing/comparison of the different jack implementations.  Note that this list does not include tschack, Torben Hohn's experimental branch of Jack 1.
 
-|| *Feature_'                   || '''Jack 1''' || '_Jack 2*  ||
-|| Implements the JACK C API          ||  Yes   ||  Yes    ||
-|| Supports multiple processors (SMP) ||  No    ||  Yes(1) ||
-|| Allows apps to connect/disconnect without disrupting audio || No || Yes ||
-|| Has (optional) DBUS support(2)     ||  No(6) ||  Yes    ||
-|| Can be used with [wiki:WalkThrough/Dev/NetOne netjack1]          ||  Yes   ||  Yes    ||
-|| Can be used with [wiki:WalkThrough/User/NetJack2 netjack2]          ||  No    ||  Yes    ||
-|| Is under active development        ||  Yes   ||  Yes    ||
-|| Supports Linux/*nix/POSIX OS's     ||  Yes   ||  Yes    ||
-|| Supports OS X                      ||  Yes   ||  Yes(4) ||
-|| Supports Windows                   ||  No    ||  Yes(5) ||
-|| Supports Solaris/OpenSolaris       ||  Yes?  ||  Yes    ||
+| *Feature_'                                                 | '''Jack 1''' | '_Jack 2*  |
+|------------------------------------------------------------|:------------:|:----------:|
+| Implements the JACK C API                                  |  Yes         |  Yes       |
+| Supports multiple processors (SMP)                         |  No          |  Yes(1)    |
+| Allows apps to connect/disconnect without disrupting audio |  No          |  Yes       |
+| Has (optional) DBUS support(2)                             |  No(6)       |  Yes       |
+| Can be used with [[WalkThrough_Dev_NetOne netjack1]]       |  Yes         |  Yes       |
+| Can be used with [[WalkThrough_User_NetJack2 netjack2]]    |  No          |  Yes       |
+| Is under active development                                |  Yes         |  Yes       |
+| Supports Linux/*nix/POSIX OS's                             |  Yes         |  Yes       |
+| Supports OS X                                              |  Yes         |  Yes(4)    |
+| Supports Windows                                           |  No          |  Yes(5)    |
+| Supports Solaris/OpenSolaris                               |  Yes?        |  Yes       |
 
 (1) Jack2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  Jack 2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like Jack 1.[[BR]]
 (2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/) and [LADI](http://ladish.org/wiki/ladi) .[[BR]]

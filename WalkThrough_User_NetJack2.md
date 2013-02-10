@@ -182,7 +182,7 @@ If you need, for particulary reasons to set another Multicast address or UDP Por
 	  jack_load netmanager -i "-a xxx.xxx.xxx.xxx -p port"
 	
 
-Alternatively, internal clients can be configurated and loaded using the jack server DBUS service, when Jack2 has been compiled with DBUS support (see http://trac.jackaudio.org/wiki/WalkThrough/User/jack_control).
+Alternatively, internal clients can be configurated and loaded using the jack server DBUS service, when Jack2 has been compiled with DBUS support (see [[WalkThrough_User_jack_control]]).
 
 You have to be careful because NetJack doesn't check if the Multicast IP or the UDP Port is correct. So if you have some network error (typically 'Can't bind multicast address : Invalid Argument' or something else), first check if it's a valid multicast address and an authorized free port.
 
@@ -285,7 +285,7 @@ to print possible parameters for the audioadapter component (will be printed on 
 
 to load the audioadapter with 4 input/output JACK ports.
 
-Alternatively, internal clients can be configurated and loaded using the jack server DBUS service, when Jack2 has been compiled with DBUS support (see http://trac.jackaudio.org/wiki/WalkThrough/User/jack_control).
+Alternatively, internal clients can be configurated and loaded using the jack server DBUS service, when Jack2 has been compiled with DBUS support (see [[WalkThrough_User_jack_control]]).
 
 ----
 
