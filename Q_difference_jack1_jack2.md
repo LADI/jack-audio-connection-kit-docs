@@ -16,8 +16,8 @@ Here is a feature listing/comparison of the different jack implementations.  Not
 | Supports multiple processors (SMP)                         |  No          |  Yes(1)    |
 | Allows apps to connect/disconnect without disrupting audio |  No          |  Yes       |
 | Has (optional) DBUS support(2)                             |  No(6)       |  Yes       |
-| Can be used with [[WalkThrough_Dev_NetOne netjack1]]       |  Yes         |  Yes       |
-| Can be used with [[WalkThrough_User_NetJack2 netjack2]]    |  No          |  Yes       |
+| Can be used with [[WalkThrough_Dev_NetOne]]                |  Yes         |  Yes       |
+| Can be used with [[WalkThrough_User_NetJack2]]             |  No          |  Yes       |
 | Is under active development                                |  Yes         |  Yes       |
 | Supports Linux/*nix/POSIX OS's                             |  Yes         |  Yes       |
 | Supports OS X                                              |  Yes         |  Yes(4)    |
