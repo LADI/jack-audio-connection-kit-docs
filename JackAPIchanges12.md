@@ -25,7 +25,7 @@ This pages summarizes "changes" in JACK client API between version 1 and 2
 * `T jack_clock_source_name                `- not public
 * `T jack_default_server_name              `- not public
 * `T jack_destroy_shm                      `- not public
-* `T jack_dump_timestamps                  `- public in <jack/timestamps.h>
+* `T jack_dump_timestamps                  `- public in &lt;jack/timestamps.h&gt;
 * `T jack_generate_unique_id               `- not public
 * `T jack_get_free_shm_info                `- not public
 * `T jack_get_mhz                          `- not public
@@ -35,7 +35,7 @@ This pages summarizes "changes" in JACK client API between version 1 and 2
 * `T jack_get_process_done_fd              `- not public
 * `T jack_hpet_init                        `- not public
 * `T jack_init_time                        `- not public
-* `T jack_init_timestamps                  `- public in <jack/timestamps.h>
+* `T jack_init_timestamps                  `- public in &lt;jack/timestamps.h&gt;
 * `T jack_initialize_shm                   `- not public
 * `T jack_messagebuffer_add                `- not public
 * `T jack_messagebuffer_exit               `- not public
@@ -49,14 +49,14 @@ This pages summarizes "changes" in JACK client API between version 1 and 2
 * `T jack_register_server                  `- not public
 * `T jack_release_shm                      `- not public
 * `T jack_release_shm_info                 `- not public
-* `T jack_reset_timestamps                 `- public in <jack/timestamps.h>
+* `T jack_reset_timestamps                 `- public in &lt;jack/timestamps.h&gt;
 * `T jack_resize_shm                       `- not public
 * `T jack_server_dir                       `- not public
 * `T jack_set_clock_source                 `- not public
 * `T jack_shmalloc                         `- not public
 * `T jack_start_freewheel                  `- not public
 * `T jack_stop_freewheel                   `- not public
-* `T jack_timestamp                        `- public in <jack/timestamps.h>
+* `T jack_timestamp                        `- public in &lt;jack/timestamps.h&gt;
 * `T jack_transport_copy_position          `- not public
 * `T jack_unregister_server                `- not public
 * `T jack_user_dir                         `- not public
@@ -78,10 +78,14 @@ This pages summarizes "changes" in JACK client API between version 1 and 2
 * `T jack_tls_set(unsigned int, void*)     `- not public
 * `T set_threaded_log_function             `- not public
 
-    nm -CDg 1/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack1.syms
-    nm -CDg 2/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack2.syms
-    diff -u jack1.syms jack2.syms > jack12.diff
-    grep '^-[A-Z]' jack12.diff | sed 's/^-//'
-    grep '^+[A-Z]' jack12.diff | sed 's/^+//'|grep -v ::
-    for i in `grep '^+[A-Z]' jack12.diff | grep -v :: | sed 's/^+. \([^ (]*\).*/\1/'` ; do echo "searching for $i ..." ; find 2 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
-    for i in `grep '^-[A-Z]' jack12.diff  | sed 's/^-. //'` ; do echo "searching for $i ..." ; find 1 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
+
+	
+	nm -CDg 1/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack1.syms
+	nm -CDg 2/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack2.syms
+	diff -u jack1.syms jack2.syms > jack12.diff
+	grep '^-[A-Z]' jack12.diff | sed 's/^-//'
+	grep '^+[A-Z]' jack12.diff | sed 's/^+//'|grep -v ::
+	for i in `grep '^+[A-Z]' jack12.diff | grep -v :: | sed 's/^+. \([^ (]*\).*/\1/'` ; do echo "searching for $i ..." ; find 2 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
+	for i in `grep '^-[A-Z]' jack12.diff  | sed 's/^-. //'` ; do echo "searching for $i ..." ; find 1 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
+
+
