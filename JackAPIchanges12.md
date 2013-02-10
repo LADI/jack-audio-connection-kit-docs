@@ -78,12 +78,11 @@ This pages summarizes "changes" in JACK client API between version 1 and 2
 * `T jack_tls_set(unsigned int, void*)     `- not public
 * `T set_threaded_log_function             `- not public
 
-nm -CDg 1/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack1.syms
+	nm -CDg 1/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack1.syms
 	nm -CDg 2/usr/lib/libjack.so | grep -v ' U '|sed 's/^[0-9a-f]* //'|sort> jack2.syms
 	diff -u jack1.syms jack2.syms > jack12.diff
 	grep '^-[A-Z]' jack12.diff | sed 's/^-//'
 	grep '^+[A-Z]' jack12.diff | sed 's/^+//'|grep -v ::
 	for i in `grep '^+[A-Z]' jack12.diff | grep -v :: | sed 's/^+. \([^ (]*\).*/\1/'` ; do echo "searching for $i ..." ; find 2 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
 	for i in `grep '^-[A-Z]' jack12.diff  | sed 's/^-. //'` ; do echo "searching for $i ..." ; find 1 -type f -exec grep -Hn $i {} \; ; done|grep -v 'Binary file'
-	
 
