@@ -1,9 +1,3 @@
-	
-	#LegendBox
-	#!legend: Work in progress
-*Expect some changes on this page*
-	
-
 # Introduction
 So ? You got started with jack, you can run it and play with your favorite JACK clients, and now you'd like to go a step further: sending audio data to other JACK clients over a network ! Let's see what we've got in store...
 

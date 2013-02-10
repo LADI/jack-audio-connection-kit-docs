@@ -1,11 +1,3 @@
-	
-	#LegendBox
-	#!legend: Work in progress
-*This page is under construction...*
-	
-
-
-----
 
 ----
 
