@@ -18,15 +18,15 @@ If your browser made you land on this page, this is no coincidence, Jack2 is pro
 
 ----
 
-1. Concepts[[BR]]
-2. Requirements[[BR]]
-3. Installation[[BR]]
-4. How to set up the master ?[[BR]]
-5. How to set up the slave ?[[BR]]
-6. Why can't I use my soundcard on a slave ?[[BR]]
-7. Why do I miss packets ?[[BR]]
-8. What about transport ?[[BR]]
-9. What's next ?[[BR]]
+1. Concepts  
+2. Requirements  
+3. Installation  
+4. How to set up the master?  
+5. How to set up the slave?  
+6. Why can't I use my soundcard on a slave?  
+7. Why do I miss packets?  
+8. What about transport?  
+9. What's next?  
 
 
 ----

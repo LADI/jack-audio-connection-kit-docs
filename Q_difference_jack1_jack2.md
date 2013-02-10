@@ -24,11 +24,11 @@ Here is a feature listing/comparison of the different jack implementations.  Not
 | Supports Windows                                           |  No          |  Yes(5)    |
 | Supports Solaris/OpenSolaris                               |  Yes?        |  Yes       |
 
-(1) Jack2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  Jack 2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like Jack 1.[[BR]]
-(2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/) and [LADI](http://ladish.org/wiki/ladi) .[[BR]]
-(3) It's not that netjack2 is exclusively for Jack2, it's just that nobody has ported the protocol to Jack1.[[BR]]
-(4) Integrated with [JackOSX](http://www.jackosx.com/) which allows CoreAudio clients become Jack clients (thanks to the JackRouter CoreAudio/Jack virtual audio device)[[BR]]
-(5) ASIO clients can become Jack clients (thanks to the JackRouter ASIO/Jack bridge)[[BR]]
+(1) Jack2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  Jack 2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like Jack 1.  
+(2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/) and [LADI](http://ladish.org/wiki/ladi).  
+(3) It's not that netjack2 is exclusively for Jack2, it's just that nobody has ported the protocol to Jack1.  
+(4) Integrated with [JackOSX](http://www.jackosx.com/) which allows CoreAudio clients become Jack clients (thanks to the JackRouter CoreAudio/Jack virtual audio device)  
+(5) ASIO clients can become Jack clients (thanks to the JackRouter ASIO/Jack bridge)  
 (6) DBUS support for jack1 is available through patch. Currently distributed as a modified jack1 [tarball](http://nedko.arnaudov.name/soft/jack/dbus/).
 
 Other differences that don't lend themselves to feature tables:

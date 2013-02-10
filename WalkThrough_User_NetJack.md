@@ -40,9 +40,14 @@ Note: ok, you could just plug the audio interface in the war machine. Would that
 For your first experiments, you might want to try using a direct link between the 2 computers
 
 1. Start JACK on the master machine as you usually do (using a JACK controler like qjackctl, pyjackctl, or on the command line)
-1. Start JACK with the net backend on the slave machine[[BR]]`jackd -R -d net`[[BR]] or for jack2 [[BR]]`jackd -R -d netone`[[BR]] For jack1: Remember not to connect any clients to the slave JACK until we've connected both machines ! This limitation is gone with jack2, however, some clients might crash, when jack is changing
+2. Start JACK with the net backend on the slave machine  
+`jackd -R -d net`  
+or for jack2  
+`jackd -R -d netone`  
+For jack1: Remember not to connect any clients to the slave JACK until we've connected both machines ! This limitation is gone with jack2, however, some clients might crash, when jack is changing
 the buffer size.
-1. Launch jack_netsource on the master JACK to connect your slave:[[BR]]`jack_netsource -H <slave jack hostname>`
+3. Launch jack_netsource on the master JACK to connect your slave:  
+`jack_netsource -H <slave jack hostname>`
 
 You're set ! If you've used NetJack's defaults, you should have 2 playback ports, 2 capture ports, 1 midi in and 1 midi out running between the master and the slave. Go ahead, launch a few clients and give your NetJack it's first drive.
 
