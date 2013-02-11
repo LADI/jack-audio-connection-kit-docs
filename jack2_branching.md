@@ -57,4 +57,4 @@ Here are steps to merge a hypothetical dev branch called mydevbranch into svn tr
 * ladi-experimental - as ladi but contains changes that happened in the svn trunk that are not yet released in a tarball.
 * no-self-connect - a branch that adds new engine option to JACK. This engine option, when enabled, allows self-connect policy to be enforced. I.e. when this option is enabled, apps that attempt to connect their own ports (often to system ones) will be restricted.
 
-We maintain a [wiki:jack2_branching_history log] of branch related operations (like new branch creation, branch deletion and [important] merges). 
+We maintain a [[jack2_branching_history]] of branch related operations (like new branch creation, branch deletion and [important] merges). 

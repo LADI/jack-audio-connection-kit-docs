@@ -64,16 +64,16 @@ This should work nicely for example.
 
 # Complete option List
 
-	-j <jack name>::
+	-j <jack name>:
 	  reports a different name to jack
-	-d <alsa_device>::
-	-c <channels>::
-	-p <period_size>::
-	-n <num_period>::
-	-r <sample_rate>::
-	-m <max_diff>::
-	-t <target_delay>:: 
-	-f <catch_factor>::
+	-d <alsa_device>:
+	-c <channels>:
+	-p <period_size>:
+	-n <num_period>:
+	-r <sample_rate>:
+	-m <max_diff>:
+	-t <target_delay>: 
+	-f <catch_factor>:
 
 Please note that the period size and numperiods dont directly realate to
 the latency of alsa_in and alsa_out. 

@@ -7,16 +7,16 @@ NetJack is a functionality of jack which enables you to send and receive JACK da
 It now even supports lossy compression, so its possible to use it over internet.
 
 ## Basic terminology used in this document
- JACK::
- If you're stuck there, I suggest you read [[WalkThrough_User_GettingStarted]] first :-)
+ **JACK:**
+ If you're stuck there, I suggest you read http://jackaudio.org first :-)
 
- NetJack::
+ **NetJack:**
  It is the generic name used for the functionality covered in this document.
 
- Master JACK (aka MJ)::
+ **Master JACK (aka MJ):**
  The JACK server running with a regular ALSA backend. You can connect multiple slave JACKs to it.
 
- Slave JACK (aka SJ)::
+ **Slave JACK (aka SJ):**
  A JACK server running with the net backend. It can only be connected to one master JACK at a time.
 
 # Getting started
@@ -46,7 +46,7 @@ or for jack2
 `jackd -R -d netone`  
 For jack1: Remember not to connect any clients to the slave JACK until we've connected both machines ! This limitation is gone with jack2, however, some clients might crash, when jack is changing
 the buffer size.
-3. Launch jack_netsource on the master JACK to connect your slave:  
+3. Launch 'jack_netsource' on the master JACK to connect your slave:  
 `jack_netsource -H <slave jack hostname>`
 
 You're set ! If you've used NetJack's defaults, you should have 2 playback ports, 2 capture ports, 1 midi in and 1 midi out running between the master and the slave. Go ahead, launch a few clients and give your NetJack it's first drive.
@@ -163,6 +163,5 @@ alsa_in and alsa_out also got better.
 
 jackd -d net means: jackd should use the network interface as the soundcard and not alsa. So you will not see the soundcard of the slave in
 your jackd patchbay.
-If you want to access the soundcard of the slave machine: Thats what alsa_in and alsa_out are for.
-alsa_in and alsa_out dont need much special parameters anymore, if you got a recent jack version.
+If you want to access the soundcard of the slave machine: Thats what `alsa_in` and `alsa_out` are for, see [WalkThrough_User_AlsaInOut].
 

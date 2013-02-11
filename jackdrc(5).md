@@ -12,10 +12,10 @@ As a transition, this only happens when $JACK_START_SERVER is defined in the env
 
 # Files
 
-* /etc/jackdrc - global defaults
-* $HOME/.jackdrc - per-user override
+* `/etc/jackdrc` - global defaults
+* `$HOME/.jackdrc` - per-user override
 
 # See also
 
-* [wiki:jackd(1)]
+* [[jackd(1)]]
 

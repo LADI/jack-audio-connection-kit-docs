@@ -3,7 +3,7 @@ This document should act as a link between the JACK design documentation and the
 # Directory structure
 The JACK source code tree contains the following subdirectories:
 	
-        * `jack`: API headers
+* `jack`: API headers
 * `jackd`: Code of the main JACK server
 * `libjack`: Client library --- implementation of the API headers
 	
@@ -23,20 +23,19 @@ The main data structure of the JACK engine is called `jack_engine_t` (`jack/inte
 
 In `engine->clients` the engine keeps a `JSList` (`jack/jlist.h`), a singly linked list of `jack_client_internal_t` structures (`jack/internal.h`). The type `jack_client_internal_t` is not the structure for internal clients, but the information about every client the engine keeps in its local memory. It holds the server side request file descriptor and the event file descriptor of the private communication channels with the respective client.
 
-There is also a _truefeeds'' and a ''sortfeeds_ list. What they mean, is explained in a comment in `engine.c`: 
+There is also a _truefeeds_ and a _sortfeeds_ list. What they mean, is explained in a comment in `engine.c`: 
 
-  Each client has a _sortfeeds_ list of clients indicating which clients it should be considered as feeding for the purposes of sorting the graph. This list differs from the clients it *actually* feeds in the following way:
-  1.   Connections from a client to itself are disregarded
+Each client has a _sortfeeds_ list of clients indicating which clients it should be considered as feeding for the purposes of sorting the graph. This list differs from the clients it *actually* feeds in the following way:
 
-  2.   Connections to a driver client are disregarded
+1.  Connections from a client to itself are disregarded
+2.  Connections to a driver client are disregarded
+3.  If a connection from A to B is a feedback connection (ie there was already a path from B to A when the connection was made) then instead of B appearing on A's sortfeeds list, A will appear on B's sortfeeds list.
 
-  3.   If a connection from A to B is a feedback connection (ie there was already a path from B to A when the connection was made) then instead of B appearing on A's sortfeeds list, A will appear on B's sortfeeds list.
+If client A is on client B's sortfeeds list, client A must come after client B in the execution order. The above 3 rules ensure that the sortfeeds relation is always acyclic so that all ordering constraints can actually be met. 
 
-  If client A is on client B's sortfeeds list, client A must come after client B in the execution order. The above 3 rules ensure that the sortfeeds relation is always acyclic so that all ordering constraints can actually be met. 
+Each client also has a _truefeeds_ list which is the same as sortfeeds except that feedback connections appear normally instead of reversed. This is used to detect whether the graph has become acyclic. 
 
-  Each client also has a _truefeeds_ list which is the same as sortfeeds except that feedback connections appear normally instead of reversed. This is used to detect whether the graph has become acyclic. 
-
-The _sortfeeds'' and ''truefeeds_ lists are set during every port (dis-)connection.
+The _sortfeeds_ and _truefeeds_ lists are set during every port (dis-)connection.
 
 The pointer to the shared memory part of the client `jack_client_control_t` is, again, called `control`; its `jack_shm_info_t` structure is called `control_shm`. In `jack_client_control_t` all the callbacks are put, notably the `JackProcessCallback` and the `JackSyncCallback`. There can also be found some information about the client ID, the client name, the clients state (`jack_client_state_t`, `jack/internal.h`), whether the client is the timebase master and whether it is a _slow sync client_ or not.
 
@@ -54,9 +53,9 @@ The function `jack_drivers_load` crawls the JACK drivers directory, which is giv
 
 There are two bidirectional channels between each external client and the server: An event socket and a request socket. On the request socket, the client can ask the server to do some work for him, for example register a port, connect a port, activate the client and so on. Via the event socket the server can notify its clients about occurring events, such as a (dis-)connected port, a buffer size or sample rate change or a graph reordering. These channels need to be bidirectional (and therefore are implemented as sockets) because the other side needs a feedback channel to answer, whether the request or the event delivery, respectively, was successful.
 
-The _entry sockets'' on server side are created during `jack_engine_new()` (`jackd/engine.c`) by calling `make_sockets()` (`jackd/engine.c`): First the ''master server socket'' is created and its file descriptor saved in `engine->fds[0]`. Then, the socket is bound to its registration path `"%s/jack_0"` (where the string variable `s` is filled by `jack_server_dir()`) and the socket is advised to listen to connection events. This socket is used to establish the request socket between a client and the server. As we see later: Now a client can create a socket and connect it to the path `"%s/jack_0"`. When then server accepts the connection on the master socket, it receives another file descriptor: A privat request channel between the client and the server with one file descriptor on each side is established. After that, the same procedure is repeated for the ''client/server event ack socket_, which is bound to the path `"%s/jack_ack_%d"`.
+The _entry sockets_ on server side are created during `jack_engine_new()` (`jackd/engine.c`) by calling `make_sockets()` (`jackd/engine.c`): First the ''master server socket'' is created and its file descriptor saved in `engine->fds[0]`. Then, the socket is bound to its registration path `"%s/jack_0"` (where the string variable `s` is filled by `jack_server_dir()`) and the socket is advised to listen to connection events. This socket is used to establish the request socket between a client and the server. As we see later: Now a client can create a socket and connect it to the path `"%s/jack_0"`. When then server accepts the connection on the master socket, it receives another file descriptor: A privat request channel between the client and the server with one file descriptor on each side is established. After that, the same procedure is repeated for the _client/server event ack socket_, which is bound to the path `"%s/jack_ack_%d"`.
 
-The communication with the clients is handled in an extra server thread, implemented in the function `jack_server_thread()`, (`jackd/engine.c`) and started at the end of `jack_engine_new()} (	jackd/engine.c`) with `jack_client_create_thread()` (`libjack/thread.c`). The jack server thread implements an infinite server loop. Each cycle begins with setting up the `engine->pfd` array of `pollfd` structures containing the file descriptors and the events which should be polled for. The _master server socket'' `engine->fds[0]` is put to `engine->pfd[0].fd`, the ''client/server event ack server'' `engine->fds[1]` to `engine->pfd[1].fd`. The `fd` member of `engine->pfd[2]` holds `engine->cleanup_fifo[0]`: In addition to the main sockets, there is a so-called ''cleanup FIFO_,  which is actually a pipe. It is also set up during `jack_engine_new()` with `cleanup_fifo[1]` being the source and `cleanup_fifo[0]` the sink. This pipe is not used for communication, but only for synchronization and it gives the other threads of the server an opportunity to wake up the server thread (`jack_wake_server_thread`, `jackd/clientengine.c`) if some errors occurred during client checkup (`jack_check_clients`, `jackd/clientengine.c`). After these three elements, all the valid request file descriptors of the clients are added. Now we poll on `engine->pfd` and sleep, if an event or many events have occurred, the server thread gets waked up and handles the events.
+The communication with the clients is handled in an extra server thread, implemented in the function `jack_server_thread()`, (`jackd/engine.c`) and started at the end of `jack_engine_new()} (	jackd/engine.c`) with `jack_client_create_thread()` (`libjack/thread.c`). The jack server thread implements an infinite server loop. Each cycle begins with setting up the `engine->pfd` array of `pollfd` structures containing the file descriptors and the events which should be polled for. The _master server socket_ `engine->fds[0]` is put to `engine->pfd[0].fd`, the ''client/server event ack server'' `engine->fds[1]` to `engine->pfd[1].fd`. The `fd` member of `engine->pfd[2]` holds `engine->cleanup_fifo[0]`: In addition to the main sockets, there is a so-called _cleanup FIFO_,  which is actually a pipe. It is also set up during `jack_engine_new()` with `cleanup_fifo[1]` being the source and `cleanup_fifo[0]` the sink. This pipe is not used for communication, but only for synchronization and it gives the other threads of the server an opportunity to wake up the server thread (`jack_wake_server_thread`, `jackd/clientengine.c`) if some errors occurred during client checkup (`jack_check_clients`, `jackd/clientengine.c`). After these three elements, all the valid request file descriptors of the clients are added. Now we poll on `engine->pfd` and sleep, if an event or many events have occurred, the server thread gets waked up and handles the events.
 	
 	
 	# Time and transport handling
@@ -66,9 +65,9 @@ The communication with the clients is handled in an extra server thread, impleme
 	
 	The core engine of the jack daemon is situated in `jack_main` (`jackd/jackd.c`). First it creates a new engine structure via `{jack_engine_new` (`jackd/engine.c`). This function sets up all the engine data structures and the ports, creates the request and event master sockets and the cleanup FIFO. At the end it starts the `jack_server_thread` (`jackd/engine.c`), which handles all the requests delivered from the clients.
 	
-	Now `jack_main` calls `jack_engine_load_driver` (`jackd/engine.c`). The function loads the driver from disk via `jack_load_driver` (`jackd/engine.c`). Afterwards `jack_engine_load_driver` creates a driver client (for the sinks and sources of the driver): `jack_create_driver_client` (`jackd/clientengine.c`). It then calls `initialize` on the drivers info structure, which lets the driver return its _real driver structure_ `jack_driver_t`. `jack_use_driver` puts this driver structure into the engine (`engine->driver`) and attaches the engine to the driver. During attachment, the driver normally registers the ports for its driver client `driver->client` and activates the client.
+Now `jack_main` calls `jack_engine_load_driver` (`jackd/engine.c`). The function loads the driver from disk via `jack_load_driver` (`jackd/engine.c`). Afterwards `jack_engine_load_driver` creates a driver client (for the sinks and sources of the driver): `jack_create_driver_client` (`jackd/clientengine.c`). It then calls `initialize` on the drivers info structure, which lets the driver return its _real driver structure_ `jack_driver_t`. `jack_use_driver` puts this driver structure into the engine (`engine->driver`) and attaches the engine to the driver. During attachment, the driver normally registers the ports for its driver client `driver->client` and activates the client.
 	
-	A driver can either be threaded or non-threaded: `jack_driver_t` or `jack_driver_nt_t`. Many drivers have their own driver data structure; in case of ALSA this is `alsa_driver_t`. A threaded drivers structure has to have all the elements of `jack_driver_t` at its beginning (a non-threaded driver them of `jack_driver_nt_t`) to allow casting it to `jack_driver_t` (or `jack_driver_nt_t`). The structure `jack_driver_t` in turn is a subset of `jack_driver_nt_t`, so you can cast any `jack_driver_nt_t` to `jack_driver_t`. To make programming easier, the elements of `jack_driver_t` and `jack_driver_nt_t` are not directly coded into the structures but via the macros `JACK_DRIVER_DECL` and `JACK_DRIVER_NT_DECL`, which also should be used for the own driver structures. The difference between threaded and non-threaded drivers is that threaded drivers have to bring up a thread, which executes the driver loop
+A driver can either be threaded or non-threaded: `jack_driver_t` or `jack_driver_nt_t`. Many drivers have their own driver data structure; in case of ALSA this is `alsa_driver_t`. A threaded drivers structure has to have all the elements of `jack_driver_t` at its beginning (a non-threaded driver them of `jack_driver_nt_t`) to allow casting it to `jack_driver_t` (or `jack_driver_nt_t`). The structure `jack_driver_t` in turn is a subset of `jack_driver_nt_t`, so you can cast any `jack_driver_nt_t` to `jack_driver_t`. To make programming easier, the elements of `jack_driver_t` and `jack_driver_nt_t` are not directly coded into the structures but via the macros `JACK_DRIVER_DECL` and `JACK_DRIVER_NT_DECL`, which also should be used for the own driver structures. The difference between threaded and non-threaded drivers is that threaded drivers have to bring up a thread, which executes the driver loop
 	
 	      while (...)
 	        { driver->wait (); driver->engine->run_cycle () }
@@ -88,9 +87,9 @@ In any case, the driver is responsible for initiating a new engine cycle, which 
 	
 The function `jack_run_one_cycle` essentially does the following: 
 	
-		1. driver->read (driver, nframes)
-		2. jack_engine_process (engine, nframes)
-		3. driver->write (driver, nframes)
+1.  driver->read (driver, nframes)
+2.  jack_engine_process (engine, nframes)
+3.  driver->write (driver, nframes)
 	
 The function `jack_engine_process` iterates over all the clients in the list `engine->clients` and, as long as the client is active and not dead, it executes `jack_process_internal` (`jackd/engine.c`) if the client is internal, and `jack_process_external` (`jackd/engine.c`) otherwise.
 

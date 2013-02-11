@@ -1,6 +1,6 @@
 * The official repo is the subversion one (see below)
 * There is a [git repo](http://repo.or.cz/w/jack2.git) for jack2 that tracks svn trunk in the master branch and has several git only branches.
-   [wiki:jack2_branching This page] describes jack2 source repositories, branches and the associated practices. 
+   The [[jack2_branching]] page describes jack2 source repositories, branches and the associated practices. 
 
 What used to be the old jackmp trunk is now part of the main repo. Or as Stephane puts it:
 

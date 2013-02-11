@@ -1,32 +1,12 @@
-session support is built into jack. currently only in jack1 svn, tschack git and jack2 git.
-
-
 # session manager
 
-at the current state there are 2 sessionmanagers. *qjackctl_' trunk and '_pyjacksm*.
-it will live in its own git repository.
-
-	
-	git clone git://hochstrom.endofinternet.org/pyjacksm.git
-	
-
-install it with:
-
-	
-	python setup.py install
-	
-
-then start `jacksmtray`
-
-you might want to look at this screencast:
-http://hochstrom.endofinternet.org/files/pyjacksm-cast01.ogv
-
+session support is built into jack. 
 a developer walk through is available at [[WalkThrough_Dev_JackSession]].
 
 # apps supporting jack-session
 
 * *jack_simple_session_client* which is simply a test client that comes with jack
-* *jack-rack* git version git://hochstrom.endofinternet.org/jackrack.git
+* *jack-rack* git version
 * *specimen* svn
 * *seq24* ([patch](http://trac.jackaudio.org/attachment/wiki/WalkThrough/User/jack_session/jack-session.patch?format=raw) sent to ML)
 * *ghostess* patch

@@ -16,7 +16,7 @@ Some clients cannot 'instantly' relocate in rt, as they may (for example) need t
 If you'd want to sync 'looping' by repeatedly relocating the jack transport, you'll need a way to do this in a seamless way. Some ways to do that:
 * give clients 'advance notification' of relocations, so they're ready when it happens. This notification might come in the form of a simple 'we're going to relocate to location X next time we hit location Y'-event.
 * give clients access to an entire 'loop/relocation map' so they can anticipate relocations
-* add a new 'looping' state and add fields with start- and end locations to [jack_position_t](http://jackaudio.org/files/docs/html/structjack__position__t.html) as per the [JesseChappellLooping looping proposal by Jesse Chappell].
+* add a new 'looping' state and add fields with start- and end locations to [jack_position_t](http://jackaudio.org/files/docs/html/structjack__position__t.html) as per the looping proposal by Jesse Chappell (see [[JesseChappellLooping]]).
 
 A drawback to syncing looping at all: suppose you have a song where the drum machine loops a 2-bar pattern, an accompaniment generator loops a 16-bar accompaniment, and a melody synth plays a 32-bar melody. The drum machine and accompaniment generator will still have to do 'internal' looping. Perhaps the 'current workaround' of just letting time roll on isn't so bad. The only potential real problem with that approach seems to be the danger of drift (which might occur when clients disagree about the exact loop length, for example due to different rounding techniques).
 
@@ -47,7 +47,7 @@ Suppose, in the presence of tempo changes, you're playing measure 10 of a song. 
 
 Yet, 'frame' is currently a required field in [jack_position_t](http://jackaudio.org/files/docs/html/structjack__position__t.html) - there is no flag to mark it invalid in [jack_position_bits_t](http://jackaudio.org/files/docs/html/transport_8h.html#a64608154318de05af9e763bfb5fb8529). 
 
-Solution directions: adding a bit for 'valid' to [[jack_position_bits_t](http://jackaudio.org/files/docs/html/transport_8h.html#a64608154318de05af9e763bfb5fb8529)] would be backwards-incompatible - it might be better to choose a 'magic value' (such as '-1') to specify this field should be ignored. Masters who cannot reposition based on only BBT information could return EINVAL, in that case perhaps a client might try again with a best-effort frame guess included.
+Solution directions: adding a bit for 'valid' to [jack_position_bits_t](http://jackaudio.org/files/docs/html/transport_8h.html#a64608154318de05af9e763bfb5fb8529) would be backwards-incompatible - it might be better to choose a 'magic value' (such as '-1') to specify this field should be ignored. Masters who cannot reposition based on only BBT information could return EINVAL, in that case perhaps a client might try again with a best-effort frame guess included.
 
 See also: http://lists.jackaudio.org/htdig.cgi/jack-devel-jackaudio.org/2009-March/002348.html
 

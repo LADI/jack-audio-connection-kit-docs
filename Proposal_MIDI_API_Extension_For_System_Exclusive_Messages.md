@@ -1,4 +1,4 @@
-# Problem
+# JACK MIDI SYSEX messages -- Problem Description 
 
 JACK MIDI, in its current state, is very good at handling lots of small MIDI messages, and sending/delivering them in sync with audio.  This is absolutely fantastic for the greater majority of JACK clients, which don't have to communicate with external hardware, and most likely have no need for system exclusive messages.  However, JACK MIDI cannot currently handle arbitrarily large system exclusive messages for a couple reasons:
 
@@ -15,40 +15,44 @@ On the mailing list, Paul asked:
 
   is JACK MIDI an appropriate API for this sort of thing?
 
-Good question!  Here's a list of examples of application types and use cases for which using the JACK MIDI API to do such a thing would be practical:
+Good question! Here's a list of examples of application types and use cases for which using the JACK MIDI API to do such a thing would be practical:
 
-  1. MIDI sequencers
+## MIDI sequencers
 
   A MIDI sequencer plays MIDI sequences, which may include system exclusive messages.  An SMF (Standard MIDI File) can potentially contain *very* long system exclusive messages, though it's probably more common for SMF's to contain shorter system exclusive messages for doing simple things like configuring MIDI-capable hardware before sending realtime sequences to the device.  A notable exception to this rule are SMFs that are meant to be played over the MIDI port of a piece of hardware that are used to upgrade firmware, though this isn't exactly a realtime MIDI issue.
 
   There are several MIDI sequencers that use the JACK MIDI API.  Examples include:
 
-    * [dino](http://dino.nongnu.org/)
-    * [Epichord](http://evanr.infinitymotel.net/epichord/)
-    * [Jacker](http://bitbucket.org/paniq/jacker/wiki/Home)
-    * [Non-Sequencer](http://non-sequencer.tuxfamily.org/)
-
+  *  [dino](http://dino.nongnu.org/)
+  *  [Epichord](http://evanr.infinitymotel.net/epichord/)
+  *  [Jacker](http://bitbucket.org/paniq/jacker/wiki/Home)
+  *  [Non-Sequencer](http://non-sequencer.tuxfamily.org/)
+  
   (Edit: Not all of the above applications can load SMF files.  SMF is an example of a common format that can potentially contain system exclusive messages, but that doesn't stop other sequencers that don't support SMF files from playing back system exclusive messages, and doesn't stop other formats from support system exclusive messages.)
 
-  2. MIDI monitors
+
+## MIDI monitors
 
   A MIDI monitor is used to take a close look at MIDI messages being sent to a MIDI port.  MIDI-capable devices often send system exclusive messages to communicate with software or other hardware, but there isn't always documentation on the format or purpose of these system exclusive messages.  A MIDI monitor can capture and save these messages, giving the developer a tool for figuring out the format and purpose of such messages.
 
   There is at least one MIDI monitor application that uses JACK MIDI:
 
-    * [gmidimonitor](http://home.gna.org/gmidimonitor/)
+*  [gmidimonitor](http://home.gna.org/gmidimonitor/)
 
-  3. Software emulations of MIDI-capable hardware
+## Software emulations of MIDI-capable hardware
 
   System exclusive messages are received from and sent to MIDI hardware.  Software emulations of such hardware, in addition to responding to other, more common MIDI messages, may very well want to respond to the system exclusive messages that the hardware it's trying to emulate responds to.
 
   There is at least one very-well known program that uses JACK MIDI and emulates several hardware synthesizers:
 
-    * [Bristol](http://bristol.sourceforge.net/index.html)
+  *  [Bristol](http://bristol.sourceforge.net/index.html)
 
   I don't know if Bristol responds directly to system exclusive messages sent over JACK MIDI, but, according to the Bristol site, "... the GUI is really just a master keyboard for the engine and drives it with MIDI SYSEX messages over TCP sessions".
 
-  4. Applications that route MIDI data to/from MIDI-capable plugins loaded in the application itself ([LV2](http://lv2plug.in/), [VST](http://en.wikipedia.org/wiki/Virtual_Studio_Technology), [DSSI](http://dssi.sourceforge.net/) to a lesser extent)
+
+##  MIDI routers
+
+  Applications that route MIDI data to/from MIDI-capable plugins loaded in the application itself ([LV2](http://lv2plug.in/), [VST](http://en.wikipedia.org/wiki/Virtual_Studio_Technology), [DSSI](http://dssi.sourceforge.net/) to a lesser extent)
 
   Applications that load plugins that can receive and send MIDI messages don't know what sorts of system exclusive messages any plugin will be capable of sending/receiving.  However, such plugins should be capable of receive/transmitting such messages successfully.
 
@@ -58,7 +62,7 @@ Good question!  Here's a list of examples of application types and use cases for
 
 # First Proposed Solution
 
-The first solution involves the introduction of two new opaque data types; 'jack_midi_blob_t' and 'jack_midi_blobstream_t':
+The first solution involves the introduction of two new opaque data types; `jack_midi_blob_t` and `jack_midi_blobstream_t`:
 
 	
 	    typedef struct _jack_midi_blob jack_midi_blob_t;
@@ -85,7 +89,7 @@ be necessary:
 	    jack_midi_blob_size(const jack_midi_blob_t *blob);
 	
 
-A 'blobstream' object is used to read and write data from/to 'blob' objects.  The 'blobstream' API resembles a file API for the sake of familiarity.  A blobstream object, when it opens a blob using 'jack_midi_blobstream_open_read', will add a reference to the blob it uses, and will subtract a reference when 'jack_midi_blobstream_close' is called.  All calls using 'blobstream' objects are RT-safe, and return 0 to indicate success, or a non-zero error code:
+A 'blobstream' object is used to read and write data from/to 'blob' objects.  The 'blobstream' API resembles a file API for the sake of familiarity.  A blobstream object, when it opens a blob using `jack_midi_blobstream_open_read`, will add a reference to the blob it uses, and will subtract a reference when `jack_midi_blobstream_close` is called.  All calls using 'blobstream' objects are RT-safe, and return 0 to indicate success, or a non-zero error code:
 
 	
 	    int
@@ -117,7 +121,7 @@ A 'blobstream' object is used to read and write data from/to 'blob' objects.  Th
 	    jack_midi_blobstream_close(jack_midi_blobstream_t *stream);
 	
 
-To enqueue blobs in MIDI port buffers, the definition for 'jack_midi_event_t' will have to be altered, and MIDI port buffers will have to grow a method to enqueue MIDI blobs:
+To enqueue blobs in MIDI port buffers, the definition for `jack_midi_event_t` will have to be altered, and MIDI port buffers will have to grow a method to enqueue MIDI blobs:
 
 	
 	    typedef struct _jack_midi_event {
@@ -159,16 +163,15 @@ __Notes__:
 
 On the mailing list, Torben noted:
 
-  i am not sure if we should do this implicit memory management.  maybe allocating a blob, and then putting the blob id into the midi event would be smarter.
-
-  we still need to manage references to blobs.  and we need an RT safe memory management in shm. (which probably needs to be threadsafe too.... tricky :)
+>  i am not sure if we should do this implicit memory management.  maybe allocating a blob, and then putting the blob id into the midi event would be smarter.
+>
+>  we still need to manage references to blobs.  and we need an RT safe memory management in shm. (which probably needs to be threadsafe too.... tricky :)
 
 # Second Proposed Solution
 
-The second solution assumes a blob is just a 'jack_midi_data_t *' created in shared memory.  This solution assumes that the jack_midi_event_t struct would not need to be modified in order for the 'buffer' member to reference shared
-memory.  My reading on shared memory indicates that this is okay, but I can't be totally sure because I don't have a thorough understanding of the internals of JACK.
+The second solution assumes a blob is just a `jack_midi_data_t *` created in shared memory.  This solution assumes that the jack_midi_event_t struct would not need to be modified in order for the 'buffer' member to reference shared memory.  My reading on shared memory indicates that this is okay, but I can't be totally sure because I don't have a thorough understanding of the internals of JACK.
 
-To start, we'd keep functionality for creating and destroying MIDI blobs, only a MIDI blob is now a 'jack_midi_data_t *' that points to a segment of shared memory:
+To start, we'd keep functionality for creating and destroying MIDI blobs, only a MIDI blob is now a `jack_midi_data_t *` that points to a segment of shared memory:
 
 	
 	    jack_midi_data_t *
@@ -188,14 +191,14 @@ MIDI buffers need to be taught how to enqueue blobs.  The 'size' argument specif
 
 Dealing with references to blobs is a little different than in the first solution.  The JACK server would need a way to map shared 'jack_midi_data_t *' objects to reference counts.
 
-We need to know if a particular 'jack_midi_data_t *' is a blob:
+We need to know if a particular `jack_midi_data_t *` is a blob:
 
 	
 	    int
 	    jack_midi_is_blob(const jack_midi_data_t *data);
 	
 
-(Perhaps this should take a 'port_buffer' argument too.  Not sure.)
+(Perhaps this should take a `port_buffer` argument too.  Not sure.)
 
 A client can acquire and release references to blobs if the client needs to access the blob for more than one cycle, or in a separate thread:
 

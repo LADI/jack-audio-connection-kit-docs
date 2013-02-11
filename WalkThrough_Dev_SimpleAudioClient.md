@@ -1,5 +1,5 @@
 
-A walkthrough illustrated by the bundled example application [source:trunk/jack/example-clients/simple_client.c simple_client.c]
+A walkthrough illustrated by the bundled example application https://github.com/jackaudio/example-clients/blob/master/simple_client.c
 
 # simple_client.c
 	

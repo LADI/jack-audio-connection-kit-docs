@@ -248,7 +248,7 @@ $JACK_DEFAULT_SERVER specifies the default server name. If not defined, the stri
 
 # See Also
 
-* [wiki:jackdrc(5)]
+* [[jackdrc(5)]]
 * http://www.jackaudio.org The official JACK website with news, docs and a list of JACK clients.
 * http://lists.sourceforge.net/mailman/listinfo/jackit-devel The JACK developers' mailing list. Subscribe, to take part in development of JACK or JACK clients. User questions are also welcome, there is no user-specific mailing list.
 * http://www.jackosx.com/ Tools specific to the Mac OS X version of JACK.

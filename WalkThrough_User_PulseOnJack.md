@@ -61,5 +61,5 @@ If you're using qjackctl as a launcher for jackd.
 in settings options add a post startup script like this:
 
 	
-	pactl load-module module-jack-sink channels=2; pactl load-module module-jack-source channels=2;pacmd set-default-sink jack_out
+	pactl load-module module-jack-sink channels=2; pactl load-module module-jack-source channels=2; pacmd set-default-sink jack_out
 	

@@ -8,8 +8,6 @@ This page is intended for you if:
 
 The theory is not Jack specific and can be applied to other real time processing too (video for example).
 
-[[PageOutline]]
-
 
 # Callback model
 
@@ -48,7 +46,7 @@ The latency of this system is built from the following factors:
 
 ## Connection between processing time and buffer underrun
 
-    * As an average processing of N samples must be finished in T time. If not the next package will arrive before the last is processed. Some processing modules use the same amount of processor ticks in each period, but others don't. I don't know whether Jack supports processing periods that take longer than T but the next periods are shorter in return. In theory an output latency and some spare place in input buffer (the one that the A/D converter fills) can tolerate this kind of processing time jitter.
+   * As an average processing of N samples must be finished in T time. If not the next package will arrive before the last is processed. Some processing modules use the same amount of processor ticks in each period, but others don't. I don't know whether Jack supports processing periods that take longer than T but the next periods are shorter in return. In theory an output latency and some spare place in input buffer (the one that the A/D converter fills) can tolerate this kind of processing time jitter.
       You have to find the ideal compromise between output latency and chance of buffer underrun.
 
 # Real time kernel

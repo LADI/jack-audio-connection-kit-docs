@@ -4,14 +4,21 @@ For a simpler but more complete list see http://wiki.linuxaudio.org/apps/categor
 
 Clients:
 
-||Application||framenr||BBT||BBTOffset||
-||hydrogen||+||-||-||
+|Application|framenr|BBT|BBTOffset|
+|:----------|:-----:|:-:|:-------:|
+|ardour|+|+|+|
+|blender|+|-|-|
+|hydrogen|+|-|-|
+|seq24|?|+|?|
+|xjadeo|+|-|-|
 
 Masters:
 
-||Application||BBT||BBTOffset||
-||Klick||+*||-||
-||jack_transport||+||-||
-||hydrogen||as of 0.9.4||?||
+|Application|BBT|BBTOffset|
+|:----------|:-:|:-------:|
+|ardour|+|+|
+|Klick||+(1)||-||
+|jack_transport|+|-|
+|hydrogen|as of 0.9.4|?|
 
-* Unless in 'interactive' mode
+(1) Unless in _interactive_ mode  

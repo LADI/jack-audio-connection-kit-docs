@@ -1,5 +1,5 @@
 
-Taking JACK MIDI input and outputting sound is demonstrated by [source:trunk/jack/example-clients/midisine.c midisine.c].
+Taking JACK MIDI input and outputting sound is demonstrated by https://github.com/jackaudio/example-clients/blob/master/midisine.c
 
 # midisine.c
 	
@@ -19,7 +19,7 @@ Taking JACK MIDI input and outputting sound is demonstrated by [source:trunk/jac
 	    You should have received a copy of the GNU General Public License
 	    along with this program; if not, write to the Free Software
 	    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-*/
+	*/
 	
 	#include <stdio.h>
 	#include <errno.h>
@@ -142,7 +142,7 @@ Taking JACK MIDI input and outputting sound is demonstrated by [source:trunk/jac
 	}
 	
 
-Producing JACK MIDI output is demonstrated by [source:trunk/jack/example-clients/midiseq.c midiseq.c].
+Producing JACK MIDI output is demonstrated by https://github.com/jackaudio/example-clients/blob/master/midiseq.c
 
 # midiseq.c
 
@@ -163,7 +163,7 @@ Producing JACK MIDI output is demonstrated by [source:trunk/jack/example-clients
 	    You should have received a copy of the GNU General Public License
 	    along with this program; if not, write to the Free Software
 	    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-*/
+	*/
 	
 	#include <jack/jack.h>
 	#include <jack/midiport.h>

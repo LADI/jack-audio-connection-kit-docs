@@ -1,16 +1,21 @@
-_The short answer:_ Jack 1 and Jack 2 are equivalent implementations of the same protocol.  Jack 2 was originally written to add multi-processor support and to rewrite the internals using C++.  Programs compiled against Jack 1 will work with Jack 2 without recompile (and vice versa).  Jack 2 was originally planned to replace Jack 1, but this is no longer so and they are considered equivalent implementations.  JACK is a C API, and so the C++ rewrite in Jack 2 only matters to the people who program/maintain jack.
+# FAQ: what are the differences between JACK 1 and JACK2
 
-_So, why would I choose one or the other?_  For most folks, it doesn't matter.  For others, there is typically one or two features that cause them to prefer one or the other.  See below for a detailed listing of the difference.
+**The short answer:** Jack 1 and Jack 2 are equivalent implementations of the same protocol. Jack 2 was originally written to add multi-processor support and to rewrite the internals using C++.  Programs compiled against Jack 1 will work with Jack 2 without recompile (and vice versa).  Jack 2 was originally planned to replace Jack 1, but this is no longer so and they are considered equivalent implementations.  JACK is a C API, and so the C++ rewrite in Jack 2 only matters to the people who program/maintain jack.
 
-_Why isn't Jack 2 going to replace Jack 1?  What happened?_  Simply put, the Jack 1 developers couldn't bring themselves to migrate to Jack 2.  There is no animosity between the two developer groups (they do indeed work together nicely).  Many of the Jack 1 developers disagree with the implementation details and class hierarchy of Jack 2, to the point where they would prefer working on the Jack 1 code.  Note that this rejection is *not* because it was done in C++ (as the Jack 1 devs are accomplished C++ devs).
+**So, why would I choose one or the other?**  For most folks, it doesn't matter.  For others, there is typically one or two features that cause them to prefer one or the other.  See below for a detailed listing of the difference.
 
-_Are we going to have two JACKs forever?_  No.  However nobody forsees a sane way to choose between Jack 1 and Jack 2.  They're both very good and have loyal followings.  However, when the time comes to work on Jack 3 (after Jack 1 is deemed "complete") nobody expects this situation to happen again.
+**Why isn't Jack 2 going to replace Jack 1?  What happened?**  Simply put, the Jack 1 developers couldn't bring themselves to migrate to Jack 2.  There is no animosity between the two developer groups (they do indeed work together nicely).  Many of the Jack 1 developers disagree with the implementation details and class hierarchy of Jack 2, to the point where they would prefer working on the Jack 1 code.  Note that this rejection is *not* because it was done in C++ (as the Jack 1 devs are accomplished C++ devs).
+
+**Are we going to have two JACKs forever?**  No.  However nobody forsees a sane way to choose between Jack 1 and Jack 2.  They're both very good and have loyal followings.  However, when the time comes to work on Jack 3 (after Jack 1 is deemed "complete") nobody expects this situation to happen again.
+
+**So what about the version numbers ?** Jack 1 _approaches_ version 1.0. At the time of writing it it at version 0.121.3. Jack 2 approaches version 2.0 - at the time of writing it is at version 1.9.10. run `jackd --version` to find out the version that you have installed.
+
 
 # Detailed Differences
 
 Here is a feature listing/comparison of the different jack implementations.  Note that this list does not include tschack, Torben Hohn's experimental branch of Jack 1.
 
-| *Feature_'                                                 | '''Jack 1''' | '_Jack 2*  |
+| **Feature**                                                |  **Jack 1**  | **Jack 2** |
 |------------------------------------------------------------|:------------:|:----------:|
 | Implements the JACK C API                                  |  Yes         |  Yes       |
 | Supports multiple processors (SMP)                         |  No          |  Yes(1)    |
@@ -38,4 +43,4 @@ Other differences that don't lend themselves to feature tables:
 * Jack 1 uses less RAM than Jack 2.
 * SMP support is not always as valuable as you would think.  If your applications are chained INPUT --> A --> B --> C --> OUTPUT, then it will _not_ be able to utilize multiple processors.  However, if you applications are independently generating audio to the OUTPUT, that is when "parallel" sub-graph exist in the global graph, then they can be.
 * Jack 2 allocates 2 threads on the client side, one for real-time computation (the one that calls the "Process" callback) and one to handle all non real-time notifications (server context changes). Jack 1 only use 1 thread for real-time computation and notification handling.
-* Jack 2 has a master/slave back-end model.  This design allows you to, for instance,  load MIDI backends along with a master backend which can be audio or network: like "jackd -X coremidi -d coreaudio"  jackd -X coremidi -d net"  on OSX, or "jackd -X winmme -d portaudio"  , "jackd -X winmme -d net" on Windows.
+* Jack 2 has a master/slave back-end model.  This design allows you to, for instance,  load MIDI backends along with a master backend which can be audio or network: like `jackd -X coremidi -d coreaudio`, `jackd -X coremidi -d net` on OSX, or `jackd -X winmme -d portaudio`, `jackd -X winmme -d net` on Windows.

@@ -99,5 +99,5 @@ The values we need to autodetect are target_latency, max_diff and the catch fact
 things we could measure to calculate the values:
 
 standard deviation of the measured delay.
-granularity of snd_pcm_delay() value. (which is quite high on usb cards)
+granularity of `snd_pcm_delay()` value. (which is quite high on usb cards)
 
