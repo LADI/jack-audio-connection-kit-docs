@@ -20,7 +20,6 @@ A complete index of pages is available via the **Pages** tab above.
 *  [[InstallationLayout]]
 *  [JACK Transport](TransportSupport) and [[TransportLimitations]]
 *  [on client threads](WalkThrough_User_ClientThreads)
-*  [[Cgroups]]
 
 # On packaging
 
