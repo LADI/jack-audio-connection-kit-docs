@@ -1,6 +1,6 @@
 _jack_control_ is a Python based tool that allows to control the JACK server, using the newly defined DBUS service available in JACK2. It can be used when JACK has been compiled and installed with the DBUS layer. You can get and install Jack2 from SVN with :
 	
-	  svn co http://subversion.jackaudio.org/jack/jack2/trunk
+	  git clone https://github.com/jackaudio/jack2
 	
   On Linux to build JACK with DBUS support, configure, build and install using :
 	
