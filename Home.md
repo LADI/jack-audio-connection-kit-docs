@@ -4,22 +4,22 @@ A complete index of pages is available via the **Pages** tab above.
 
 # User Resources
 
-*  [differences beteen JACK 1 and JACk2](Q_difference_jack1_jack2)
+*  [differences beteen JACK 1 and JACk2](wiki/Q_difference_jack1_jack2)
 *  [[Troubleshooting]]
 *  [[MailingLists]]
 
 # Walkthroughs
 
-*  [ALSA in/out](WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
-*  [Netjack 1](WalkThrough_User_NetJack) - connect JACK 1 servers via network
-*  [Netjack 2](WalkThrough_User_NetJack2) - connect JACK 2 servers via network
-*  [General info on Pulseaudio](PulseAudio), and [walkthrough for JACK and Pulseaudio](WalkThrough_User_PulseOnJack)
+*  [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
+*  [Netjack 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
+*  [Netjack 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
+*  [General info on Pulseaudio](wiki/PulseAudio), and [walkthrough for JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 
 # Some details and FAQ
 
 *  [[InstallationLayout]]
-*  [JACK Transport](TransportSupport) and [[TransportLimitations]]
-*  [on client threads](WalkThrough_User_ClientThreads)
+*  [JACK Transport](wiki/TransportSupport) and [[TransportLimitations]]
+*  [on client threads](wiki/WalkThrough_User_ClientThreads)
 
 # On packaging
 
