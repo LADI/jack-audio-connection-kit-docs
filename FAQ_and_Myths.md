@@ -1,7 +1,7 @@
 FAQ
 ===
 
-...
+See http://jackaudio.org/faq for now.
 
 
 JACK and JACK-Related Myths Debunked
