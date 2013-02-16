@@ -30,3 +30,7 @@ That depends. CPU frequency scaling happens orders of magnitude faster than any 
 **Is it possible to make LADSPA,LV2,etc plugins run in a separate process, so that any crashes would not bring Ardour to its knees?**
 It is possible, but it does not scale. A context-switch would be needed for the process-callback of every plugin.
 If you want to run 2 VST plugins like this, it is fine. If you want EQ and compression for every track in an N-track session, its like one JACK client per plugin, and adds notable CPU load.
+
+**Kernel clock frequency affects midi performance/jitter.**
+There is no canonical answer to that. The kernel clock freq (<code>dev.rtc.max-user-freq</code>, <code>dev.hpet.max-user-freq</code>) is irrelevant for JACK, JACK-midi and JACK's MIDI-backends including a2jmidid.
+However, applications that directly use ALSA-MIDI or ALSA-sequencer may be affected by this. There are many related factors. It depends which timer is used by the soundcard's driver (snd_timer, snd_hrtimer) and how the applications schedules ALSA-MIDI data processing.
