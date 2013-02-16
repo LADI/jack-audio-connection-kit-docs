@@ -7,13 +7,13 @@ FAQ
 JACK and JACK-Related Myths Debunked
 ====================================
 
-**the only way to reliable jackd requires getting rid of pulseaudio entirely.**
+**The only way to reliable jackd requires getting rid of pulseaudio entirely.**
 certainly not. see [[http://jackaudio.org/pulseaudio_and_jack]]
 
 **I need to use <code>shedutil</code> to set up realtime scheduling of each audio application.**
 No you do not.
 There are countless examples e.g.
-[[archwiki]](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=243256#A_Shell-Based_Example_Setup)
+[archwiki](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=243256#A_Shell-Based_Example_Setup)
 which demonstrate elaborate scripts to raise the priority of audio-processing applications. In fact they all achieve the opposite.
 The fundamental idea behind jack is to only elevate the audio-processing part (jack-callback) of each application and never the application itself. The GUI and user-interface threads of an application should run at normal priority. If the application itself is prioritized it can itself interfere with the audio-processing.
 
@@ -23,7 +23,7 @@ No. Realtime scheduling is available on all modern Linux systems (>2.6.0) no mat
 Some feature of the preemt_rt kernel can also help to achieve lower latencies with certain hardware configurations.
 
 
-**I must disable CPU frequency scaling to get rid of xruns**
+**I must disable CPU frequency scaling to get rid of x-runs**
 That depends. CPU frequency scaling happens orders of magnitude faster than any audio-processing. There are however two caveats: the CPU frequency governor may not react in time, and on multi-core systems the governor may take overall CPU load into account instead of DSP load. These issues have been addressed by [[http://gareus.org/oss/jackfreqd/]]. NTL if you are not concerned with fan-noise it is a safe bet to disable CPU freq scaling. (this is usually done by calling <code>sudo cpufreq-selector -g performance</code>). You should however disable bus-frequency scaling and C1E halt states and EIST in the BIOS if your BIOS offers those options.
 
 
