@@ -24,7 +24,7 @@ Some feature of the preemt_rt kernel can also help to achieve lower latencies wi
 
 
 **I must disable CPU frequency scaling to get rid of x-runs**
-That depends. CPU frequency scaling happens orders of magnitude faster than any audio-processing. There are however two caveats: the CPU frequency governor may not react in time, and on multi-core systems the governor may take overall CPU load into account instead of DSP load. These issues have been addressed by [[http://gareus.org/oss/jackfreqd/]]. NTL if you are not concerned with fan-noise it is a safe bet to disable CPU freq scaling. (this is usually done by calling <code>sudo cpufreq-selector -g performance</code>). You should however disable bus-frequency scaling and C1E halt states and EIST in the BIOS if your BIOS offers those options.
+That depends. CPU frequency scaling happens orders of magnitude faster than any audio-processing. There are however two caveats: the CPU frequency governor may not react in time, and on multi-core systems the governor may take overall CPU load into account instead of DSP load. These issues have been addressed by [[http://gareus.org/oss/jackfreqd/]]. NTL if you are not concerned with fan-noise it is a safe bet to disable CPU freq scaling. (this is usually done by calling <code>sudo cpufreq-set -g performance</code> or <code>sudo cpufreq-selector -g performance</code>). You should however disable bus-frequency scaling and C1E halt states and EIST in the BIOS if your BIOS offers those options.
 
 
 **Is it possible to make LADSPA,LV2,etc plugins run in a separate process, so that any crashes would not bring Ardour to its knees?**
