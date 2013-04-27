@@ -1,4 +1,3 @@
-
 Taking JACK MIDI input and outputting sound is demonstrated by https://github.com/jackaudio/example-clients/blob/master/midisine.c
 
 # midisine.c
@@ -109,7 +108,7 @@ Taking JACK MIDI input and outputting sound is demonstrated by https://github.co
 	{
 		jack_client_t *client;
 	
-		if ((client = 0)
+		if ((client = jack_client_open ("midi_test", JackNullOption, NULL)) == 0)
 		{
 			fprintf(stderr, "jack server not running?\n");
 			return 1;
