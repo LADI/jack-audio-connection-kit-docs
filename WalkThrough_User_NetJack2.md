@@ -136,7 +136,7 @@ Imagine you want to send and receive for audio channels over a network. The MTU 
 So imagine we can't put 1400 bytes in one packet. We have four channels, at a sample rate of 48kHz, each audio sample takes four bytes.
 We then have 16 bytes per audio frames. We can put 1400/16 frames in one packet. We take the _power of two_ directly under this value, to better fit to the audio world needs, what gives us 64 frames per packet.
 
-If you take a period size of 2048, you will have to send and receive 32 packets per cycle. That means more packets sent together, so more opportunities to loose some of them.
+If you take a period size of 2048, you will have to send and receive 32 packets per cycle. That means more packets sent together, so more opportunities to lose some of them.
 So keep in mind this simple fact : the smaller period size you set, the less packets you have __per cycle__ (you still have the same amount of data to transmit), added, of course, to a smaller latency.
 
 If you use ALSA and want to send midi from your hardware (keyboard, control surface etc.), you can add the -X raw or seq option to the ALSA driver.
