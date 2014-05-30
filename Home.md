@@ -29,6 +29,7 @@ A complete index of pages is available via the **Pages** tab above.
 
 # Developer Resources
 
+*  [JACK API reference (doxygen)](http://jackaudio.github.io/api/)
 *  [[WalkThrough_Dev_LatencyBufferProcess]]
 *  [[WalkThrough_Dev_SimpleAudioClient]]
 *  [[WalkThrough_Dev_SimpleMidiClient]]
