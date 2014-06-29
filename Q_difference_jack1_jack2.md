@@ -43,4 +43,4 @@ Other differences that don't lend themselves to feature tables:
 * Jack 1 uses less RAM than Jack 2.
 * SMP support is not always as valuable as you would think.  If your applications are chained INPUT --> A --> B --> C --> OUTPUT, then it will _not_ be able to utilize multiple processors.  However, if you applications are independently generating audio to the OUTPUT, that is when "parallel" sub-graph exist in the global graph, then they can be.
 * Jack 2 allocates 2 threads on the client side, one for real-time computation (the one that calls the "Process" callback) and one to handle all non real-time notifications (server context changes). Jack 1 only use 1 thread for real-time computation and notification handling.
-* Jack 2 has a master/slave back-end model.  This design allows you to, for instance,  load MIDI backends along with a master backend which can be audio or network: like `jackd -X coremidi -d coreaudio`, `jackd -X coremidi -d net` on OSX, or `jackd -X winmme -d portaudio`, `jackd -X winmme -d net` on Windows.
+
