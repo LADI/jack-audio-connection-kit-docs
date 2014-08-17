@@ -5,6 +5,7 @@ If you intend to use consumer applications like Flash or media players in your J
   1. Redirect all ALSA output to PulseAudio
   1. Redirect PulseAudio to JACK
 
+Warning: If you follow this setup there is no control with qjackctl. Any settings there will have no effect. You will have to make changes to the configuration with jack_control. jack_control has no man page, try jack_control --help. 
 
 ## Redirecting ALSA to PulseAudio
 
