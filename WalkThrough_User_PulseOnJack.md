@@ -5,7 +5,11 @@ If you intend to use consumer applications like Flash or media players in your J
   1. Redirect all ALSA output to PulseAudio
   1. Redirect PulseAudio to JACK
 
-**Warning**: If you follow this setup there is no control with qjackctl. Any settings there will have no effect. You will have to make changes to the configuration with jack_control. jack_control has no man page, try jack_control --help. 
+**Warning 1**: If you follow this setup there is no control with qjackctl. Any settings there will have no effect. You will have to make changes to the configuration with jack_control. jack_control has no man page, try jack_control --help. 
+
+ **Warning 2**: After the computers wake from suspend you will have to restart pulseaudio and possibly the application using it. (If it is a browser plugin using the audio (flash), reloading the page should suffice. If it is html5 audio you will have to restart the browser) However, be aware that doing so might freeze programs connecting to Jack directly.
+
+`pulseaudio -k`
 
 ## Redirecting ALSA to PulseAudio
 
@@ -64,6 +68,4 @@ in settings options add a post startup script like this:
 	
 	pactl load-module module-jack-sink channels=2; pactl load-module module-jack-source channels=2; pacmd set-default-sink jack_out
 	
- **Note**: after suspension you will have to restart pulseaudio and possibly the application using it. (If it is a browser plugin using the audio (flash), reloading the page should suffice. If it is html5 audio you will have to restart the browser) However, be aware that doing so might freeze programs connecting to Jack directly.
 
-`pulseaudio -k`
