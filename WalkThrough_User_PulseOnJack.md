@@ -5,18 +5,18 @@ If you intend to use consumer applications like Flash or media players in your J
   1. Redirect all ALSA output to PulseAudio
   1. Redirect PulseAudio to JACK
 
-## with Jack2 and jackdbus
+## A: with JACK2 and jackdbus
 
 ### Install Cadence
 
-remove QJackQtl if you use that and install Cadence from the KXStdudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
+remove QJackQtl if you use that and install Cadence from the KXStudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
 Done.
 
-## with jack1
+## B: with JACK1
 
-**Warning 1**: If you follow this setup there is no control with qjackctl. Any settings there will have no effect. You will have to make changes to the configuration with jack_control. jack_control has no man page, try jack_control --help. 
+**Warning 1**: If you follow this setup there is no control with QJackCtl. Any settings there will have no effect. You will have to make changes to the configuration with jack_control. jack_control has no man page, try jack_control --help. 
 
- **Warning 2**: After the computers wake from suspend you will have to restart pulseaudio and possibly the application using it. (If it is a browser plugin using the audio (flash), reloading the page should suffice. If it is html5 audio you will have to restart the browser) However, be aware that doing so might freeze programs connecting to Jack directly.
+ **Warning 2**: After the computers wake from suspend you will have to restart PulseAudio and possibly the application using it. (If it is a browser plugin using the audio (flash), reloading the page should suffice. If it is html5 audio you will have to restart the browser) However, be aware that doing so might freeze programs connecting to Jack directly.
 
 `pulseaudio -k`
 
