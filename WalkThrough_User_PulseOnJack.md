@@ -20,6 +20,8 @@ Done.
 
 `pulseaudio -k`
 
+**Warning 3**: It has been said about this method that it is "[the hardest way to do it](http://lists.linuxaudio.org/pipermail/linux-audio-user/2014-August/098427.html) [PulseAudio on JACK]". It probably needs a rewrite. Proceed with care.
+
 ### Redirecting ALSA to PulseAudio
 
 Use the following settings in /etc/asound.conf (or $HOME/.asoundrc)
