@@ -20,6 +20,7 @@ Here is a feature listing/comparison of the different jack implementations.  Not
 | Implements the JACK C API                                  |  Yes         |  Yes       |
 | Supports multiple processors (SMP)                         |  No          |  Yes(1)    |
 | Allows apps to connect/disconnect without disrupting audio |  No          |  Yes       |
+| Interacts with PulseAudio on Linux to share soundcard      |  No(6)       |  Yes       |
 | Has (optional) DBUS support(2)                             |  No(6)       |  Yes       |
 | Can be used with [[WalkThrough_Dev_NetOne]]                |  Yes         |  Yes       |
 | Can be used with [[WalkThrough_User_NetJack2]]             |  No          |  Yes       |
@@ -28,13 +29,16 @@ Here is a feature listing/comparison of the different jack implementations.  Not
 | Supports OS X                                              |  Yes         |  Yes(4)    |
 | Supports Windows                                           |  No          |  Yes(5)    |
 | Supports Solaris/OpenSolaris                               |  Yes?        |  Yes       |
+| Has builtin version of zita-a2j/j2a for multiple soundcards | Yes         |  No        |
+| Supports metadata API                                       | Yes         |  No        |
+| Has builtin version of a2jmidi for integration with Linux MIDI | Yes       | No        |
 
 (1) Jack2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  Jack 2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like Jack 1.  
 (2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/) and [LADI](http://ladish.org/wiki/ladi).  
 (3) It's not that netjack2 is exclusively for Jack2, it's just that nobody has ported the protocol to Jack1.  
 (4) Integrated with [JackOSX](http://www.jackosx.com/) which allows CoreAudio clients become Jack clients (thanks to the JackRouter CoreAudio/Jack virtual audio device)  
 (5) ASIO clients can become Jack clients (thanks to the JackRouter ASIO/Jack bridge)  
-(6) DBUS support for jack1 is available through patch. Currently distributed as a modified jack1 [tarball](http://nedko.arnaudov.name/soft/jack/dbus/).
+(6) DBUS and PulseAudio interaction support for jack1 is available through patch. Currently distributed as a modified jack1 [tarball](http://nedko.arnaudov.name/soft/jack/dbus/).
 
 Other differences that don't lend themselves to feature tables:
 
@@ -43,4 +47,5 @@ Other differences that don't lend themselves to feature tables:
 * Jack 1 uses less RAM than Jack 2.
 * SMP support is not always as valuable as you would think.  If your applications are chained INPUT --> A --> B --> C --> OUTPUT, then it will _not_ be able to utilize multiple processors.  However, if you applications are independently generating audio to the OUTPUT, that is when "parallel" sub-graph exist in the global graph, then they can be.
 * Jack 2 allocates 2 threads on the client side, one for real-time computation (the one that calls the "Process" callback) and one to handle all non real-time notifications (server context changes). Jack 1 only use 1 thread for real-time computation and notification handling.
+* Jack 2 uses a large, fixed sized buffer for MIDI; Jack 1 defaults to a smaller size but allows the size to be set at run time.
 
