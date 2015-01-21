@@ -7,10 +7,10 @@ See http://jackaudio.org/faq for now.
 JACK and JACK-Related Myths Debunked
 ====================================
 
-**The only way to reliable jackd requires getting rid of pulseaudio entirely.**
+**The only way to reliably use jackd requires getting rid of pulseaudio entirely.**
 certainly not. see [[http://jackaudio.org/pulseaudio_and_jack]]
 
-**I need to use <code>shedutil</code> to set up realtime scheduling of each audio application.**
+**I need to use <code>schedtool</code> or <code>chrt</code> to set up realtime scheduling of each audio application.**
 No you do not.
 There are countless examples e.g.
 [archwiki](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=243256#A_Shell-Based_Example_Setup)
