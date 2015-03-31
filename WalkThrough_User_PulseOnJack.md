@@ -9,7 +9,7 @@ If you intend to use consumer applications like Flash or media players in your J
 
 ### Install Cadence
 
-remove QJackQtl if you use that and install Cadence from the KXStudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
+remove QJackCtl if you use that and install Cadence from the KXStudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
 Done.
 
 ## B: with JACK1
