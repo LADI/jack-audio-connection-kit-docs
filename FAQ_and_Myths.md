@@ -8,7 +8,7 @@ JACK and JACK-Related Myths Debunked
 ====================================
 
 **The only way to reliably use jackd requires getting rid of pulseaudio entirely.**
-Certainly not, see [[http://jackaudio.org/pulseaudio_and_jack]]
+Certainly not, see [[http://jackaudio.org/faq/pulseaudio_and_jack.html]]
 
 **I need to use <code>schedtool</code> or <code>chrt</code> to set up realtime scheduling of each audio application.**
 No you do not.
