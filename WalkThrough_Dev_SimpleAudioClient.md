@@ -115,7 +115,7 @@ Here we go - our main program...
 						  JACK_DEFAULT_AUDIO_TYPE,
 						  JackPortIsOutput, 0);
 	
-		if ((input_port # NULL) || (output_port NULL)) {
+		if ((input_port == NULL) || (output_port == NULL)) {
 			fprintf(stderr, "no more JACK ports available\n");
 			exit (1);
 		}
