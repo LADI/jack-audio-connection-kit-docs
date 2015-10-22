@@ -7,6 +7,8 @@ There are three scenarios (use cases) for JACK, related to D-Bus, from users poi
 
 Apart from D-Bus only functionality availability, they affect JACK server auto-launching and thus overall user experience. If more than one scenario is supposed to be available for user, typically package "flavors" are used.
 
+## Scenario 1: Classic JACK only
+
 Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher.
 * Pros:
   * This is the classic environment most current JACK users are aware of.
@@ -15,6 +17,8 @@ Server auto-launching is implemented as fork+exec (starting new process) of jack
   * No JACK D-Bus only control/monitor applications can be used.
   * No audio card negotiation with PulseAudio.
 
+## Scenario 2: D-Bus only JACK
+
 Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bus service, in case it is not already started, and starts the JACK server. Correct interaction with PulseAudio is done using a D-Bus based audio card "acquire/release" mechanism. When JACK server starts, it asks this D-Bus service to acquire the audio card and PulseAudio will unconditionally release it. When JACK server stops, it releases the audio card that can be grabbed again by PulseAudio.
 * Pros:
   * JACK D-Bus aware control/monitor applications can be used, resulting in much better [Linux] end-user (especially desktop) experience.
@@ -22,6 +26,8 @@ Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bu
 * Cons:
   * This is not the classic environment most current JACK users are aware of.
   * If D-Bus session bus gets misconfigured/non-functional, user is not able to use JACK server before fixing it.
+
+## Scenario 3: D-Bus JACK and Classic JACK mixture
 
 Both D-Bus launcher (jackdbus executable) and classic launcher (jackd executable) are installed. Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher. Audio card negotiation with PulseAudio in implemented in jackdbus only.
 * Pros:
