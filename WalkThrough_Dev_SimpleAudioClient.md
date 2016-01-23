@@ -164,7 +164,7 @@ The next part should be optional - it's alway a bad thing to connect ports autom
 	
 		free (ports);
 	
-If you kill this program you'll see xruns for shure. Better call jack_client_close( client ) via atexit(..).
+If you kill this program you'll see xruns for sure. Better call jack_client_close( client ) via atexit(..).
 	
 		/* keep running until stopped by the user */
 	
