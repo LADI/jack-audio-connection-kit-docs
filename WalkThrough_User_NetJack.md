@@ -4,7 +4,7 @@ So ? You got started with jack, you can run it and play with your favorite JACK 
 ## ...NetJack1 !
 NetJack is a functionality of jack which enables you to send and receive JACK data (audio and/or midi) on an IP network. It is a simple toolset, that gives you quite a lot of power. The purpose of this walkthough is to give you the necessary basics to use NetJack1.
 
-It now even supports lossy compression, so its possible to use it over internet.
+It now even supports lossy compression, so it's possible to use it over internet.
 
 ## Basic terminology used in this document
  **JACK:**
@@ -49,7 +49,7 @@ the buffer size.
 3. Launch 'jack_netsource' on the master JACK to connect your slave:  
 `jack_netsource -H <slave jack hostname>`
 
-You're set ! If you've used NetJack's defaults, you should have 2 playback ports, 2 capture ports, 1 midi in and 1 midi out running between the master and the slave. Go ahead, launch a few clients and give your NetJack it's first drive.
+You're set ! If you've used NetJack's defaults, you should have 2 playback ports, 2 capture ports, 1 midi in and 1 midi out running between the master and the slave. Go ahead, launch a few clients and give your NetJack its first drive.
 
 You can run qjackctl or any other patchbay on the slave to connect things, when all is running.
 
@@ -83,7 +83,7 @@ Here are the options of the jack_netsource program:
 	
 
 And the complete list of options for the netjack driver backend obtained by _jackd -d net --help_
-Note that for the jack2 port its currently _jackd -d netone --help_
+Note that for the jack2 port it's currently _jackd -d netone --help_
 
 Most options are autodetected, you normally dont need to specify any of them.
 	
@@ -115,7 +115,7 @@ For jack1:
 You cant connect clients while jackd is waiting for the autoconf packet.
 This can be overcome, by passing -a0 and setting up in the right way beforehand.
 Jackd will start immediately in freerunning mode, similar to jackd -d dummy. It will
-sync to the clocksource once its there.
+sync to the clocksource once it's there.
 
 jack2 will just not have system port until a master connects. The system ports will also
 diaappear after some time running without a master.
@@ -136,7 +136,7 @@ so 2 periods for travel, and 1 for processing on the slave.
 A wireless connection for example, will show collisions. Collisions are not detected on wireless Networks. So the
 packets will be lost. Also note that the transfer speed of a wireless card almost never reaches the advertised values.
 
-In my experiences its only possible to fill half of the links bandwidth. After that the netjack connections will start to exhibit
+In my experiences it's only possible to fill half of the links bandwidth. After that the netjack connections will start to exhibit
 network xruns. Setting -l 2 when invoking jack_netsource leviates this problem. But at the cost of 2 periods of roundtrip latency. (Note that the default is -l5, but for normal Channel counts on ethernet -l1 is just fine)
 
 For an internet connection you will need a much higher latency setting. In case you configered a too low latency, netsource will print
@@ -151,7 +151,7 @@ denormals when both ends are not connected.
 The celt bitstreams, are still changing. So you need to make sure, that both
 ends are using the same version.
 
-Its a low-latency lossy codec. So if you want to use netjack over internet, this is now possible.
+It's a low-latency lossy codec. So if you want to use netjack over internet, this is now possible.
 
 use a period size between 128 and 512. then give -c <kbit_per_channel> to both jackd -d net (or jackd -d netone) and jack_netsource.
 
