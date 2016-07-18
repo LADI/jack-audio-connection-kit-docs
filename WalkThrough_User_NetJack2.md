@@ -256,7 +256,7 @@ to load the audioadapter with 4 input/output JACK ports.
 Alternatively, internal clients can be configurated and loaded using the jack server DBUS service, when Jack2 has been compiled with DBUS support (see [[WalkThrough_User_jack_control]]).
 
 
-## 7. Can I use master synchronized on it's audio card and slave also synchronized on it's audio card ?
+## 7. Can I use master synchronized on its audio card and slave also synchronized on its audio card ?
 
 This setup can also be done. But as explained previously, this will cause some synchronization issue.  In this setup you'll need to use another component called _netadapter_. It is an in-server client that will connect to the master machine, and does resampling as needed to adapt with the sample rate and buffer size used on the master machine.
 
