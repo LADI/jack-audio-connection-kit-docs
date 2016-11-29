@@ -27,7 +27,7 @@ If your browser made you land on this page, this is no coincidence, Jack2 is pro
 
   **a. Main concept**
 
-Imagine that you have two computers (Linux, OSX, Windows or Solaris), fully operational for audio. You run your favorite synths, sampler and other stuff on the first one, a fast processor and a lot of memory inside; and you start your favorite audio/midi sequencer on the other computer, which has large disks and great audio hardware. You may thing, how could I plug those two systems together without any audio wiring or d<->a conversion ?
+Imagine that you have two computers (Linux, OSX, Windows or Solaris), fully operational for audio. You run your favorite synths, sampler and other stuff on the first one, a fast processor and a lot of memory inside; and you start your favorite audio/midi sequencer on the other computer, which has large disks and great audio hardware. You may think, how could I plug those two systems together without any audio wiring or d<->a conversion ?
 
 Then you probably think, ho, I made my best to get the cleanest local network of the neighborhood, I set up firewalls, proxys, etc., and for now, I have no data to send on it...
 Don't worry, you didn't think twice for nothing...Netjack and now Netjack2 allow you to connect two 'jackified' computers as you are used to. On the first one, you see the second like a simple jack client, with its audio and midi ports you can connect to any other jack port as you always did.
