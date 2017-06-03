@@ -8,7 +8,7 @@
 
 **Are we going to have two JACKs forever?**  No.  However nobody forsees a sane way to choose between Jack 1 and Jack 2.  They're both very good and have loyal followings.  However, when the time comes to work on Jack 3 (after Jack 1 is deemed "complete") nobody expects this situation to happen again.
 
-**So what about the version numbers ?** Jack 1 _approaches_ version 1.0. At the time of writing it it at version 0.121.3. Jack 2 approaches version 2.0 - at the time of writing it is at version 1.9.10. run `jackd --version` to find out the version that you have installed.
+**So what about the version numbers ?** Jack 1 _approaches_ version 1.0. At the time of writing it is at version 0.121.3. Jack 2 approaches version 2.0 - at the time of writing it is at version 1.9.10. run `jackd --version` to find out the version that you have installed.
 
 
 # Detailed Differences
