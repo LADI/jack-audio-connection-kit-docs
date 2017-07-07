@@ -6,9 +6,10 @@ Clients:
 
 |Application|framenr|BBT|BBTOffset|
 |:----------|:-----:|:-:|:-------:|
-|ardour|+|+|+|
-|blender|+|-|-|
-|hydrogen|+|-|-|
+|Ardour|+|+|+|
+|Blender|+|-|-|
+|Hydrogen|+|-|-|
+|Radium|+|-|-|
 |seq24|?|+|?|
 |xjadeo|+|-|-|
 
@@ -16,9 +17,10 @@ Masters:
 
 |Application|BBT|BBTOffset|
 |:----------|:-:|:-------:|
-|ardour|+|+|
-|Klick||+(1)||-||
+|Ardour|+|+|
+|Hydrogen|as of 0.9.4|?|
 |jack_transport|+|-|
-|hydrogen|as of 0.9.4|?|
+|Radium|-|-|
+|Klick||+(1)||-||
 
 (1) Unless in _interactive_ mode  
