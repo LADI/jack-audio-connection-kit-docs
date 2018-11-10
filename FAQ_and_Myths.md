@@ -11,10 +11,7 @@ JACK and JACK-Related Myths Debunked
 Certainly not, see [[http://jackaudio.org/faq/pulseaudio_and_jack.html]]
 
 **I need to use <code>schedtool</code> or <code>chrt</code> to set up realtime scheduling of each audio application.**
-No you do not.
-There are countless examples e.g.
-[archwiki](https://wiki.archlinux.org/index.php?title=JACK_Audio_Connection_Kit&oldid=243256#A_Shell-Based_Example_Setup)
-which demonstrate elaborate scripts to raise the priority of audio-processing applications. In fact they all achieve the opposite.
+No you do not. In fact this will achieve the opposite.
 The fundamental idea behind jack is to only elevate the audio-processing part (jack-callback) of each application and never the application itself. The GUI and user-interface threads of an application should run at normal priority. If the application itself is prioritized it can itself interfere with the audio-processing.
 
 
