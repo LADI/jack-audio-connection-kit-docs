@@ -79,6 +79,6 @@ Again, at the time of writing, almost nothing except `jack_property` can display
 
 ***
 
-**Note:** *the contents of the is page were resurrected via the [Internet Archive Wayback Machine](http://web.archive.org/web/20140328210350/http://jackaudio.org/metadata) from the page `http://jackaudio.org/metadata` of the old (Drupal-driven) web site at `jackaudio.org`. The original page had this notice at the top:*
+**Note:** *the contents of this page were resurrected via the [Internet Archive Wayback Machine](http://web.archive.org/web/20140328210350/http://jackaudio.org/metadata) from the page `http://jackaudio.org/metadata` of the old (Drupal-driven) web site at `jackaudio.org`. The original page had this notice at the top:*
 
 > Submitted by paul on Wed, 2014-01-22 19:28
