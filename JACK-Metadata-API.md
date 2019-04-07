@@ -49,7 +49,7 @@ However, `jack_property` can be used to do all these things (note that "all thes
 
 The script below shows a sample use of `jack_property` to define "pretty-name" metadata for all ports (and the backend) of a JACK system running on an RME HDSP device.
 
-```
+```bash
 #!/bin/sh
 
 #
