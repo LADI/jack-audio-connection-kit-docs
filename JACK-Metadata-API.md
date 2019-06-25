@@ -29,7 +29,7 @@ Both key and value are strings, but the value part could represent arbitrary dif
 
 The [API documentation](http://jackaudio.org/files/docs/html/group__Metadata.html) should be consulted for more details.
 
-# What do with metadata?
+# What to do with metadata?
 
 If we know the UUID of an object, we can do 3 things with metadata:
 
