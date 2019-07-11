@@ -9,12 +9,12 @@ If you intend to use consumer applications like Flash or media players in your J
 
 ### a) Install Cadence
 
-Install Cadence from the KXStudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
+The clicky GUI method, no hackery required: Install Cadence from the KXStudio repositories. From within Cadence you can enable the ALSA and PulseAudio bridges with the GUI.
 Done.
 
 ### b) Using scripts in QJackCtl
 
-QJackCtl can launch scripts. This is extremely powerful and you can let it do all the magic for you. A ready made script can be found at [brummer10](https://github.com/brummer10/pajackconnect) 
+The nerdy, elegant and powerful method, some more setup required: QJackCtl can launch scripts. This is extremely powerful and you can let it do all the magic for you. A ready made script can be found at [brummer10](https://github.com/brummer10/pajackconnect) 
 
 ## B: with JACK1
 
