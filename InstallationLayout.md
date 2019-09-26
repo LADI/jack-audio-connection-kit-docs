@@ -30,7 +30,7 @@ Jack drivers are installed into `<PREFIX>/lib/jack/` as dynamic libraries.
 
 In-process clients are installed into `<PREFIX>/lib/jack/`.
 
-## D-Bus service file
+# D-Bus service file
 
 If `jackdbus` is being installed, a D-Bus service file is installed too. This file instructs the D-Bus session bus how to activate the JACK controller object upon request.
 
