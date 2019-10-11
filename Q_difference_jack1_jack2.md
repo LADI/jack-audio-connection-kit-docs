@@ -30,9 +30,9 @@ Here is a feature listing/comparison of the different jack implementations.  Not
 | Supports Windows                                           |  No          |  Yes(5)    |
 | Supports Solaris/OpenSolaris                               |  Yes?        |  Yes       |
 | Has builtin support for >1 soundcard on Linux              | Yes          |  No        |
-| Supports metadata API                                      | Yes          |  No        |
+| Supports metadata API                                      | Yes          |  Yes       |
 | Has builtin integration with Linux MIDI                    | Yes          |  No        |
-| Has builtin integration with CoreMIDI (OS X)               | No           |  Yes        |
+| Has builtin integration with CoreMIDI (OS X)               | No           |  Yes       |
 
 (1) Jack2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  Jack 2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like Jack 1.  
 (2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/) and [LADI](http://ladish.org/wiki/ladi).  
