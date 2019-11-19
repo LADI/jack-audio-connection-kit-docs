@@ -1,4 +1,4 @@
-Welcome to the JACK Audio Connection Kit wiki! 
+Welcome to the **JACK Audio Connection Kit** wiki! 
 
 A complete index of pages is available via the **Pages** tab above.
 
