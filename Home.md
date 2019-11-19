@@ -1,6 +1,6 @@
 Welcome to the **JACK Audio Connection Kit** wiki! 
 
-A complete index of pages is available via the **Pages** tab above.
+A complete index of pages is available via the **Pages** tab on the right hand side.
 
 # User Resources
 
@@ -37,4 +37,3 @@ A complete index of pages is available via the **Pages** tab above.
 *  [[JackAPIchanges12]]
 *  [[Proposal_MIDI_API_Extension_For_System_Exclusive_Messages]]
 *  [[Jack2CodingStyle]]
-
