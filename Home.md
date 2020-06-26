@@ -12,20 +12,20 @@ A complete index of pages is available via the **Pages** tab on the right hand s
 # Walkthroughs
 
 *  [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
-*  [Netjack 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
-*  [Netjack 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
-*  [General info on Pulseaudio](wiki/PulseAudio), and [walkthrough for JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
+*  [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
+*  [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
+*  [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 
 # Some details and FAQ
 
-*  [[InstallationLayout]]
-*  [JACK Transport](wiki/TransportSupport) and [[TransportLimitations]]
-*  [on client threads](wiki/WalkThrough_User_ClientThreads)
+*  [[Installation filesystem layout]]
+*  [JACK Transport](wiki/TransportSupport) and [[Transport limitations]]
+*  [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 
 # On packaging
 
-*  [[SuggestedPackagingApproach]]
-*  [[JackDbusPackaging]]
+*  [[Suggested packaging approach]]
+*  [[JACK D-Bus packaging]]
 
 # Developer Resources
 
