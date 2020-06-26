@@ -1,5 +1,5 @@
 The JACK DEVEL mailing list, intended for developers, can be found under:
-http://lists.jackaudio.org/listinfo.cgi/jack-devel-jackaudio.org
+https://lists.linuxaudio.org/listinfo/jackaudio
 
 The LAU List is also a good place for end-users to ask questions about JACK:
 http://lists.linuxaudio.org/listinfo/linux-audio-user
