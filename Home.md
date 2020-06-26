@@ -1,6 +1,8 @@
 Welcome to the **JACK Audio Connection Kit** wiki! 
 
 # User Resources
+*  [[jackd(1)]]
+*  [[jackdrc(5)]]
 *  [[Differences between jack1 and jack2]]
 *  [[FAQ and myths]]
 *  [[Troubleshooting]]
@@ -14,8 +16,9 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 
 # Some details and FAQ
 *  [[Installation filesystem layout]]
-*  [JACK Transport](wiki/TransportSupport) and [[JACK Transport limitations]]
+*  [JACK Transport](wiki/TransportSupport), [[JACK Transport limitations]] and [[JACK Transport support]]
 *  [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
+*  [[Cgroups]] - for a realtime kernel configuration
 
 # On packaging
 *  [[Suggested packaging approach]]
@@ -23,13 +26,15 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 
 # Developer resources
 *  [JACK API reference (doxygen)](http://jackaudio.github.io/api/)
+*  [[jack2 source code guide]]
+*  [[jack1 source code guide]]
+*  [[JACK API differences]] - changes between jack1 and jack2
 *  [[WalkThrough_Dev_LatencyBufferProcess]]
 *  [[WalkThrough_Dev_SimpleAudioClient]]
 *  [[WalkThrough_Dev_SimpleMidiClient]]
 *  [[WalkThrough_Dev_Tools]]
-*  [[JACK API differences]] - changes between jack1 and jack2
-*  [[jack1 source code guide]]
-*  [[jack2 source code guide]]
+*  [[Repository layout]]
 
 # Proposed features
 *  [[Proposal of MIDI API extension for System Exclusive Messages]]
+*  [[JesseChappellLooping]]
