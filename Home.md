@@ -19,7 +19,7 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 
 # On packaging
 *  [[Suggested packaging approach]]
-*  [JACK D-Bus packaging](wiki/JACK DBus packaging]]
+*  [JACK D-Bus packaging](wiki/JACK DBus packaging)
 
 # Developer resources
 *  [JACK API reference (doxygen)](http://jackaudio.github.io/api/)
