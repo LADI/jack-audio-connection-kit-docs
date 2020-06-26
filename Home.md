@@ -28,7 +28,8 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 *  [[WalkThrough_Dev_SimpleMidiClient]]
 *  [[WalkThrough_Dev_Tools]]
 *  [[JACK API differences]] - changes between jack1 and jack2
-*  [[Jack2CodingStyle]]
+*  [[jack1 source code guide]]
+*  [[jack2 source code guide]]
 
 # Proposed features
 *  [[Proposal of MIDI API extension for System Exclusive Messages]]
