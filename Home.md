@@ -4,10 +4,10 @@ A complete index of pages is available via the **Pages** tab on the right hand s
 
 # User Resources
 
-*  [differences beteen JACK 1 and JACK2](wiki/Q_difference_jack1_jack2)
-*  [[FAQ_and_Myths]]
+*  [[Differences between jack1 and jack2]]
+*  [[FAQ and myths]]
 *  [[Troubleshooting]]
-*  [[MailingLists]]
+*  [[Mailing lists]]
 
 # Walkthroughs
 
