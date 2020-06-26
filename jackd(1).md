@@ -16,7 +16,7 @@ JACK is a low-latency audio server. Originally written for the GNU/Linux operati
 
 JACK differs from other audio servers in being designed from the ground up for professional audio work. It focuses on two key areas: synchronous execution of all clients, and low latency operation.
 
-For the latest JACK information, please consult the web site, http://trac.jackaudio.org .
+For the latest JACK information, please consult the web site, https://jackaudio.org
 
 # Options
 
