@@ -1,3 +1,9 @@
+# What Is PulseAudio?
+
+PulseAudio is a sound server for POSIX and Win32 systems. A sound server is basically a proxy for your sound applications. It allows you to do advanced operations on your sound data as it passes between your application and your hardware. Things like transferring the audio to a different machine, changing the sample format or channel count and mixing several sounds into one are easily achieved using a sound server.
+
+See http://pulseaudio.org/.
+
 # Running PulseAudio on top of JACK
 
 If you intend to use consumer applications like Flash or media players in your JACK setup, one possible solution is to use PulseAudio as an intermediate layer for all these non-JACKified programs. Basically, it boils down to the following:
