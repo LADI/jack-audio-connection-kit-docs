@@ -16,7 +16,7 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 
 # Some details and FAQ
 *  [[Installation filesystem layout]]
-*  [JACK Transport](wiki/TransportSupport), [[JACK Transport limitations]] and [[JACK Transport support]]
+*  [[JACK Transport support]] and [[JACK Transport limitations]]
 *  [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 *  [[Cgroups]] - for a realtime kernel configuration
 
