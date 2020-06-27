@@ -1,7 +1,10 @@
+WARNING: JACK SESSION IS DEPRECIATED
 
+CURRENT BEST PRACTICE FOR SESSION MANAGEMENT: [NSM](http://non.tuxfamily.org/nsm) [API](http://non.tuxfamily.org/nsm/API.html)
 
-an approach to embed a really simple and straight forward session api into jack.
+# Outline
 
+An approach to embed a really simple and straight forward session api into jack.
 
 # Definition of Session
 
