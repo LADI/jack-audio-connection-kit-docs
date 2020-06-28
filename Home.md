@@ -70,7 +70,7 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * https://github.com/x42/jack-stdio
 
 ## Control
-* [https://qjackctl.sourceforge.io QjackCtl] - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
+* [QjackCtl](https://qjackctl.sourceforge.io) - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
   * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
   * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
   * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
