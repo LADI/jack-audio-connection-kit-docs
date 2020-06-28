@@ -17,6 +17,8 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * [List of JACK Frame & Period settings ideal for USB interface](https://linuxmusicians.com/viewtopic.php?f=47&t=10707) - (Frames/Sample Rate) * Period = Theoretical (or Math-derived) Latency
 * [Balancing Performance and Reliability in Jack](https://www.penguinproducer.com/Blog/2011/10/balancing-performance-and-reliability-in-jack/)
 * [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
+  * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
+  * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
 * [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
@@ -50,7 +52,10 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 
 ## Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
+  * [pretty-name](https://jackaudio.org/metadata/pretty-name)
   * [signal-type](https://jackaudio.org/metadata/signal-type)
+  * [order](https://jackaudio.org/metadata/order)
+  * etc.
 * [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
 * [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port meta-data changes.
 * https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys. 
@@ -62,12 +67,17 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * https://github.com/Gimmeapill/xruncounter - measure jack xruns and evaluate the overall performance of a system
 * https://github.com/7890/jack_tools - playground for JACK tools and experiments
 * [Jacktools - Realtime Audio Processors as Python Classes](https://media.ccc.de/v/lac2018-46-jacktools_realtime_audio_processors_as_python_classes) - video [[*](http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html)]
+* https://github.com/x42/jack-stdio
 
 ## Control
-* https://github.com/rncbc/qjackctl - a simple Qt application to control the JACK sound server
+* [https://qjackctl.sourceforge.io QjackCtl] - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
   * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
-* https://github.com/falkTX/cadence - a set of tools useful for audio production
+  * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
+  * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
+* [Cadence](https://kx.studio/Applications:Cadence) - a set of tools useful for audio production [[*](https://github.com/falkTX/cadence)]
 * https://github.com/be1/jackie - a small jack daemon controller
+* https://github.com/progwolff/jackman - Collection of scripts that help managing multiple audio interfaces with Jack.
+  * https://github.com/progwolff/jackman_kcm - KDE
 
 ## WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
