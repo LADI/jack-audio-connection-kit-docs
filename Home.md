@@ -9,27 +9,59 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * [[Troubleshooting]]
 * [[Mailing lists]]
 * https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit
+* https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit
 
 # Guides and walk-throughs
 * [Demystifying JACK – A Beginners Guide to Getting Started with JACK](https://libremusicproduction.com/articles/demystifying-jack-%E2%80%93-beginners-guide-getting-started-jack) - Libre Music Production
-* https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit
+* [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by Filipe Coelho at Sonoj 2019
+* [Sound Engineers Guide to Jackd](http://www.orford.org/assets/jack-idiots_guide.txt) (jack-idiots_guide.txt)
 * [jack_control walkthrough](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) - Python tool to control JACK2 server
 * [List of JACK Frame & Period settings ideal for USB interface](https://linuxmusicians.com/viewtopic.php?f=47&t=10707) - (Frames/Sample Rate) * Period = Theoretical (or Math-derived) Latency
 * [Balancing Performance and Reliability in Jack](https://www.penguinproducer.com/Blog/2011/10/balancing-performance-and-reliability-in-jack/)
 * [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
   * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
-* [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
-* [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
-
-# About JACK
-* [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by Filipe Coelho at Sonoj 2019
-* [[JACK Transport support]] and [[JACK Transport limitations]]
 * [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 * [[Cgroups]] - for a realtime kernel configuration
-* [Sound Engineers Guide to Jackd](http://www.orford.org/assets/jack-idiots_guide.txt) (jack-idiots_guide.txt)
+
+# JACK Transport/Timebase
+* [[JACK Transport support]] and [[JACK Transport limitations]]
+
+```
+jack_transport> ?
+  activate	  Call jack_activate().
+  exit		  Exit transport program.
+  deactivate  Call jack_deactivate().
+  help		  Display help text [<command>].
+  locate	  Locate to frame <position>.
+  master	  Become timebase master [<conditionally>].
+  play		  Start transport rolling.
+  quit		  Synonym for 'exit'.
+  release	  Release timebase.
+  stop		  Stop transport.
+  tempo       Set beat tempo <beats_per_min>.
+  timeout	  Set sync timeout in <seconds>.
+  ?  		  Synonym for `help'.
+
+echo play |jack_transport
+  # pass a command to execute. tempo change doesn't work via this method.
+```
+
+* [timebase.py](https://gist.github.com/SpotlightKid/51805ad2c6c93e3661e1ca4befda4fc8) - query and manipulate JACK transport state and provide timebase information using jackclient-python.
+* [jacktransportloop](http://danmbox.github.io/jack-file/) - forces the Jack transport to loop between two time-points.
+* https://github.com/ycollet/qtmiditrans - translates midi events into jack transport
+* [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
+* [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
+* https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
+
+# OSC
+* https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
+
+# Networked
+* [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
+* [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
 
 # Install and packaging
 * [[Installation filesystem layout]]
