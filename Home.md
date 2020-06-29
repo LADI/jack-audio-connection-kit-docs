@@ -16,15 +16,25 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by Filipe Coelho at Sonoj 2019
 * [Sound Engineers Guide to Jackd](http://www.orford.org/assets/jack-idiots_guide.txt) (jack-idiots_guide.txt)
 * [jack_control walkthrough](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) - Python tool to control JACK2 server
+* [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
+
+## Configuration
 * [List of JACK Frame & Period settings ideal for USB interface](https://linuxmusicians.com/viewtopic.php?f=47&t=10707) - (Frames/Sample Rate) * Period = Theoretical (or Math-derived) Latency
+* [Latency Measurement Results](https://wiki.linuxaudio.org/wiki/jack_latency_results)
 * [Balancing Performance and Reliability in Jack](https://www.penguinproducer.com/Blog/2011/10/balancing-performance-and-reliability-in-jack/)
+* [List of JACK Frame \[or Buffer\] & Period settings ideal for USB interface](https://wiki.linuxaudio.org/wiki/list_of_jack_frame_period_settings_ideal_for_usb_interface)
+* [[Cgroups]] - for a realtime kernel configuration
+* [JACK and Headphones](http://tedfelix.com/linux/jack-headphones.html) - duplicate outputs at ALSA level
+
+## Multiple soundcards
 * [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
   * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
+
+## PulseAudio
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
-* [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
-* [[Cgroups]] - for a realtime kernel configuration
+* [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
 # JACK Transport/Timebase
 * [[JACK Transport support]] and [[JACK Transport limitations]]
@@ -113,6 +123,9 @@ echo play |jack_transport
 
 ## WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
+
+## Haiku
+* https://github.com/Barrett17/libjackcompat - experimental media_kit compatibility layer
 
 # Proposed features
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
