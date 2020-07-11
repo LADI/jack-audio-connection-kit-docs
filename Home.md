@@ -31,7 +31,7 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 ## Multiple soundcards
 * [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
-  * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
+* [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
 
 ## PulseAudio
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
