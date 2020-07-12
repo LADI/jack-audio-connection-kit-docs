@@ -174,6 +174,9 @@ jack_zombie
 ## Haiku
 * https://github.com/Barrett17/libjackcompat - experimental media_kit compatibility layer
 
+## Testing
+* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside JACK's process() callback 
+
 # Proposed features
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
 * [[Proposal for JesseChappellLooping]]
