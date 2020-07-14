@@ -38,8 +38,6 @@ Notice: this wiki is undergoing renovation, not all content is currently up-to-d
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
 * [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
-
-
 # JACK Transport/Timebase
 * [[JACK Transport support]] and [[JACK Transport limitations]]
 
@@ -104,7 +102,11 @@ echo play |jack_transport
   * [order](https://jackaudio.org/metadata/order)
   * etc.
 * [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
-* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port meta-data changes.
+* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
+
+`jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server.
+
+* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
 * https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys. 
 
 # JACK tools
