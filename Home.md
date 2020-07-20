@@ -2,7 +2,7 @@ Welcome to the **JACK Audio Connection Kit** wiki!
 
 Notice: this wiki is undergoing renovation, not all content is currently up-to-date. Drop into IRC for the latest.
 
-**jackd* is the JACK audio server daemon that allows JACK client programs to process and route audio and MIDI data in a synchronous, sample-accurate and low\-latency manner. Originally written for the GNU/Linux operating system, it also runs on various Unix platforms, Mac OS X and MS Windows.
+**jackd** is the JACK audio server daemon that allows JACK client programs to process and route audio and MIDI data in a synchronous, sample-accurate and low\-latency manner. Originally written for the GNU/Linux operating system, it also runs on various Unix platforms, Mac OS X and MS Windows.
 
 JACK can connect a number of different client applications to an audio device and also to each other. Most clients are external, running in their own processes as normal applications. JACK also supports internal clients, which run within the jackd process using a loadable "plugin" interface.
 
