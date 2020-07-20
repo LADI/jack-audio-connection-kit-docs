@@ -23,11 +23,10 @@ Just attaching a random piece of data to an object isn't very useful - nothing w
 All metadata in JACK consists of a pair of strings. One of them, the "key" identifies what type of information is represented by the other (the "value"). This allows us to ask of each object "Does this object have any value for `<key>`?" and get a meaningful answer.
 
 The key part of a piece of metadata is just a string containing a URI. The URI may or may not correspond to a URL - if it does, then an `HTTP GET` request to the URL should retrieve something that explains the meaning of the key and how to use it. For example, [http://jackaudio.org/metadata/pretty-name](http://jackaudio.org/metadata/pretty-name) is a URI that also corresponds to a URL that describes what "pretty-name" data is and how to use it.
-[*Unfortunately that is no longer available at the moment - Ed.*]
 
 Both key and value are strings, but the value part could represent arbitrary different kinds of data - a name, an image, audio, anything basically. We therefore provide an optional third component to each piece of metadata - a specification of the "type" of data represented by the value part. If it is empty, then the value is assumed to be just a normal (null-terminated) C string, useful for naming things in various ways. The type can also be any MIME type or any URI. If find a piece of metadata with a type that you cannot understand, you should ignore that metadata.
 
-The [API documentation](http://jackaudio.org/files/docs/html/group__Metadata.html) should be consulted for more details.
+The [API documentation](https://jackaudio.org/api/group__Metadata.html) should be consulted for more details.
 
 # What to do with metadata?
 
