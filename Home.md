@@ -161,7 +161,7 @@ jack_zombie
 * https://github.com/7890/jack_tools - playground for JACK tools and experiments
 * [Jacktools - Realtime Audio Processors as Python Classes](https://media.ccc.de/v/lac2018-46-jacktools_realtime_audio_processors_as_python_classes) - video [[*](http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html)]
 * https://github.com/x42/jack-stdio
-
+* https://github.com/fps/jack2_split - facilitates parallelism in serial jack graphs by introducing latency, only useful for jack2/jackdmp
 
 ## Control
 * [QjackCtl](https://qjackctl.sourceforge.io) - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
