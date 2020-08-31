@@ -8,6 +8,7 @@ See also:
 * http://lists.jackaudio.org/private.cgi/jack-devel-jackaudio.org/2010-January/004310.html
 * http://jackaudio.org/files/docs/html/transport-design.html
 * http://jackaudio.org/files/docs/html/group__TransportControl.html
+* https://github.com/zynthian/zynthian-issue-tracking/issues/262#issuecomment-683592451
 
 # No real-time relocation/looping
 
