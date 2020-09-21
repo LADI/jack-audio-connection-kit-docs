@@ -18,10 +18,10 @@ JACK differs from other audio servers in being designed from the ground up for p
 * [jackd2 Manpages](https://manpages.debian.org/buster/jackd2)
 
 ## Guides and walk-throughs
-* https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit - general overview
+* [Wikipedia: JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit) - general overview
 * [Demystifying JACK – A Beginners Guide to Getting Started with JACK](https://libremusicproduction.com/articles/demystifying-jack-%E2%80%93-beginners-guide-getting-started-jack) - Libre Music Production
-* [https://ccrma.stanford.edu/docs/common/JACK.html CCRMA JACK Guide]
-* https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit
+* [CCRMA JACK Guide](https://ccrma.stanford.edu/docs/common/JACK.html)
+* [Arch wiki: JACK Audio Connection Kit](https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit) - Installation, Configuration, Troubleshooting
 * [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by falkTX at Sonoj 2019
 * [Sound Engineers Guide to Jackd](http://www.orford.org/assets/jack-idiots_guide.txt) (jack-idiots_guide.txt)
 * [jack_control walkthrough](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) - Python tool to control JACK2 server
