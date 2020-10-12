@@ -1,12 +1,21 @@
 # FAQ: what are the differences between JACK1 and JACK2
 
-**The short answer:** JACK1 and JACK2 are equivalent implementations of the same protocol. JACK2 was originally written to add multi-processor support and to rewrite the internals using C++.  Programs compiled against JACK1 will work with JACK2 without recompile (and vice versa with a few exceptions).  JACK2 was originally planned to replace JACK1, but there is a convoluted story behind it... As of right now, JACK1 is in bugfix-only maintenance mode while JACK2 is in active development.
+**The short answer:**  
+JACK1 and JACK2 are equivalent implementations of the same protocol. JACK2 was originally written to add multi-processor support and to rewrite the internals using C++.  
+Programs compiled against JACK1 will work with JACK2 without recompile (and vice versa with a few exceptions).  
+JACK2 was originally planned to replace JACK1, but there is a convoluted story behind it... As of right now, JACK1 is in bugfix-only maintenance mode while JACK2 is in active development.
 
-**Which one should I choose?**  Use JACK2, as that is one being actively worked on and maintained. If you're feeling brave, try PipeWire.
+**Which one should I choose?**  
+Use JACK2, as that is one being actively worked on and maintained. If you're feeling brave, try PipeWire.
 
-**Are we going to have two JACKs forever?**  No.  falkTX now maintains both, and as declared JACK2 to be the one to go for.  The current plan is to implement all JACK1 features into JACK2 and then slowly phase out JACK1 into "bugfix-only" mode (see the JACK2 v1.9.12 release notes for more detailed information).  This feature-parity is pretty much complete now, with a few exceptions that will be finalized soon.
+**Are we going to have two JACKs forever?**  
+No.  
+falkTX now maintains both, and as declared JACK2 to be the one to go for.  
+The current plan is to implement all JACK1 features into JACK2 and then slowly phase out JACK1 into "bugfix-only" mode (see the JACK2 v1.9.12 release notes for more detailed information).  
+This feature-parity is pretty much complete now, with a few exceptions that will be finalized soon.
 
-**So what about the version numbers ?** JACK1 _approaches_ version 1.0. At the time of writing it is at version 0.121.3. JACK2 approaches version 2.0 - at the time of writing it is at version 1.9.15. run `jackd --version` to find out the version that you have installed.
+**So what about the version numbers ?**  
+JACK1 _approaches_ version 1.0. At the time of writing it is at version 0.121.3. JACK2 approaches version 2.0 - at the time of writing it is at version 1.9.15. run `jackd --version` to find out the version that you have installed.
 
 
 # Detailed Differences
