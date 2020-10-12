@@ -15,7 +15,9 @@ The current plan is to implement all JACK1 features into JACK2 and then slowly p
 This feature-parity is pretty much complete now, with a few exceptions that will be finalized soon.
 
 **So what about the version numbers ?**  
-JACK1 _approaches_ version 1.0. At the time of writing it is at version 0.121.3. JACK2 approaches version 2.0 - at the time of writing it is at version 1.9.15. run `jackd --version` to find out the version that you have installed.
+JACK1 _approaches_ version 1.0. At the time of writing it is at version 0.121.3.  
+JACK2 _approaches_ version 2.0 - at the time of writing it is at version 1.9.15.  
+run `jackd --version` to find out the version that you have installed.
 
 
 # Detailed Differences
