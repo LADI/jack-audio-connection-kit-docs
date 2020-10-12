@@ -29,14 +29,14 @@ Here is a feature listing/comparison of the different JACK implementations.  Not
 | Implements the JACK C API                                  |  Yes         |  Yes       |
 | Supports multiple processors (SMP)                         |  No          |  Yes(1)    |
 | Allows apps to connect/disconnect without disrupting audio |  No          |  Yes       |
-| Interacts with PulseAudio on Linux to share soundcard      |  No(6)       |  Yes       |
-| Has (optional) DBUS support(2)                             |  No(6)       |  Yes       |
+| Interacts with PulseAudio on Linux to share soundcard      |  No(4)       |  Yes       |
+| Has (optional) DBUS support(2)                             |  No(4)       |  Yes       |
 | Can be used with [[WalkThrough_Dev_NetOne]]                |  Yes         |  Yes       |
 | Can be used with [[WalkThrough_User_NetJack2]]             |  No          |  Yes       |
-| Is under active development                                |  Yes(7)      |  Yes       |
+| Is under active development                                |  No(5)       |  Yes       |
 | Supports Linux/*nix/POSIX OS's                             |  Yes         |  Yes       |
-| Supports macOS                                             |  Yes         |  Yes(4)    |
-| Supports Windows                                           |  No          |  Yes(5)    |
+| Supports macOS                                             |  Yes         |  Yes       |
+| Supports Windows                                           |  No          |  Yes       |
 | Supports Solaris/OpenSolaris                               |  Yes?        |  Yes       |
 | Has builtin support for >1 soundcard on Linux              |  Yes         |  No        |
 | Supports metadata API                                      |  Yes         |  Yes       |
@@ -46,10 +46,8 @@ Here is a feature listing/comparison of the different JACK implementations.  Not
 (1) JACK2 can run in 2 different modes : "asynchronous" when the server does not wait for graph end for a given cycle but just write the outputs computed at the previous cycle. In this case an extra period of latency is added.  JACK2 can also be run in "synchronous" mode, when the server waits for the graph activation end in a given cycle, in which case it works like JACK1.  
 (2) DBUS support helps in integrating with [PulseAudio](http://www.pulseaudio.org/).  
 (3) It's not that netjack2 is exclusively for JACK2, it's just that nobody has ported the protocol to JACK1.  
-(4) Integrated with [JackOSX](http://www.jackosx.com/) which allows CoreAudio clients become JACK clients (thanks to the JackRouter CoreAudio/JACK virtual audio device)  
-(5) ASIO clients can become JACK clients (thanks to the JackRouter ASIO/JACK bridge)  
-(6) DBUS and PulseAudio interaction support for jack1 were available through patch. Currently lacking an interested person to port and maintain it.  
-(7) Bugfix-only mode. Don't expect new features (you can still make a pull request if you really want though).
+(4) DBUS and PulseAudio interaction support for jack1 were available through patch. Currently lacking an interested person to port and maintain it.  
+(5) Bugfix-only mode. Don't expect new features (you can still make a pull request if you really want though).
 
 Other differences that don't lend themselves to feature tables:
 
