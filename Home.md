@@ -102,7 +102,11 @@ echo play |jack_transport
 * [[WalkThrough_Dev_NetOne]]
 * https://github.com/jackaudio/example-clients
 
-## Metadata
+## Bindings
+* https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
+* https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
+
+# Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
   * [pretty-name](https://jackaudio.org/metadata/pretty-name)
   * [signal-type](https://jackaudio.org/metadata/signal-type)
