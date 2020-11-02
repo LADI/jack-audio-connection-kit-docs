@@ -194,5 +194,5 @@ jack_zombie
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
 * [[Proposal for JesseChappellLooping]]
 
-## Session Management
+# Session Management
 Both LASH/LADISH and JACK Session are deprecated; the use of [NSM](https://linuxaudio.github.io/new-session-manager) is recommended.
