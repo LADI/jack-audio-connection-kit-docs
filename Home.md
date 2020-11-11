@@ -242,6 +242,7 @@ Commands:
 * https://github.com/be1/jackie - a small jack daemon controller
 * https://github.com/progwolff/jackman - Collection of scripts that help managing multiple audio interfaces with Jack.
   * https://github.com/progwolff/jackman_kcm - KDE
+* https://github.com/madskjeldgaard/rofi-jack -  Keyboard centric jack audio management using the rofi app launcher
 
 ## Mixer
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
