@@ -88,6 +88,11 @@ echo play |jack_transport
 * [[Suggested packaging approach]]
 * [JACK D-Bus packaging](wiki/JACK-DBus-packaging)
 
+
+# Session Management
+Both LASH/LADISH and JACK Session are deprecated; the use of [NSM](https://linuxaudio.github.io/new-session-manager) is recommended.
+
+
 # Developer resources
 * [JACK API reference (doxygen)](https://jackaudio.github.io/api)
 * [[jack2 source code guide]]
@@ -123,22 +128,22 @@ echo play |jack_transport
 * [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
 * https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
 
-## Clients
+# Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
 * https://github.com/jackaudio/example-clients
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
 
-### Recording
+## Recording
 * [qjackrcd](https://orouits.github.io/qjackrcd/) - stereo recorder with automatic silence pause, file splitting and background file post-processing
 * https://github.com/UoC-Radio/audio-coffin -  A simple audio recorder/logger on top of Jack, libsndfile and libsoxr 
 * https://github.com/swh/timemachine - JACK aplication that can retrospectively record audio
 
-### Tuners
+## Tuners
 * https://github.com/brummer10/XTuner - simple tuner for JACK including NSM support
 * https://github.com/jessecrossen/jackstrobe - simple strobe tuner using JACK and Qt 5
 
-### Visualisation
+## Visualisation
 * [https://www.aelius.com/njh/jackmeter/ JACK Meter] - a basic console based DPM (Digital Peak Meter) for JACK
 * https://github.com/gethiox/jack-peak-meter - terminal-based peak-meter for JACK audio system writen in Go 
 * https://github.com/xkr47/vu-meter -  Audio VU meter for JACK with any number of channels written in Rust
@@ -147,16 +152,16 @@ echo play |jack_transport
 * [JACK Meterbridge](http://plugin.org.uk/meterbridge/) - supports a number of different types of meter, rendered using the SDL library and user-editable pixmaps
 * [Japa](http://kokkinizita.linuxaudio.org/linuxaudio/japa-pict.html)
 
-### Mixer
+## Mixer
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
 * https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
 * [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
 * [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface.
 
-### Video
+## Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
 
-### Tools
+## Tools
 * http://devel.tlrmx.org/audio/bitmeter - a diagnosis tool for JACK audio software on Linux
 * [Zita MU1](http://kokkinizita.linuxaudio.org/linuxaudio/zita-mu1-doc/quickguide.html) - used to organise stereo monitoring
 * [SilentJack](https://www.aelius.com/njh/silentjack) - silence/dead air detector for the Jack Audio Connection Kit
@@ -209,7 +214,7 @@ jack_zombie
 * https://github.com/x42/jack-stdio
 * https://github.com/fps/jack2_split - facilitates parallelism in serial jack graphs by introducing latency, only useful for jack2/jackdmp
 
-## Control
+# Control
 ```
 Usage: jack_control [command] [command] ...
 Commands:
@@ -263,6 +268,3 @@ Commands:
 # Proposed features
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
 * [[Proposal for JesseChappellLooping]]
-
-# Session Management
-Both LASH/LADISH and JACK Session are deprecated; the use of [NSM](https://linuxaudio.github.io/new-session-manager) is recommended.
