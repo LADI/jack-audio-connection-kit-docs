@@ -150,7 +150,7 @@ echo play |jack_transport
 * https://github.com/jessecrossen/jackstrobe - simple strobe tuner using JACK and Qt 5
 
 ## Visualisation
-* [https://www.aelius.com/njh/jackmeter/ JACK Meter] - a basic console based DPM (Digital Peak Meter) for JACK
+* [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
 * https://github.com/gethiox/jack-peak-meter - terminal-based peak-meter for JACK audio system writen in Go 
 * https://github.com/xkr47/vu-meter -  Audio VU meter for JACK with any number of channels written in Rust
 * [jack_oscrolloscope](http://das.nasophon.de/jack_oscrolloscope/) - a simple waveform viewer for JACK
@@ -164,7 +164,7 @@ echo play |jack_transport
 ## Mixer
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
 * https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
-* [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
+* [Non Mixer](http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer) - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
 * https://github.com/kampfschlaefer/jackmix - Matrix-Mixer for the Jack-Audio-connection-Kit 
 * https://github.com/jacob3141/mx2482 -  JACK Mixer written with Qt, based on QJackAudio
 * [Jackmaster](http://69b.org/cms/software/jackmaster) - "Master Console" for the jack-audio-connection-kit
