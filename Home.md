@@ -104,6 +104,25 @@ echo play |jack_transport
 * https://github.com/jackaudio/headers
 * [x42/weakjack](https://github.com/x42/weakjack) - small library that abstracts the JACK Application Binary Interface.
 
+## Bindings
+* https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
+* https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
+* https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
+
+## Metadata
+* [JACK Metadata](https://jackaudio.org/metadata)
+  * [pretty-name](https://jackaudio.org/metadata/pretty-name)
+  * [signal-type](https://jackaudio.org/metadata/signal-type)
+  * [order](https://jackaudio.org/metadata/order)
+  * etc.
+* [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
+* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
+
+`jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server.
+
+* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
+* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
+
 ## Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
 * https://github.com/jackaudio/example-clients
@@ -128,33 +147,21 @@ echo play |jack_transport
 * [JACK Meterbridge](http://plugin.org.uk/meterbridge/) - supports a number of different types of meter, rendered using the SDL library and user-editable pixmaps
 * [Japa](http://kokkinizita.linuxaudio.org/linuxaudio/japa-pict.html)
 
+### Mixer
+* https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
+* https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
+* [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
+* [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface.
+
+### Video
+* [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
+
 ### Tools
 * http://devel.tlrmx.org/audio/bitmeter - a diagnosis tool for JACK audio software on Linux
 * [Zita MU1](http://kokkinizita.linuxaudio.org/linuxaudio/zita-mu1-doc/quickguide.html) - used to organise stereo monitoring
 * [SilentJack](https://www.aelius.com/njh/silentjack) - silence/dead air detector for the Jack Audio Connection Kit
 * [Rotter](https://www.aelius.com/njh/rotter/) - a Recording of Transmission / Audio Logger for JACK
 
-## Bindings
-* https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
-* https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
-* https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
-
-
-## Metadata
-* [JACK Metadata](https://jackaudio.org/metadata)
-  * [pretty-name](https://jackaudio.org/metadata/pretty-name)
-  * [signal-type](https://jackaudio.org/metadata/signal-type)
-  * [order](https://jackaudio.org/metadata/order)
-  * etc.
-* [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
-* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
-
-`jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server.
-
-* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
-* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys. 
-
-# JACK tools
 * https://github.com/jackaudio/tools
 
 JACK2 package commands:
@@ -243,15 +250,6 @@ Commands:
 * https://github.com/progwolff/jackman - Collection of scripts that help managing multiple audio interfaces with Jack.
   * https://github.com/progwolff/jackman_kcm - KDE
 * https://github.com/madskjeldgaard/rofi-jack -  Keyboard centric jack audio management using the rofi app launcher
-
-## Mixer
-* https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
-* https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
-* [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
-* [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface.
-
-## Video
-* [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
 
 ## WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
