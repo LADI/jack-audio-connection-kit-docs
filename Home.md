@@ -41,15 +41,34 @@ JACK differs from other audio servers in being designed from the ground up for p
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
 * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
 
-## Session Management
+## Session management
 Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://linuxaudio.github.io/new-session-manager) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) is recommended.
 
-## PulseAudio
+NSM clients usually come with `jackpatch`, which automatically saves connections but isn't the most robust of software.
+
+## Connection management
+* https://github.com/SpotlightKid/jack-matchmaker - Auto-connect new JACK ports matching the patterns given on the command line. 
+* https://github.com/kripton/jack_autoconnect -  Tiny application that reacts on port registrations by clients and connects them 
+* https://github.com/gentoo-root/jacklistener - a daemon that monitors ALSA jacks plugging/unplugging events and sends signals with these events to D-Bus.
+* https://github.com/gentoo-root/jacknotifier - a daemon that monitors signals from JACK Listener Daemon and shows desktop notifications
+* https://github.com/gentoo-root/jackeventcmd - a daemon that runs custom commands when headphones are plugged/unplugged.
+* [jack-plumbing](http://rohandrape.net/?t=rju&e=md/jack-plumbing.md) - implicitly bounded regex rules with sub-expression pattern supportto manage connections as clients register ports with JACK.
+* https://github.com/resinbeard/autocable - Eats your text files and routes JACK connections for you.
+  * [Beginning a GNU/Linux/JACK headless performance system](https://llllllll.co/t/beginning-a-gnu-linux-jack-headless-performance-system/1119)
+
+## Connection saving
+* [aj-snapshot](http://aj-snapshot.sourceforge.net/) - small program that can be used to make snapshots of the connections made between JACK and/or ALSA clients
+* https://github.com/dedelala/patchy - store and recall jack audio port connections 
+* https://github.com/jacktrip/jmess-jack - save an XML file with all the current connections
+* [jack_snapshot](https://sourceforge.net/projects/heaven/files/Audio%20Applications/Jack%20Related/jack_snapshot/) 
+
+
+## PulseAudio integration
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
 * [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
-# JACK Transport/Timebase
+# JACK Transport / JACK Timebase
 * [[JACK Transport support]] and [[JACK Transport limitations]]
 
 ```
@@ -68,7 +87,7 @@ jack_transport> ?
   timeout	  Set sync timeout in <seconds>.
   ?  		  Synonym for `help'.
 
-echo play |jack_transport
+echo play | jack_transport
   # pass a command to execute. tempo change doesn't work via this method.
 ```
 
@@ -81,6 +100,7 @@ echo play |jack_transport
 
 # OSC
 * https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
+* [jack-data](http://rohandrape.net/?t=rju&e=md/jack-data.md)- JACK audio data onto OSC
 
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
@@ -218,23 +238,36 @@ jack_wait
 jack_zombie
 ```
 
+* [rd jackd utilities](http://rohandrape.net/?t=rju)
+  * jack-data: jack audio data onto osc
+  * jack-dl: load dsp algorithms from shared libraries
+  * jack-level: jack cli level meter
+  * jack-lxvst: jack cli host for linux vst instruments
+  * jack-osc: jack <-> open sound control daemon
+  * jack-play: resampling soundfile playback
+  * jack-plumbing: plumbing daemon
+  * jack-record: soundfile recording
+  * jack-scope: plain X oscilloscope
+  * jack-transport: minimalist ncurses jack transport
+  * jack-udp: jack over udp client
 * https://github.com/SpotlightKid/jack-audio-tools - collection of utilities and tools for the JACK audio ecosystem
 * https://github.com/Gimmeapill/xruncounter - measure jack xruns and evaluate the overall performance of a system
 * https://github.com/7890/jack_tools - playground for JACK tools and experiments
 * [Jacktools - Realtime Audio Processors as Python Classes](https://media.ccc.de/v/lac2018-46-jacktools_realtime_audio_processors_as_python_classes) - video [[*](http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html)]
 * https://github.com/x42/jack-stdio
-* https://github.com/fps/jack2_split - facilitates parallelism in serial jack graphs by introducing latency, only useful for jack2/jackdmp
+* https://github.com/fps/jack2_split - facilitates parallelism in serial JACK graphs by introducing latency, only useful for jack2/jackdmp
 * https://github.com/x42/robtk/blob/master/jackwrap.c - x42 jack wrapper / minimal LV2 host
+* https://github.com/ponderworthy/MultiJACK - fully operational demo of a framework to increase available audio DSP power available to JACK within a single multicore motherboard, using multiple JACK processes in concert, connected via IP transport. 
 
 # Control
 ```
 Usage: jack_control [command] [command] ...
 Commands:
-    exit                       - exit jack dbus service (stops jack server if currently running)
+    exit                       - exit jack dbus service (stops JACK server if currently running)
     help                       - print this help text
-    status                     - check whether jack server is started, return value is 0 if running and 1 otherwise
-    start                      - start jack server if not currently started
-    stop                       - stop jack server if currently started
+    status                     - check whether JACK server is started, return value is 0 if running and 1 otherwise
+    start                      - start JACK server if not currently started
+    stop                       - stop JACK server if currently started
     sm                         - switch master to currently selected driver
     dl                         - get list of available drivers
     dg                         - get currently selected driver
@@ -263,10 +296,11 @@ Commands:
   * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
   * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
 * [Cadence](https://kx.studio/Applications:Cadence) - a set of tools useful for audio production [[*](https://github.com/falkTX/cadence)]
+* https://github.com/ovenwerks/studio-controls - helper for setting up a system for audio work 
 * https://github.com/be1/jackie - a small jack daemon controller
-* https://github.com/progwolff/jackman - Collection of scripts that help managing multiple audio interfaces with Jack.
+* https://github.com/progwolff/jackman - collection of scripts that help managing multiple audio interfaces with Jack
   * https://github.com/progwolff/jackman_kcm - KDE
-* https://github.com/madskjeldgaard/rofi-jack -  Keyboard centric jack audio management using the rofi app launcher
+* https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
 
 ## WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
