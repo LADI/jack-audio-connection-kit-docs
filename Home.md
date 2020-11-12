@@ -132,7 +132,15 @@ echo play |jack_transport
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
 
+## Playback
+* [jplay2](https://gareus.org/oss/jplay2/start) - a command-line audio player that plays a single file, gluing JACK, libsamplerate, liblo (OSC control)
+* https://github.com/eeeeeta/mfl-gramophone -  A simple Rust application to play audio, using JACK, when it receives commands via OSC. 
+
 ## Recording
+* https://github.com/kmatheussen/jack_capture - program for recording soundfiles with JACK
+  * [jrec2](http://gareus.org/oss/jrec/jrec2) - patch to jack_capture that implements silence detection and splitting of output files
+  * [RecJack](http://mein-neues-blog.de/2015/02/07/mein-neues-blog-deb-repository/#recjack) - a front end for jack_capture
+* https://github.com/HoerTech-gGmbH/jack_playrec - provides an interface for synchronous recording/playback via JACK
 * [qjackrcd](https://orouits.github.io/qjackrcd/) - stereo recorder with automatic silence pause, file splitting and background file post-processing
 * https://github.com/UoC-Radio/audio-coffin -  A simple audio recorder/logger on top of Jack, libsndfile and libsoxr 
 * https://github.com/swh/timemachine - JACK aplication that can retrospectively record audio
@@ -157,6 +165,7 @@ echo play |jack_transport
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
 * https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
 * [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
+* https://github.com/kampfschlaefer/jackmix - Matrix-Mixer for the Jack-Audio-connection-Kit 
 * https://github.com/jacob3141/mx2482 -  JACK Mixer written with Qt, based on QJackAudio
 * [Jackmaster](http://69b.org/cms/software/jackmaster) - "Master Console" for the jack-audio-connection-kit
 * [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface
@@ -169,7 +178,6 @@ echo play |jack_transport
 * [Zita MU1](http://kokkinizita.linuxaudio.org/linuxaudio/zita-mu1-doc/quickguide.html) - used to organise stereo monitoring
 * [SilentJack](https://www.aelius.com/njh/silentjack) - silence/dead air detector for the Jack Audio Connection Kit
 * [Rotter](https://www.aelius.com/njh/rotter/) - a Recording of Transmission / Audio Logger for JACK
-
 * https://github.com/jackaudio/tools
 
 JACK2 package commands:
@@ -216,6 +224,7 @@ jack_zombie
 * [Jacktools - Realtime Audio Processors as Python Classes](https://media.ccc.de/v/lac2018-46-jacktools_realtime_audio_processors_as_python_classes) - video [[*](http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html)]
 * https://github.com/x42/jack-stdio
 * https://github.com/fps/jack2_split - facilitates parallelism in serial jack graphs by introducing latency, only useful for jack2/jackdmp
+* https://github.com/x42/robtk/blob/master/jackwrap.c - x42 jack wrapper / minimal LV2 host
 
 # Control
 ```
