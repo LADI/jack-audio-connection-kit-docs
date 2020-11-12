@@ -91,6 +91,7 @@ echo play | jack_transport
   # pass a command to execute. tempo change doesn't work via this method.
 ```
 
+* [gjacktransport](http://gjacktransport.sourceforge.net/) - app for controlling the JACK transport mechanism
 * [transporter.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/transporter.py) / [timebase_master.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/timebase_master.py) - query and manipulate JACK transport state and provide timebase information using jackclient-python.
 * [jacktransportloop](http://danmbox.github.io/jack-file/) - forces the Jack transport to loop between two time-points.
 * https://github.com/ycollet/qtmiditrans - translates midi events into jack transport
