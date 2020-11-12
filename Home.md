@@ -41,6 +41,9 @@ JACK differs from other audio servers in being designed from the ground up for p
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
 * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
 
+## Session Management
+Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://linuxaudio.github.io/new-session-manager) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) is recommended.
+
 ## PulseAudio
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
@@ -87,11 +90,6 @@ echo play |jack_transport
 * [[Installation filesystem layout]]
 * [[Suggested packaging approach]]
 * [JACK D-Bus packaging](wiki/JACK-DBus-packaging)
-
-
-# Session Management
-Both LASH/LADISH and JACK Session are deprecated; the use of [NSM](https://linuxaudio.github.io/new-session-manager) is recommended.
-
 
 # Developer resources
 * [JACK API reference (doxygen)](https://jackaudio.github.io/api)
@@ -151,12 +149,17 @@ Both LASH/LADISH and JACK Session are deprecated; the use of [NSM](https://linux
 * https://github.com/alxdb/jack-analyser -  an Osciloscope for the JACK Audio API 
 * [JACK Meterbridge](http://plugin.org.uk/meterbridge/) - supports a number of different types of meter, rendered using the SDL library and user-editable pixmaps
 * [Japa](http://kokkinizita.linuxaudio.org/linuxaudio/japa-pict.html)
+* http://sed.free.fr/spectrojack - little spectrogram/audiogram/sonogram/whatever that, using GTK2 and FFTW3. 
+* http://spectrum3d.sourceforge.net - displays a 3D audio spectrogram in real time or not, made using Gstreamer, SDL (or Gtkglext), OpenGl, GTK2/3 and uTouch-Geis free libraries
+* [JACK Live Spectrum](http://consciousness.mywebcommunity.org/programming/jack-live-spectrum/) - a small C program for Linux that displays a flowing frequency spectrum of live audio
 
 ## Mixer
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
 * https://github.com/jack-mixer/jack_mixer - a GTK+ JACK audio mixer app with look similar to its hardwarecounterpart.  It has lot of useful features, apart from being able to mixmultiple JACK audio streams.
 * [http://non.tuxfamily.org/wiki/index.php?page=Non%20Mixer Non Mixer] - a powerful, reliable and fast modular Digital Audio Mixer ([LV2 fork](https://github.com/falktx/non))
-* [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface.
+* https://github.com/jacob3141/mx2482 -  JACK Mixer written with Qt, based on QJackAudio
+* [Jackmaster](http://69b.org/cms/software/jackmaster) - "Master Console" for the jack-audio-connection-kit
+* [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface
 
 ## Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
