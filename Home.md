@@ -98,6 +98,39 @@ echo play | jack_transport
 * [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
 * [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
 * https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
+* https://github.com/jmage619/jmetro - dumb Jack based metronome with Qt based UI.
+
+# CV
+* [JACK/LV2 CV - LinuxMusicians](https://linuxmusicians.com/viewtopic.php?f=1&t=20701)
+
+# MIDI
+* [JACK-AUDIO-CONNECTION-KIT API: Reading and writing MIDI data](https://jackaudio.org/api/group__MIDIAPI.html)
+* [JACK-AUDIO-CONNECTION-KIT API: midiport.h File Reference](https://jackaudio.org/api/midiport_8h.html)
+* https://github.com/harryhaaren/JACK-MIDI-Examples
+* https://github.com/jerash/jpmidi - command line midi player synced with JACK transport
+* [jack-smf-player / jack-smf-recorder](https://sourceforge.net/projects/jack-smf-utils/) - play and record MIDI streams from/to Standard MIDI Files, uses libsmf as a backend.
+* https://github.com/x42/jack-midi-cmd - commandline tool to generate JACK MIDI events
+* https://github.com/paulguy/crustymidi -  JACK MIDI event scripting triggerable on events
+* https://github.com/noedigcode/oldnotes - replaces velocities of specified notes with that ofthe previously received non-specified notes
+* https://github.com/jmage619/velociraptor -  A Jack midi velocity compressor with Qt based UI.
+* https://github.com/x42/jack_midi_clock - utility to send MIDI Beat Clock pulses that follow the JACK Transport 
+* https://github.com/chronopoulos/jack-midi-timestamp - simple timing log for JACK MIDI events 
+* https://github.com/xitiomet/jack-rtp-midi-bridge - bridge JACK MIDI and RTP MIDI
+* https://github.com/noedigcode/keytarboard - translates keyboard key presses into JACK MIDI notes
+* https://github.com/ovenwerks/midikb - keyboard to Jack MIDI program 
+* [jack-keyboard](http://jack-keyboard.sourceforge.net/) - virtual keyboard for JACK MIDI
+* https://github.com/metachronica/audio-midihaskey - virtual MIDI keyboard for microtonal music
+* https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder for Jack Audio Connection Kit
+* https://sourceforge.net/projects/arpage/ - MIDI Arpeggiator w/ JACK Tempo Sync
+* https://github.com/chronopoulos/libsequoia - an API for generative musical sequencing
+* https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
+* https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
+
+## Bridge
+* https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
+* https://github.com/free-creations/a_j_midi -  Connect ALSA with JACK MIDI
+* https://github.com/williamweston/jamrouter - Near-Sample-Accurate JACK <-> Raw MIDI router
+* https://github.com/hselasky/jack_umidi - Raw MIDI to JACK daemon 
 
 # OSC
 * https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
@@ -130,6 +163,7 @@ echo play | jack_transport
 
 ## Bindings
 * https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
+* https://github.com/jaudiolibs/jnajack -  Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
 * https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
 * https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
 
@@ -190,6 +224,10 @@ echo play | jack_transport
 * https://github.com/jacob3141/mx2482 -  JACK Mixer written with Qt, based on QJackAudio
 * [Jackmaster](http://69b.org/cms/software/jackmaster) - "Master Console" for the jack-audio-connection-kit
 * [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface
+
+## Samples
+* https://github.com/resinbeard/candor - enables a monome 256 user to capture and playback audio from up to 8 channels simultaneously, managing a maximum of 48 remembered wav soundfiles without a computer display.
+* https://github.com/jmage619/jmage-sampler
 
 ## Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
