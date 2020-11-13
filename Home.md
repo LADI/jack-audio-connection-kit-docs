@@ -223,6 +223,9 @@ echo play | jack_transport
 * [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
 * https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
 
+## Testing
+* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside JACK's process() callback 
+
 # JACK Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
 * https://github.com/jackaudio/example-clients
@@ -346,9 +349,6 @@ jack_zombie
 
 # Haiku
 * https://github.com/Barrett17/libjackcompat - experimental media_kit compatibility layer
-
-## Testing
-* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside JACK's process() callback 
 
 # Proposed features
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
