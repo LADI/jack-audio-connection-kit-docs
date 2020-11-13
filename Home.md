@@ -35,6 +35,49 @@ JACK differs from other audio servers in being designed from the ground up for p
 * [[Cgroups]] - for a realtime kernel configuration
 * [JACK and Headphones](http://tedfelix.com/linux/jack-headphones.html) - duplicate outputs at ALSA level
 
+# Control
+```
+Usage: jack_control [command] [command] ...
+Commands:
+    exit                       - exit jack dbus service (stops JACK server if currently running)
+    help                       - print this help text
+    status                     - check whether JACK server is started, return value is 0 if running and 1 otherwise
+    start                      - start JACK server if not currently started
+    stop                       - stop JACK server if currently started
+    sm                         - switch master to currently selected driver
+    dl                         - get list of available drivers
+    dg                         - get currently selected driver
+    ds <driver>                - select driver
+    dp                         - get parameters of currently selected driver
+    dpd <param>                - get long description for driver parameter
+    dps <param> <value>        - set driver parameter
+    dpr <param>                - reset driver parameter to its default value
+    asd <driver>               - add slave driver
+    rsd <driver>               - remove slave driver
+    il                         - get list of available internals
+    ip <name>                  - get parameters of given internal
+    ipd <name> <param>         - get long description for internal parameter
+    ips <name> <param> <value> - set internal parameter
+    ipr <name> <param>         - reset internal parameter to its default value
+    iload <name>               - load internal
+    iunload <name>             - unload internal
+    ep                         - get engine parameters
+    epd <param>                - get long description for engine parameter
+    eps <param> <value>        - set engine parameter
+    epr <param>                - reset engine parameter to its default value
+```
+
+* [QjackCtl](https://qjackctl.sourceforge.io) - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
+  * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
+  * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
+  * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
+* [Cadence](https://kx.studio/Applications:Cadence) - a set of tools useful for audio production [[*](https://github.com/falkTX/cadence)]
+* https://github.com/ovenwerks/studio-controls - helper for setting up a system for audio work with multiple device GUI
+* https://github.com/be1/jackie - a small JACK daemon controller
+* https://github.com/progwolff/jackman - collection of scripts that help managing multiple audio interfaces with Jack
+  * https://github.com/progwolff/jackman_kcm - KDE
+* https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
+
 ## Multiple soundcards
 * [jack_load audioadapter](https://linuxmusicians.com/viewtopic.php?p=95025#p95025)
 * [ALSA in/out](wiki/WalkThrough_User_AlsaInOut) - use more than one soundcard with jackd
@@ -47,13 +90,13 @@ Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://l
 NSM clients usually come with `jackpatch`, which automatically saves connections but isn't the most robust of software.
 
 ## Connection management
-* https://github.com/SpotlightKid/jack-matchmaker - Auto-connect new JACK ports matching the patterns given on the command line. 
-* https://github.com/kripton/jack_autoconnect -  Tiny application that reacts on port registrations by clients and connects them 
-* https://github.com/gentoo-root/jacklistener - a daemon that monitors ALSA jacks plugging/unplugging events and sends signals with these events to D-Bus.
-* https://github.com/gentoo-root/jacknotifier - a daemon that monitors signals from JACK Listener Daemon and shows desktop notifications
-* https://github.com/gentoo-root/jackeventcmd - a daemon that runs custom commands when headphones are plugged/unplugged.
+* https://github.com/SpotlightKid/jack-matchmaker - auto-connect new JACK ports matching the patterns given on the command line
+* https://github.com/kripton/jack_autoconnect -  application that reacts on port registrations by clients by creating connections
+* https://github.com/gentoo-root/jacklistener - daemon that monitors ALSA jacks plugging/unplugging events and sends signals with these events to D-Bus
+* https://github.com/gentoo-root/jacknotifier - daemon that monitors signals from JACK Listener Daemon and shows desktop notifications
+* https://github.com/gentoo-root/jackeventcmd - daemon that runs custom commands when headphones are plugged/unplugged
 * [jack-plumbing](http://rohandrape.net/?t=rju&e=md/jack-plumbing.md) - implicitly bounded regex rules with sub-expression pattern supportto manage connections as clients register ports with JACK.
-* https://github.com/resinbeard/autocable - Eats your text files and routes JACK connections for you.
+* https://github.com/resinbeard/autocable - eats your text files and routes JACK connections for you
   * [Beginning a GNU/Linux/JACK headless performance system](https://llllllll.co/t/beginning-a-gnu-linux-jack-headless-performance-system/1119)
 
 ## Connection saving
@@ -61,7 +104,6 @@ NSM clients usually come with `jackpatch`, which automatically saves connections
 * https://github.com/dedelala/patchy - store and recall jack audio port connections 
 * https://github.com/jacktrip/jmess-jack - save an XML file with all the current connections
 * [jack_snapshot](https://sourceforge.net/projects/heaven/files/Audio%20Applications/Jack%20Related/jack_snapshot/) 
-
 
 ## PulseAudio integration
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
@@ -181,7 +223,7 @@ echo play | jack_transport
 * [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
 * https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
 
-# Clients
+# JACK Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
 * https://github.com/jackaudio/example-clients
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
@@ -298,53 +340,11 @@ jack_zombie
 * https://github.com/x42/robtk/blob/master/jackwrap.c - x42 jack wrapper / minimal LV2 host
 * https://github.com/ponderworthy/MultiJACK - fully operational demo of a framework to increase available audio DSP power available to JACK within a single multicore motherboard, using multiple JACK processes in concert, connected via IP transport. 
 
-# Control
-```
-Usage: jack_control [command] [command] ...
-Commands:
-    exit                       - exit jack dbus service (stops JACK server if currently running)
-    help                       - print this help text
-    status                     - check whether JACK server is started, return value is 0 if running and 1 otherwise
-    start                      - start JACK server if not currently started
-    stop                       - stop JACK server if currently started
-    sm                         - switch master to currently selected driver
-    dl                         - get list of available drivers
-    dg                         - get currently selected driver
-    ds <driver>                - select driver
-    dp                         - get parameters of currently selected driver
-    dpd <param>                - get long description for driver parameter
-    dps <param> <value>        - set driver parameter
-    dpr <param>                - reset driver parameter to its default value
-    asd <driver>               - add slave driver
-    rsd <driver>               - remove slave driver
-    il                         - get list of available internals
-    ip <name>                  - get parameters of given internal
-    ipd <name> <param>         - get long description for internal parameter
-    ips <name> <param> <value> - set internal parameter
-    ipr <name> <param>         - reset internal parameter to its default value
-    iload <name>               - load internal
-    iunload <name>             - unload internal
-    ep                         - get engine parameters
-    epd <param>                - get long description for engine parameter
-    eps <param> <value>        - set engine parameter
-    epr <param>                - reset engine parameter to its default value
-```
 
-* [QjackCtl](https://qjackctl.sourceforge.io) - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
-  * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
-  * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
-  * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
-* [Cadence](https://kx.studio/Applications:Cadence) - a set of tools useful for audio production [[*](https://github.com/falkTX/cadence)]
-* https://github.com/ovenwerks/studio-controls - helper for setting up a system for audio work 
-* https://github.com/be1/jackie - a small jack daemon controller
-* https://github.com/progwolff/jackman - collection of scripts that help managing multiple audio interfaces with Jack
-  * https://github.com/progwolff/jackman_kcm - KDE
-* https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
-
-## WINE
+# WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
 
-## Haiku
+# Haiku
 * https://github.com/Barrett17/libjackcompat - experimental media_kit compatibility layer
 
 ## Testing
@@ -353,3 +353,6 @@ Commands:
 # Proposed features
 * [[Proposal for MIDI API extension for System Exclusive Messages]]
 * [[Proposal for JesseChappellLooping]]
+
+# See also
+* https://github.com/lv2/lv2/wiki
