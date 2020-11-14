@@ -77,6 +77,7 @@ Commands:
 * https://github.com/progwolff/jackman - collection of scripts that help managing multiple audio interfaces with Jack
   * https://github.com/progwolff/jackman_kcm - KDE
 * https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
+* https://github.com/redtide/jacksettings -  JACK settings using a jackd based systemd service
 
 ## Multiple soundcards
 * [jack_load audioadapter](https://linuxmusicians.com/viewtopic.php?p=95025#p95025)
@@ -228,6 +229,7 @@ echo play | jack_transport
 * https://github.com/residuum/JackSharp -  C# bindings for jackd
 * https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
 * https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
+* https://github.com/unclechu/node-jack-connector -  Bindings JACK-Audio-Connection-Kit for Node.JS 
 
 ## Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
@@ -280,6 +282,7 @@ echo play | jack_transport
 * http://sed.free.fr/spectrojack - little spectrogram/audiogram/sonogram/whatever that, using GTK2 and FFTW3. 
 * http://spectrum3d.sourceforge.net - displays a 3D audio spectrogram in real time or not, made using Gstreamer, SDL (or Gtkglext), OpenGl, GTK2/3 and uTouch-Geis free libraries
 * [JACK Live Spectrum](http://consciousness.mywebcommunity.org/programming/jack-live-spectrum/) - a small C program for Linux that displays a flowing frequency spectrum of live audio
+* https://github.com/jcarrano/rtfi - Resonator Time-Frequency Image
 
 ## Mixer
 * https://github.com/MaurizioB/jack_switch - simple insert switcher for jack clients
