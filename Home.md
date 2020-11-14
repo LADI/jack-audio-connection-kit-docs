@@ -141,6 +141,7 @@ echo play | jack_transport
 * [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
 * https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
 * https://github.com/jmage619/jmetro - dumb Jack based metronome with Qt based UI.
+* https://github.com/TGrif/jack-metronome - gtkmm, sndfile
 
 # CV
 * [JACK/LV2 CV - LinuxMusicians](https://linuxmusicians.com/viewtopic.php?f=1&t=20701)
@@ -158,15 +159,25 @@ echo play | jack_transport
 * https://github.com/x42/jack_midi_clock - utility to send MIDI Beat Clock pulses that follow the JACK Transport 
 * https://github.com/chronopoulos/jack-midi-timestamp - simple timing log for JACK MIDI events 
 * https://github.com/xitiomet/jack-rtp-midi-bridge - bridge JACK MIDI and RTP MIDI
-* https://github.com/noedigcode/keytarboard - translates keyboard key presses into JACK MIDI notes
-* https://github.com/ovenwerks/midikb - keyboard to Jack MIDI program 
-* [jack-keyboard](http://jack-keyboard.sourceforge.net/) - virtual keyboard for JACK MIDI
-* https://github.com/metachronica/audio-midihaskey - virtual MIDI keyboard for microtonal music
-* https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder for Jack Audio Connection Kit
-* https://sourceforge.net/projects/arpage/ - MIDI Arpeggiator w/ JACK Tempo Sync
-* https://github.com/chronopoulos/libsequoia - an API for generative musical sequencing
+* https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
 * https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
 * https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
+
+### Keyboard
+* https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder/looper for Jack Audio Connection Kit
+* [jack-keyboard](http://jack-keyboard.sourceforge.net/) - virtual keyboard for JACK MIDI
+* https://github.com/metachronica/audio-midihaskey - virtual MIDI keyboard for microtonal music
+* https://github.com/noedigcode/keytarboard - translates keyboard key presses into JACK MIDI notes
+* https://github.com/ovenwerks/midikb - keyboard to Jack MIDI program
+* https://github.com/Krasjet/kb -  Customizable virtual MIDI keyboard daemon for JACK. 
+
+### Sequencing
+* https://github.com/chronopoulos/libsequoia - an API for generative musical sequencing
+
+### Looping
+* https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
+* https://github.com/ahlstromcj/seq66 - lean and mean version of Sequencer64 using modern C++ and Qt 5.
+
 
 ## Bridge
 * https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
@@ -181,6 +192,12 @@ echo play | jack_transport
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
 * [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
+
+# Radio
+* https://github.com/mildsunrise/jackpifm - program that runs on your Raspberry Pi, reads live audio from JACK and broadcasts it over FM through the GPIO pin 7 (GPIO #4).
+
+# Hardware
+* https://github.com/nettings/gpioctl - Control the ALSA mixer or generate JACK MIDI or OSC messages from rotary encoders and switches connected to GPIOs. 
 
 # Install and packaging
 * [[Installation filesystem layout]]
@@ -206,6 +223,9 @@ echo play | jack_transport
 ## Bindings
 * https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
 * https://github.com/jaudiolibs/jnajack -  Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
+* https://github.com/free-creations/jackAudio4Java -  A thin JNI wrapper around the JACK Audio Connection Kit
+* https://github.com/umjammer/jjack - Jack-to-Java Audio Driver and Bridge API
+* https://github.com/residuum/JackSharp -  C# bindings for jackd
 * https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
 * https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
 
@@ -273,6 +293,12 @@ echo play | jack_transport
 ## Samples
 * https://github.com/resinbeard/candor - enables a monome 256 user to capture and playback audio from up to 8 channels simultaneously, managing a maximum of 48 remembered wav soundfiles without a computer display.
 * https://github.com/jmage619/jmage-sampler
+
+## Looping
+* https://github.com/monocasual/giada - minimalistic and hardcore music production tool
+
+## Synthesis
+* https://github.com/Ho-Ro/connie -  Electronic organ (Vox Continental like) with JACK interface 
 
 ## Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
