@@ -163,6 +163,7 @@ echo play | jack_transport
 * https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
 * https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
 * https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
+* https://github.com/falkTX/JackAss - a VST plugin that provides JACK-MIDI support for VST hosts
 
 ### Keyboard
 * https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder/looper for Jack Audio Connection Kit
@@ -238,15 +239,16 @@ echo play | jack_transport
   * [order](https://jackaudio.org/metadata/order)
   * etc.
 * [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
-* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
+* https://github.com/drobilla/jackey - simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys
 
-`jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server.
+`jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server
 
-* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes.
-* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys.
+* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes
+* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys
 
 ## Testing
-* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside JACK's process() callback 
+* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside the process() callback 
+* https://github.com/falkTX/jack-midi-timing - Sender and receiver tool to test the timing accuracy and jitter of MIDI devices
 
 # JACK Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
@@ -265,7 +267,7 @@ echo play | jack_transport
 * https://github.com/HoerTech-gGmbH/jack_playrec - provides an interface for synchronous recording/playback via JACK
 * [qjackrcd](https://orouits.github.io/qjackrcd/) - stereo recorder with automatic silence pause, file splitting and background file post-processing
 * https://github.com/UoC-Radio/audio-coffin -  A simple audio recorder/logger on top of Jack, libsndfile and libsoxr 
-* https://github.com/swh/timemachine - JACK aplication that can retrospectively record audio
+* https://github.com/swh/timemachine - JACK application that can retrospectively record audio
 
 ## Tuners
 * https://github.com/brummer10/XTuner - simple tuner for JACK including NSM support
@@ -276,7 +278,7 @@ echo play | jack_transport
 * https://github.com/gethiox/jack-peak-meter - terminal-based peak-meter for JACK audio system writen in Go 
 * https://github.com/xkr47/vu-meter -  Audio VU meter for JACK with any number of channels written in Rust
 * [jack_oscrolloscope](http://das.nasophon.de/jack_oscrolloscope/) - a simple waveform viewer for JACK
-* https://github.com/alxdb/jack-analyser -  an Osciloscope for the JACK Audio API 
+* https://github.com/alxdb/jack-analyser -  an osciloscope for the JACK Audio API 
 * [JACK Meterbridge](http://plugin.org.uk/meterbridge/) - supports a number of different types of meter, rendered using the SDL library and user-editable pixmaps
 * [Japa](http://kokkinizita.linuxaudio.org/linuxaudio/japa-pict.html)
 * http://sed.free.fr/spectrojack - little spectrogram/audiogram/sonogram/whatever that, using GTK2 and FFTW3. 
