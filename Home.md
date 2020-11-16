@@ -180,7 +180,6 @@ echo play | jack_transport
 * https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
 * https://github.com/ahlstromcj/seq66 - lean and mean version of Sequencer64 using modern C++ and Qt 5.
 
-
 ## Bridge
 * https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
 * https://github.com/free-creations/a_j_midi -  Connect ALSA with JACK MIDI
@@ -190,6 +189,9 @@ echo play | jack_transport
 # OSC
 * https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
 * [jack-data](http://rohandrape.net/?t=rju&e=md/jack-data.md)- JACK audio data onto OSC
+* https://github.com/x42/jackmidi2osc - tool to generate OSC triggered by JACK MIDI events.
+* https://github.com/ssj71/OSC2MIDI - configurable OSC to jack MIDI (and back) bridge
+* https://github.com/piegamesde/jackmidiosc -  Midi to OSC bridge using JACK audio, written in Rust
 
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
