@@ -21,11 +21,9 @@ JACK differs from other audio servers in being designed from the ground up for p
 * [Wikipedia: JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit) - general overview
 * [Demystifying JACK – A Beginners Guide to Getting Started with JACK](https://libremusicproduction.com/articles/demystifying-jack-%E2%80%93-beginners-guide-getting-started-jack) - Libre Music Production
 * [CCRMA JACK Guide](https://ccrma.stanford.edu/docs/common/JACK.html)
-* [Arch wiki: JACK Audio Connection Kit](https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit) - Installation, Configuration, Troubleshooting
+* [ArchWiki: JACK Audio Connection Kit](https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit) - Installation, Configuration, Troubleshooting
 * [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by falkTX at Sonoj 2019
 * [Sound Engineers Guide to Jackd](http://www.orford.org/assets/jack-idiots_guide.txt) (jack-idiots_guide.txt)
-* [jack_control walkthrough](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) - Python tool to control JACK2 server
-* [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 
 ## Configuration
 * [List of JACK Frame & Period settings ideal for USB interface](https://linuxmusicians.com/viewtopic.php?f=47&t=10707) - (Frames/Sample Rate) * Period = Theoretical (or Math-derived) Latency
@@ -36,37 +34,7 @@ JACK differs from other audio servers in being designed from the ground up for p
 * [JACK and Headphones](http://tedfelix.com/linux/jack-headphones.html) - duplicate outputs at ALSA level
 
 # Control
-```
-Usage: jack_control [command] [command] ...
-Commands:
-    exit                       - exit jack dbus service (stops JACK server if currently running)
-    help                       - print this help text
-    status                     - check whether JACK server is started, return value is 0 if running and 1 otherwise
-    start                      - start JACK server if not currently started
-    stop                       - stop JACK server if currently started
-    sm                         - switch master to currently selected driver
-    dl                         - get list of available drivers
-    dg                         - get currently selected driver
-    ds <driver>                - select driver
-    dp                         - get parameters of currently selected driver
-    dpd <param>                - get long description for driver parameter
-    dps <param> <value>        - set driver parameter
-    dpr <param>                - reset driver parameter to its default value
-    asd <driver>               - add slave driver
-    rsd <driver>               - remove slave driver
-    il                         - get list of available internals
-    ip <name>                  - get parameters of given internal
-    ipd <name> <param>         - get long description for internal parameter
-    ips <name> <param> <value> - set internal parameter
-    ipr <name> <param>         - reset internal parameter to its default value
-    iload <name>               - load internal
-    iunload <name>             - unload internal
-    ep                         - get engine parameters
-    epd <param>                - get long description for engine parameter
-    eps <param> <value>        - set engine parameter
-    epr <param>                - reset engine parameter to its default value
-```
-
+* [jack_control walkthrough](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) - Python tool to control JACK2 server
 * [QjackCtl](https://qjackctl.sourceforge.io) - a simple Qt application to control the JACK sound server [[*](https://github.com/rncbc/qjackctl)]
   * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
   * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
@@ -100,8 +68,16 @@ NSM clients usually come with `jackpatch`, which automatically saves connections
 * https://github.com/resinbeard/autocable - eats your text files and routes JACK connections for you
   * [Beginning a GNU/Linux/JACK headless performance system](https://llllllll.co/t/beginning-a-gnu-linux-jack-headless-performance-system/1119)
 
+### Terminal
+* [njconnect](https://sourceforge.net/projects/njconnect)
+
+### Graph
+* [Patchage](http://drobilla.net/software/patchage) - a modular patch bay for audio and MIDI systems based on Jack and Alsa.
+* https://github.com/falkTX/Catia -  Simple JACK Patchbay with A2J integration and JACK Transport controls 
+* https://github.com/OpenMusicKontrollers/patchmatrix - a JACK patchbay in flow matrix style
+
 ## Connection saving
-* [aj-snapshot](http://aj-snapshot.sourceforge.net/) - small program that can be used to make snapshots of the connections made between JACK and/or ALSA clients
+* [aj-snapshot](http://aj-snapshot.sourceforge.net) - small program that can be used to make snapshots of the connections made between JACK and/or ALSA clients
 * https://github.com/dedelala/patchy - store and recall jack audio port connections 
 * https://github.com/jacktrip/jmess-jack - save an XML file with all the current connections
 * [jack_snapshot](https://sourceforge.net/projects/heaven/files/Audio%20Applications/Jack%20Related/jack_snapshot/) 
@@ -225,9 +201,10 @@ echo play | jack_transport
 * [x42/weakjack](https://github.com/x42/weakjack) - small library that abstracts the JACK Application Binary Interface.
 
 ## Bindings
-* https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake 
+* https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake
+* [PyJack](https://sourceforge.net/projects/py-jack/) - JACK client module for Python
 * https://github.com/jaudiolibs/jnajack -  Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
-* https://github.com/free-creations/jackAudio4Java -  A thin JNI wrapper around the JACK Audio Connection Kit
+* https://github.com/free-creations/jackAudio4Java - thin JNI wrapper around the JACK Audio Connection Kit
 * https://github.com/umjammer/jjack - Jack-to-Java Audio Driver and Bridge API
 * https://github.com/residuum/JackSharp -  C# bindings for jackd
 * https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
@@ -254,6 +231,7 @@ echo play | jack_transport
 
 # JACK Clients
 * [JACK-AUDIO-CONNECTION-KIT: Creating & manipulating clients](https://jackaudio.org/api/group__ClientFunctions.html) - API
+* [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 * https://github.com/jackaudio/example-clients
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
