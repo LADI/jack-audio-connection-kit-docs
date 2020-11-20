@@ -255,6 +255,7 @@ echo play | jack_transport
 
 ## Visualisation
 * [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
+* https://github.com/madskjeldgaard/jackmeter - fork of JACK Meter for status bar commands
 * https://github.com/gethiox/jack-peak-meter - terminal-based peak-meter for JACK audio system writen in Go 
 * https://github.com/xkr47/vu-meter -  Audio VU meter for JACK with any number of channels written in Rust
 * [jack_oscrolloscope](http://das.nasophon.de/jack_oscrolloscope/) - a simple waveform viewer for JACK
