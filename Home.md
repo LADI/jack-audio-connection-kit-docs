@@ -203,6 +203,8 @@ echo play | jack_transport
 ## Bindings
 * https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake
 * [PyJack](https://sourceforge.net/projects/py-jack/) - JACK client module for Python
+* https://github.com/fphammerle/jacker - Python bindings for the JACK Audio Connection Kit C API
+* https://github.com/falkTX/Cadence/blob/master/src/jacklib.py
 * https://github.com/jaudiolibs/jnajack -  Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
 * https://github.com/free-creations/jackAudio4Java - thin JNI wrapper around the JACK Audio Connection Kit
 * https://github.com/umjammer/jjack - Jack-to-Java Audio Driver and Bridge API
