@@ -257,7 +257,7 @@ echo play | jack_transport
 
 ## Visualisation
 * [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
-* https://github.com/madskjeldgaard/jackmeter - fork of JACK Meter for status bar commands
+* https://github.com/madskjeldgaard/jack_meter_simple - fork of JACK Meter for status bar commands
 * https://github.com/gethiox/jack-peak-meter - terminal-based peak-meter for JACK audio system writen in Go 
 * https://github.com/xkr47/vu-meter -  Audio VU meter for JACK with any number of channels written in Rust
 * [jack_oscrolloscope](http://das.nasophon.de/jack_oscrolloscope/) - a simple waveform viewer for JACK
@@ -350,6 +350,7 @@ jack_zombie
   * jack-udp: jack over udp client
 * https://github.com/SpotlightKid/jack-audio-tools - collection of utilities and tools for the JACK audio ecosystem
 * https://github.com/Gimmeapill/xruncounter - measure jack xruns and evaluate the overall performance of a system
+* https://github.com/madskjeldgaard/jack_xruntotal -  display total number of xruns from JACK in a status bar friendly way
 * https://github.com/7890/jack_tools - playground for JACK tools and experiments
 * [Jacktools - Realtime Audio Processors as Python Classes](https://media.ccc.de/v/lac2018-46-jacktools_realtime_audio_processors_as_python_classes) - video [[*](http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html)]
 * https://github.com/x42/jack-stdio
