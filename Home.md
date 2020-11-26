@@ -39,6 +39,7 @@ JACK differs from other audio servers in being designed from the ground up for p
   * https://github.com/brummer10/pajackconnect - script to be invoked via QjackCtl to make JACK with with PulseAudio [[*](https://linuxmusicians.com/viewtopic.php?f=19&t=13234)]
   * https://github.com/SpotlightKid/jack-select - systray application to quickly change the JACK configuration from QjackCtl presets via DBus
   * https://github.com/kmatheussen/qjackctl_macos - script to build on macos
+  * [QjackCtl and the Patchbay](https://www.rncbc.org/drupal/node/76) - A tutorial for the QjackCtl "Patchbay" tool
 * [Cadence](https://kx.studio/Applications:Cadence) - a set of tools useful for audio production [[*](https://github.com/falkTX/cadence)]
 * https://github.com/ovenwerks/studio-controls - helper for setting up a system for audio work with multiple device GUI
 * https://github.com/be1/jackie - a small JACK daemon controller
