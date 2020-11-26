@@ -59,6 +59,8 @@ Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://l
 
 NSM clients usually come with `jackpatch`, which automatically saves connections but isn't the most robust of software.
 
+Other suggestions can be found at: https://wiki.linuxaudio.org/wiki/session_management
+
 ## Connection management
 * https://github.com/SpotlightKid/jack-matchmaker - auto-connect new JACK ports matching the patterns given on the command line
 * https://github.com/kripton/jack_autoconnect -  application that reacts on port registrations by clients by creating connections
