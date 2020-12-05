@@ -120,8 +120,11 @@ echo play | jack_transport
 * [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
 * [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
 * https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
-* https://github.com/jmage619/jmetro - dumb Jack based metronome with Qt based UI.
+
+## Metronome
+* https://github.com/jmage619/jmetro - dumb JACK based metronome with a Qt based UI.
 * https://github.com/TGrif/jack-metronome - gtkmm, sndfile
+* https://gitlab.com/tmatth/polygnome - A polyrhythmic metronome
 
 # CV
 * [JACK/LV2 CV - LinuxMusicians](https://linuxmusicians.com/viewtopic.php?f=1&t=20701)
