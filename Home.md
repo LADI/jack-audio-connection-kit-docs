@@ -178,6 +178,10 @@ echo play | jack_transport
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
 * [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
+* [Zita-njbridge](https://kokkinizita.linuxaudio.org/linuxaudio/) - transmit full quality multichannel audio over a local IP network, with adaptive resampling by the receiver(s).
+  * https://github.com/rhetr/ipaudio -  use jackd, zita-njbridge and systemd for network ip audio
+  * https://github.com/nettings/medianet - Raspbian overlay to create a JACK-based embedded system for audio processing and streaming
+  * https://github.com/gisogrimm/ov-client - headless clients to share/receive spatial realtime audio using JACK, zita-njbridge and TASCAR
 * [JackTrip](https://ccrma.stanford.edu/software/jacktrip)
   * https://github.com/jcacerec/jacktrip
   * https://github.com/noahbailey/jacktrip-docker - Container for JackTrip network audio server
