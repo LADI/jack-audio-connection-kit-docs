@@ -178,6 +178,11 @@ echo play | jack_transport
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
 * [NetJACK 2](wiki/WalkThrough_User_NetJack2) - connect JACK 2 servers via network
+* [JackTrip](https://ccrma.stanford.edu/software/jacktrip)
+  * https://github.com/jcacerec/jacktrip
+  * https://github.com/noahbailey/jacktrip-docker - Container for JackTrip network audio server
+  * https://github.com/noiseorchestra/jacktrip_pypatcher - Python scripts to autopatch a JackTrip hubserver 
+  * https://github.com/noiseorchestra/autonomous-noise-unit - Python scripts for running JackTrip on an RPi with OLED screen and rotary switch interface. 
 
 # Radio
 * https://github.com/mildsunrise/jackpifm - program that runs on your Raspberry Pi, reads live audio from JACK and broadcasts it over FM through the GPIO pin 7 (GPIO #4).
