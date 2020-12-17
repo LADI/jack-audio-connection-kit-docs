@@ -240,7 +240,6 @@ echo play | jack_transport
 `jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server
 
 * [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes
-* https://github.com/drobilla/jackey - a simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys
 
 ## Testing
 * https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside the process() callback 
