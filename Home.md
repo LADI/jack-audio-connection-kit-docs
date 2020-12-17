@@ -230,10 +230,16 @@ echo play | jack_transport
 
 ## Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
+  * [order](https://jackaudio.org/metadata/order)
+  * port-group - for stereo pair/ambisonics/etc
   * [pretty-name](https://jackaudio.org/metadata/pretty-name)
   * [signal-type](https://jackaudio.org/metadata/signal-type)
-  * [order](https://jackaudio.org/metadata/order)
-  * etc.
+  * [event-types](https://jackaudio.org/metadata/event-types)
+  * [connected](https://jackaudio.org/metadata/connected)
+  * [hardware](https://jackaudio.org/metadata/hardware)
+  * [icon-large](https://jackaudio.org/metadata/icon-large)
+  * [icon-small](https://jackaudio.org/metadata/icon-large)
+  * [icon-name](https://jackaudio.org/metadata/icon-large)
 * [jack2/JackMetadata.cpp at develop · jackaudio/jack2](https://github.com/jackaudio/jack2/blob/develop/common/JackMetadata.cpp#L30)
 * https://github.com/drobilla/jackey - simple define-only header that serves as an ad-hoc standard for Jack Metadata property keys
 
