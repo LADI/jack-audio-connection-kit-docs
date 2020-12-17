@@ -162,9 +162,12 @@ echo play | jack_transport
 * https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
 * https://github.com/ahlstromcj/seq66 - lean and mean version of Sequencer64 using modern C++ and Qt 5.
 
+### DJing
+* https://mixxx.org - Free and open source DJ software for Windows, macOS, and Linux
+
 ## Bridge
 * https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
-* https://github.com/free-creations/a_j_midi -  Connect ALSA with JACK MIDI
+* https://github.com/free-creations/a_j_midi - Connect ALSA with JACK MIDI
 * https://github.com/williamweston/jamrouter - Near-Sample-Accurate JACK <-> Raw MIDI router
 * https://github.com/hselasky/jack_umidi - Raw MIDI to JACK daemon 
 
