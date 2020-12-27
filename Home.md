@@ -47,6 +47,7 @@ JACK differs from other audio servers in being designed from the ground up for p
   * https://github.com/progwolff/jackman_kcm - KDE
 * https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
 * https://github.com/redtide/jacksettings -  JACK settings using a jackd based systemd service
+* https://github.com/febef/jackwui - web user interface for Linux Jack Audio Server, WIP
 
 ## Multiple soundcards
 * [jack_load audioadapter](https://linuxmusicians.com/viewtopic.php?p=95025#p95025)
@@ -181,6 +182,8 @@ echo play | jack_transport
 * https://github.com/jackaudio/example-clients
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
+zig-jack-examples
+* https://github.com/noisesmith/zig-jack-examples - ports of the example JACK audio code to zig
 
 ## Playback
 * [jplay2](https://gareus.org/oss/jplay2/start) - a command-line audio player that plays a single file, gluing JACK, libsamplerate, liblo (OSC control)
@@ -212,14 +215,7 @@ echo play | jack_transport
 * https://github.com/jacob3141/mx2482 -  JACK Mixer written with Qt, based on QJackAudio
 * [Jackmaster](http://69b.org/cms/software/jackmaster) - "Master Console" for the jack-audio-connection-kit
 * [JackMiniMix](https://www.aelius.com/njh/jackminimix/) - simple mixer with an OSC based control interface
-
-* [gjacktransport](http://gjacktransport.sourceforge.net/) - app for controlling the JACK transport mechanism
-* [transporter.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/transporter.py) / [timebase_master.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/timebase_master.py) - query and manipulate JACK transport state and provide timebase information using jackclient-python.
-* [jacktransportloop](http://danmbox.github.io/jack-file/) - forces the Jack transport to loop between two time-points.
-* https://github.com/ycollet/qtmiditrans - translates midi events into jack transport
-* [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
-* [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
-* https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
+* https://github.com/knoellle/audio-multiplexer - interlace two streams of speech while maintaining comprehension. 
 
 ## Host / FX
 * [Carla](https://kx.studio/Applications:Carla) - fully-featured modular audio plugin host
@@ -237,17 +233,29 @@ echo play | jack_transport
 ## Synthesis
 * https://github.com/Ho-Ro/connie -  Electronic organ (Vox Continental like) with JACK interface
 
-## DJing
-* https://mixxx.org - Free and open source DJ software for Windows, macOS, and Linux
-
 ## Metronome
 * https://github.com/jmage619/jmetro - dumb JACK based metronome with a Qt based UI.
 * https://github.com/TGrif/jack-metronome - gtkmm, sndfile
 * https://gitlab.com/tmatth/polygnome - A polyrhythmic metronome
 
+## Timeline
+* [gjacktransport](http://gjacktransport.sourceforge.net/) - app for controlling the JACK transport mechanism
+* [transporter.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/transporter.py) / [timebase_master.py](https://github.com/SpotlightKid/jack-audio-tools/blob/master/transport/timebase_master.py) - query and manipulate JACK transport state and provide timebase information using jackclient-python.
+* [jacktransportloop](http://danmbox.github.io/jack-file/) - forces the Jack transport to loop between two time-points.
+* https://github.com/ycollet/qtmiditrans - translates midi events into jack transport
+* [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
+* [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
+* https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
+
+## DJing
+* https://mixxx.org - Free and open source DJ software for Windows, macOS, and Linux
+
 ## Tuners
 * https://github.com/brummer10/XTuner - simple tuner for JACK including NSM support
 * https://github.com/jessecrossen/jackstrobe - simple strobe tuner using JACK and Qt 5
+
+## Effects
+* https://github.com/Fishmael/jack-plugins - simple JACK audio plugins written in Java
 
 ## Visualisation
 * [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
@@ -262,6 +270,15 @@ echo play | jack_transport
 * http://spectrum3d.sourceforge.net - displays a 3D audio spectrogram in real time or not, made using Gstreamer, SDL (or Gtkglext), OpenGl, GTK2/3 and uTouch-Geis free libraries
 * [JACK Live Spectrum](http://consciousness.mywebcommunity.org/programming/jack-live-spectrum/) - a small C program for Linux that displays a flowing frequency spectrum of live audio
 * https://github.com/jcarrano/rtfi - Resonator Time-Frequency Image
+* https://github.com/simoncrowe/stylegan2-jack-visualizer - Visualise the spectral density of a JACK client's audio output in real time using StyleGAN 2
+
+## Beamforming
+* https://github.com/balkce/beamform - ROS package that carries out simple 1D beamforming strategies, using JACK as input/output audio server.
+
+## Radio
+* https://github.com/recri/keyer - iambic/ascii morse code keyer
+* https://github.com/UoC-Radio/JMPXRDS - FM MPX signal generator with RDS support on top of Jack Audio Connection Kit 
+
 # CV
 * [JACK/LV2 CV - LinuxMusicians](https://linuxmusicians.com/viewtopic.php?f=1&t=20701)
 
@@ -272,7 +289,7 @@ echo play | jack_transport
 * https://github.com/jerash/jpmidi - command line midi player synced with JACK transport
 * [jack-smf-player / jack-smf-recorder](https://sourceforge.net/projects/jack-smf-utils/) - play and record MIDI streams from/to Standard MIDI Files, uses libsmf as a backend.
 * https://github.com/x42/jack-midi-cmd - commandline tool to generate JACK MIDI events
-* https://github.com/paulguy/crustymidi -  JACK MIDI event scripting triggerable on events
+* https://github.com/paulguy/crustymidi - JACK MIDI event scripting triggerable on events
 * https://github.com/noedigcode/oldnotes - replaces velocities of specified notes with that ofthe previously received non-specified notes
 * https://github.com/jmage619/velociraptor -  A Jack midi velocity compressor with Qt based UI.
 * https://github.com/x42/jack_midi_clock - utility to send MIDI Beat Clock pulses that follow the JACK Transport 
@@ -298,7 +315,7 @@ echo play | jack_transport
 * https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
 * https://github.com/ahlstromcj/seq66 - lean and mean version of Sequencer64 using modern C++ and Qt 5.
 
-## Synth
+## Hardware configuration
 * https://github.com/kmtaylor/gi_editor -  A software editor for the Roland JunoGi synthesizer 
 
 ## Bridge
@@ -313,6 +330,7 @@ echo play | jack_transport
 * https://github.com/x42/jackmidi2osc - tool to generate OSC triggered by JACK MIDI events.
 * https://github.com/ssj71/OSC2MIDI - configurable OSC to jack MIDI (and back) bridge
 * https://github.com/piegamesde/jackmidiosc -  Midi to OSC bridge using JACK audio, written in Rust
+* https://github.com/voidseg/jack-volume -  JACK client for controlling the volume of multiple audio channels via OSC. 
 
 # Networked
 * [NetJACK 1](wiki/WalkThrough_User_NetJack) - connect JACK 1 servers via network
@@ -326,14 +344,17 @@ echo play | jack_transport
   * https://github.com/noahbailey/jacktrip-docker - Container for JackTrip network audio server
   * https://github.com/noiseorchestra/jacktrip_pypatcher - Python scripts to autopatch a JackTrip hubserver 
   * https://github.com/noiseorchestra/autonomous-noise-unit - Python scripts for running JackTrip on an RPi with OLED screen and rotary switch interface.
+  * https://github.com/alastairhmoore/test-jacktrip-wsl -  Test audio generation on wsl played back using host windows 
+
+## Websockets
+* https://github.com/lucdoebereiner/klangraum - sum incoming websocket audio streams and send to JACK
+* https://github.com/lucdoebereiner/KlangSendWS - node.js websocket server that broadcasts audio (vorbis encoded) from JACK (via ffmpeg) to its clients
 
 # Radio
 * https://github.com/mildsunrise/jackpifm - program that runs on your Raspberry Pi, reads live audio from JACK and broadcasts it over FM through the GPIO pin 7 (GPIO #4).
 
 # Hardware
 * https://github.com/nettings/gpioctl - Control the ALSA mixer or generate JACK MIDI or OSC messages from rotary encoders and switches connected to GPIOs. 
-
-
 
 # Installation and packaging
 * [[Installation filesystem layout]]
@@ -361,13 +382,15 @@ echo play | jack_transport
 * [PyJack](https://sourceforge.net/projects/py-jack/) - JACK client module for Python
 * https://github.com/fphammerle/jacker - Python bindings for the JACK Audio Connection Kit C API
 * https://github.com/falkTX/Cadence/blob/master/src/jacklib.py
-* https://github.com/jaudiolibs/jnajack -  Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
+* https://github.com/jaudiolibs/jnajack - Java bindings to JACK Audio Connection Kit [[*](http://lac.linuxaudio.org/2007/presentations/lac07_slides_gulden1.pdf)]
 * https://github.com/free-creations/jackAudio4Java - thin JNI wrapper around the JACK Audio Connection Kit
 * https://github.com/umjammer/jjack - Jack-to-Java Audio Driver and Bridge API
-* https://github.com/residuum/JackSharp -  C# bindings for jackd
-* https://github.com/xthexder/go-jack -  Go bindings for Jack Audio Connection Kit
+* https://github.com/residuum/JackSharp - C# bindings for jackd
+* https://github.com/xthexder/go-jack - Go bindings for Jack Audio Connection Kit
 * https://github.com/stetre/luajack - requires Lua (>=5.3) and JACK (API >= v0.124.1)
-* https://github.com/unclechu/node-jack-connector -  Bindings JACK-Audio-Connection-Kit for Node.JS 
+* https://github.com/unclechu/node-jack-connector - Bindings JACK-Audio-Connection-Kit for Node.JS 
+* https://github.com/markjfisher/jack-egg - CHICKEN Scheme bindings to Jack Audio 
+* https://github.com/dpzmick/rust-easyjack - Some hopefully easy to use Rust bindings for the JACK API, WIP.
 
 ## Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
@@ -386,16 +409,22 @@ echo play | jack_transport
 
 `jack_property` - list, set and delete any metadata associated with the ports and clients of a JACK server
 
-* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) -  Listen to and print JACK client/port metadata changes
+* [jack-property-listener.py](https://gist.github.com/SpotlightKid/dc70dac006337c99bf65bcdc98e43ddc) - listen to and print JACK client/port metadata changes
+
+# Frameworks
+* https://github.com/DISTRHO/DPF - designed to make development of new plugins an easy and enjoyable task
+* https://github.com/PieterPenninckx/rsynth - Rust API abstraction for API's for audio plugins and applications
 
 # Testing
-* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside the process() callback 
+* https://wiki.linuxaudio.org/apps/all/jack_delay - command line JACK app you can use to measure the latency of your sound card
 * https://github.com/falkTX/jack-midi-timing - Sender and receiver tool to test the timing accuracy and jitter of MIDI devices
 * http://devel.tlrmx.org/audio/bitmeter - a diagnosis tool for JACK audio software on Linux
+* https://github.com/falkTX/jack_interposer - Library to check at run-time whether an application makes non-RT-safe calls inside the process() callback 
 * [Zita MU1](http://kokkinizita.linuxaudio.org/linuxaudio/zita-mu1-doc/quickguide.html) - used to organise stereo monitoring
 * [SilentJack](https://www.aelius.com/njh/silentjack) - silence/dead air detector for the Jack Audio Connection Kit
 * [Rotter](https://www.aelius.com/njh/rotter/) - a Recording of Transmission / Audio Logger for JACK
 * https://github.com/jackaudio/tools
+* https://github.com/wmedrano/j2sdl2 -  Output to SDL2 Audio From JACK with Rust
 
 # Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
