@@ -313,6 +313,7 @@ zig-jack-examples
 
 ## Sequencing
 * https://github.com/chronopoulos/libsequoia - an API for generative musical sequencing
+* https://github.com/rdybka/vht - MIDI tracker
 
 ## Looping
 * https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
