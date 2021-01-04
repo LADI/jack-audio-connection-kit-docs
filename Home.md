@@ -295,10 +295,13 @@ zig-jack-examples
 * https://github.com/x42/jack_midi_clock - utility to send MIDI Beat Clock pulses that follow the JACK Transport 
 * https://github.com/chronopoulos/jack-midi-timestamp - simple timing log for JACK MIDI events 
 * https://github.com/xitiomet/jack-rtp-midi-bridge - bridge JACK MIDI and RTP MIDI
-* https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
 * https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
 * https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
 * https://github.com/falkTX/JackAss - a VST plugin that provides JACK-MIDI support for VST hosts
+
+## Arpeggiation
+* https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
+* https://github.com/emuse/qmidiarp - an arpeggiator, sequencer and MIDI LFO for ALSA and JACK.
 
 ## Keyboard
 * https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder/looper for Jack Audio Connection Kit
