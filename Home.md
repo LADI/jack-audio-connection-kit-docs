@@ -232,6 +232,7 @@ zig-jack-examples
 
 ## Synthesis
 * https://github.com/Ho-Ro/connie -  Electronic organ (Vox Continental like) with JACK interface
+* https://github.com/CesarChaussinand/wavetable -  a wavetable midi synth for JACK
 
 ## Metronome
 * https://github.com/jmage619/jmetro - dumb JACK based metronome with a Qt based UI.
@@ -245,6 +246,8 @@ zig-jack-examples
 * https://github.com/ycollet/qtmiditrans - translates midi events into jack transport
 * [jack-trans2midi](https://sourceforge.net/projects/jack-trans2midi/) - converts jack transport into midi clock messages.
 * [JackCtlMMC/QJackMMC](http://jackctlmmc.sourceforge.net/) - allow MIDI Machine Control (MMC) to drive JACK transport.
+ Sync jack with midi MMC
+* https://github.com/Morgenkaff/jackctlmmc - sync JACK with MIDI MMC
 * https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
 
 ## DJing
@@ -288,7 +291,7 @@ zig-jack-examples
 * https://github.com/harryhaaren/JACK-MIDI-Examples
 * https://github.com/jerash/jpmidi - command line midi player synced with JACK transport
 * [jack-smf-player / jack-smf-recorder](https://sourceforge.net/projects/jack-smf-utils/) - play and record MIDI streams from/to Standard MIDI Files, uses libsmf as a backend.
-* https://github.com/x42/jack-midi-cmd - commandline tool to generate JACK MIDI events
+* https://github.com/x42/jack-midi-cmd - command-line tool to generate JACK MIDI events
 * https://github.com/paulguy/crustymidi - JACK MIDI event scripting triggerable on events
 * https://github.com/noedigcode/oldnotes - replaces velocities of specified notes with that ofthe previously received non-specified notes
 * https://github.com/jmage619/velociraptor -  A Jack midi velocity compressor with Qt based UI.
@@ -298,10 +301,13 @@ zig-jack-examples
 * https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
 * https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
 * https://github.com/falkTX/JackAss - a VST plugin that provides JACK-MIDI support for VST hosts
+* https://github.com/derekdreery/jack-midi-sink -  Dumps any midi messages to stdout, parsing if possible. 
+* https://github.com/keinstein/mutabor -  Perform dynamic tunings in realtime music or use them for procesing MIDI files 
 
 ## Arpeggiation
-* https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
 * https://github.com/emuse/qmidiarp - an arpeggiator, sequencer and MIDI LFO for ALSA and JACK.
+* https://sourceforge.net/projects/arpage - MIDI Arpeggiator w/ JACK Tempo Sync
+* [flarps](http://flarps.sourceforge.net/) - MIDI arpeggiator for Linux based systems, controlled by text file
 
 ## Keyboard
 * https://github.com/brummer10/Mamba - virtual MIDI Keyboard and MIDI file player/recorder/looper for Jack Audio Connection Kit
@@ -309,11 +315,12 @@ zig-jack-examples
 * https://github.com/metachronica/audio-midihaskey - virtual MIDI keyboard for microtonal music
 * https://github.com/noedigcode/keytarboard - translates keyboard key presses into JACK MIDI notes
 * https://github.com/ovenwerks/midikb - keyboard to Jack MIDI program
-* https://github.com/Krasjet/kb -  Customizable virtual MIDI keyboard daemon for JACK. 
+* https://github.com/Krasjet/kb - customizable virtual MIDI keyboard daemon for JACK. 
 
 ## Sequencing
 * https://github.com/chronopoulos/libsequoia - an API for generative musical sequencing
 * https://github.com/rdybka/vht - MIDI tracker
+* https://github.com/riban-bw/PyStep -  JACK MIDI Step Sequencer 
 
 ## Looping
 * https://github.com/ahlstromcj/sequencer64 - major reboot of Seq24, with new features
@@ -327,6 +334,7 @@ zig-jack-examples
 * https://github.com/free-creations/a_j_midi - Connect ALSA with JACK MIDI
 * https://github.com/williamweston/jamrouter - Near-Sample-Accurate JACK <-> Raw MIDI router
 * https://github.com/hselasky/jack_umidi - Raw MIDI to JACK daemon 
+* https://github.com/hires/AMidiJ - ALSA to Jack MIDI Adapter in Java
 
 # OSC
 * https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
@@ -349,6 +357,7 @@ zig-jack-examples
   * https://github.com/noiseorchestra/jacktrip_pypatcher - Python scripts to autopatch a JackTrip hubserver 
   * https://github.com/noiseorchestra/autonomous-noise-unit - Python scripts for running JackTrip on an RPi with OLED screen and rotary switch interface.
   * https://github.com/alastairhmoore/test-jacktrip-wsl -  Test audio generation on wsl played back using host windows 
+* https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and Midi over the network
 
 ## Websockets
 * https://github.com/lucdoebereiner/klangraum - sum incoming websocket audio streams and send to JACK
