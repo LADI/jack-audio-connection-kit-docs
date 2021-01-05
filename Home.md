@@ -249,6 +249,7 @@ zig-jack-examples
  Sync jack with midi MMC
 * https://github.com/Morgenkaff/jackctlmmc - sync JACK with MIDI MMC
 * https://github.com/rncbc/jack_link - a JACK transport timebase prototype bridge to [Ableton Link](https://www.ableton.com/en/link/).
+* https://github.com/x37v/jack_transport_link - a bridge between Jack's Transport mechanism and Ableton's Link synchronization. 
 
 ## DJing
 * https://mixxx.org - Free and open source DJ software for Windows, macOS, and Linux
