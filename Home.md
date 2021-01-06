@@ -92,6 +92,10 @@ Other suggestions can be found at: https://wiki.linuxaudio.org/wiki/session_mana
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
 * [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
+## Bridges
+* [JACKRouter](https://jackaudio.org/faq/jack_on_windows.html)
+* https://github.com/madhatter68/JackRouter - alternative to jackrouter for MacOS
+
 ## Tools
 JACK2 package commands:
 ```
@@ -184,6 +188,7 @@ echo play | jack_transport
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
 zig-jack-examples
 * https://github.com/noisesmith/zig-jack-examples - ports of the example JACK audio code to zig
+* https://github.com/mildsunrise/simplejack - simple realtime JACK audio in Node.JS
 
 ## Playback
 * [jplay2](https://gareus.org/oss/jplay2/start) - a command-line audio player that plays a single file, gluing JACK, libsamplerate, liblo (OSC control)
@@ -354,10 +359,13 @@ zig-jack-examples
   * https://github.com/gisogrimm/ov-client - headless clients to share/receive spatial realtime audio using JACK, zita-njbridge and TASCAR
 * [JackTrip](https://ccrma.stanford.edu/software/jacktrip)
   * https://github.com/jcacerec/jacktrip
+  * https://github.com/vicwomg/jamtrip
   * https://github.com/noahbailey/jacktrip-docker - Container for JackTrip network audio server
   * https://github.com/noiseorchestra/jacktrip_pypatcher - Python scripts to autopatch a JackTrip hubserver 
   * https://github.com/noiseorchestra/autonomous-noise-unit - Python scripts for running JackTrip on an RPi with OLED screen and rotary switch interface.
-  * https://github.com/alastairhmoore/test-jacktrip-wsl -  Test audio generation on wsl played back using host windows 
+  * https://github.com/alastairhmoore/test-jacktrip-wsl -  Test audio generation on wsl played back using host windows
+  * https://github.com/jacktrip-webrtc/jacktrip-webrtc
+  * [Quacktrip](http://msp.ucsd.edu/tools/quacktrip/) - for Pure data
 * https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and Midi over the network
 
 ## Websockets
