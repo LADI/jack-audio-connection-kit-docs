@@ -19,7 +19,7 @@ JACK differs from other audio servers in being designed from the ground up for p
 
 ## Guides and walk-throughs
 * [Wikipedia: JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit) - general overview
-* [Demystifying JACK – A Beginners Guide to Getting Started with JACK](https://libremusicproduction.com/articles/demystifying-jack-%E2%80%93-beginners-guide-getting-started-jack) - Libre Music Production
+* [Demystifying JACK – A Beginners Guide to Getting Started with JACK](https://linuxaudio.github.io/libremusicproduction/html/articles/demystifying-jack-%E2%80%93-beginners-guide-getting-started-jack) - Libre Music Production
 * [CCRMA JACK Guide](https://ccrma.stanford.edu/docs/common/JACK.html)
 * [ArchWiki: JACK Audio Connection Kit](https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit) - Installation, Configuration, Troubleshooting
 * [Past, Present and Future of the JACK Audio Connection Kit](https://media.ccc.de/v/sonoj2019-1902-jack-past-present-future) - video, talk by falkTX at Sonoj 2019
