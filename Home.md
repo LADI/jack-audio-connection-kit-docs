@@ -48,6 +48,7 @@ JACK differs from other audio servers in being designed from the ground up for p
 * https://github.com/madskjeldgaard/rofi-jack -  keyboard centric JACK audio management using the rofi app launcher
 * https://github.com/redtide/jacksettings -  JACK settings using a jackd based systemd service
 * https://github.com/febef/jackwui - web user interface for Linux Jack Audio Server, WIP
+* https://github.com/Zigazou/micro-equalizer - Bash script that will configure JACK and two LV2 plugins to enhance cheap microphone sound in realtime.
 
 ## Multiple soundcards
 * [jack_load audioadapter](https://linuxmusicians.com/viewtopic.php?p=95025#p95025)
