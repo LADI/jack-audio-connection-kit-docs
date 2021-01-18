@@ -266,6 +266,7 @@ zig-jack-examples
 
 ## Effects
 * https://github.com/Fishmael/jack-plugins - simple JACK audio plugins written in Java
+* https://github.com/fps/jack_convolve -  A simple C++ jack client for doing convolution
 
 ## Visualisation
 * [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
@@ -335,6 +336,7 @@ zig-jack-examples
 
 ## Hardware configuration
 * https://github.com/kmtaylor/gi_editor -  A software editor for the Roland JunoGi synthesizer 
+* https://github.com/fps/jack_led_peak - drive LEDs based on the peak values of the inputs, primary for the Raspberry PI
 
 ## Bridge
 * https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
@@ -448,10 +450,10 @@ zig-jack-examples
 * [Rotter](https://www.aelius.com/njh/rotter/) - a Recording of Transmission / Audio Logger for JACK
 * https://github.com/jackaudio/tools
 * https://github.com/wmedrano/j2sdl2 -  Output to SDL2 Audio From JACK with Rust
+* https://github.com/fps/jack_wakeup - sample wakeup times for a jackd client
 
 # Video
 * [XJADEO - The X Jack Video Monitor](http://xjadeo.sourceforge.net/) - a software video player that displays a video-clip in sync with an external time source (MTC, LTC, JACK-transport). Xjadeo is useful in soundtrack composition, video monitoring or any task that requires to synchronizing movie frames with external events.
-
 
 # WINE
 * https://github.com/wineasio/wineasio - provides an ASIO to JACK driver for WINE
