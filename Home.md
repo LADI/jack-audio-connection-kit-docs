@@ -266,7 +266,14 @@ zig-jack-examples
 
 ## Effects
 * https://github.com/Fishmael/jack-plugins - simple JACK audio plugins written in Java
+
+## Convolution
 * https://github.com/fps/jack_convolve -  A simple C++ jack client for doing convolution
+* [http://kokkinizita.linuxaudio.org/linuxaudio/ Jconvolver] - FFT convolution using non-uniform partition sizes
+  * https://github.com/greenm01/jcgui - A little host for jconvolver
+* https://github.com/brugal/gtrfx/tree/master/jconv - FFT-based convolution with multiple partition sizes.
+  * https://sourceforge.net/projects/conviction - Frontend to manage the jack convolution engine jconv.
+* https://github.com/fps/jack_convolve - simple C++ jack client for doing convolution 
 
 ## Visualisation
 * [JACK Meter](https://www.aelius.com/njh/jackmeter/) - a basic console based DPM (Digital Peak Meter) for JACK
