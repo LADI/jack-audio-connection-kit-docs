@@ -376,7 +376,8 @@ zig-jack-examples
   * https://github.com/alastairhmoore/test-jacktrip-wsl -  Test audio generation on wsl played back using host windows
   * https://github.com/jacktrip-webrtc/jacktrip-webrtc
   * [Quacktrip](http://msp.ucsd.edu/tools/quacktrip/) - for Pure data
-* https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and Midi over the network
+* https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and MIDI over the network
+* https://github.com/bgola/spatify - audio spatialization over WebRTC and JACK Audio Connection Kit
 
 ## Websockets
 * https://github.com/lucdoebereiner/klangraum - sum incoming websocket audio streams and send to JACK
