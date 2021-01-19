@@ -227,6 +227,7 @@ zig-jack-examples
 * [Carla](https://kx.studio/Applications:Carla) - fully-featured modular audio plugin host
 * [Ingen](https://gitlab.com/drobilla/ingen/) - realtime modular audio system based on LV2
 * [JACK Rack](http://jack-rack.sourceforge.net) - an effects "rack" for the JACK
+* See also the [LV2 wiki](https://github.com/lv2/lv2/wiki) for other JACK LV2 hosts
 
 ## Samples
 * https://github.com/resinbeard/candor - enables a monome 256 user to capture and playback audio from up to 8 channels simultaneously, managing a maximum of 48 remembered wav soundfiles without a computer display.
