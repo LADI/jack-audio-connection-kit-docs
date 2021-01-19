@@ -380,6 +380,10 @@ zig-jack-examples
 * https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and MIDI over the network
 * https://github.com/bgola/spatify - audio spatialization over WebRTC and JACK Audio Connection Kit
 
+> gst-launch-1.0 jackaudiosrc ! audioconvert ! audioresample ! opusenc ! rtpopuspay ! udpsink host=localhost port=5004
+
+Then Janus etc. can convert that RTP stream to WebRTC.
+
 ## Websockets
 * https://github.com/lucdoebereiner/klangraum - sum incoming websocket audio streams and send to JACK
 * https://github.com/lucdoebereiner/KlangSendWS - node.js websocket server that broadcasts audio (vorbis encoded) from JACK (via ffmpeg) to its clients
