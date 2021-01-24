@@ -186,6 +186,7 @@ echo play | jack_transport
 * [On JACK client threads](wiki/WalkThrough_User_ClientThreads)
 * https://github.com/jackaudio/example-clients
   * https://github.com/jackaudio/example-clients/blob/master/inprocess.c - internal client, runs as part of jackd
+  * https://github.com/jackaudio/example-clients/blob/master/midisine.c
 * https://github.com/resinbeard/jacksandbox - simple JACK client for learning and testing audio code
 zig-jack-examples
 * https://github.com/noisesmith/zig-jack-examples - ports of the example JACK audio code to zig
