@@ -379,6 +379,7 @@ zig-jack-examples
   * https://github.com/jacktrip-webrtc/jacktrip-webrtc
   * [Quacktrip](http://msp.ucsd.edu/tools/quacktrip/) - for Pure data
 * https://github.com/zokrezyl/jackcast - simple tool to transmit JACK audio and MIDI over the network
+* https://github.com/hselasky/hpsjam - low latency audio collaboration tool with lyrics and chat support
 * https://github.com/bgola/spatify - audio spatialization over WebRTC and JACK Audio Connection Kit
 
 > gst-launch-1.0 jackaudiosrc ! audioconvert ! audioresample ! opusenc ! rtpopuspay ! udpsink host=localhost port=5004
