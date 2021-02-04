@@ -10,7 +10,7 @@ Use JACK2, as that is one being actively worked on and maintained. If you're fee
 
 **Are we going to have two JACKs forever?**  
 No.  
-falkTX now maintains both, and as declared JACK2 to be the one to go for.  
+falkTX now maintains both, and has declared JACK2 to be the one to go for.  
 The current plan is to implement all JACK1 features into JACK2 and then slowly phase out JACK1 into "bugfix-only" mode (see the JACK2 v1.9.12 release notes for more detailed information).  
 This feature-parity is pretty much complete now, with a few exceptions that will be finalized soon.
 
