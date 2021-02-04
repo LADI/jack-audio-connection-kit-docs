@@ -314,15 +314,16 @@ zig-jack-examples
 * https://github.com/x42/jack-midi-cmd - command-line tool to generate JACK MIDI events
 * https://github.com/paulguy/crustymidi - JACK MIDI event scripting triggerable on events
 * https://github.com/noedigcode/oldnotes - replaces velocities of specified notes with that ofthe previously received non-specified notes
-* https://github.com/jmage619/velociraptor -  A Jack midi velocity compressor with Qt based UI.
+* https://github.com/jmage619/velociraptor - A Jack midi velocity compressor with Qt based UI.
 * https://github.com/x42/jack_midi_clock - utility to send MIDI Beat Clock pulses that follow the JACK Transport 
 * https://github.com/chronopoulos/jack-midi-timestamp - simple timing log for JACK MIDI events 
 * https://github.com/xitiomet/jack-rtp-midi-bridge - bridge JACK MIDI and RTP MIDI
 * https://github.com/falkTX/nooice - joysticks as JACK-MIDI devices
 * https://github.com/moddevices/mod-midi-merger - small JACK-internal client to merge MIDI events from several inputs to one output
 * https://github.com/falkTX/JackAss - a VST plugin that provides JACK-MIDI support for VST hosts
-* https://github.com/derekdreery/jack-midi-sink -  Dumps any midi messages to stdout, parsing if possible. 
-* https://github.com/keinstein/mutabor -  Perform dynamic tunings in realtime music or use them for procesing MIDI files 
+* https://github.com/derekdreery/jack-midi-sink - Dumps any midi messages to stdout, parsing if possible. 
+* https://github.com/keinstein/mutabor - Perform dynamic tunings in realtime music or use them for procesing MIDI files 
+* https://github.com/taylordotfish/jack-send-midi - Send realtime-safe MIDI events with JACK, even from non-realtime-safe contexts. 
 
 ## Arpeggiation
 * https://github.com/emuse/qmidiarp - an arpeggiator, sequencer and MIDI LFO for ALSA and JACK.
