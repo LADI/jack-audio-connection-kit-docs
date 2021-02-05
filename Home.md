@@ -353,11 +353,10 @@ zig-jack-examples
 
 ## Bridge
 * https://github.com/linuxaudio/a2jmidid - ALSA sequencer to JACK MIDI bridging (for jack2)
-* https://github.com/free-creations/a_j_midi - Connect ALSA with JACK MIDI
+* https://github.com/free-creations/ajmidi - A one-way static bridge, connecting ALSA-MIDI to JACK-MIDI.
 * https://github.com/williamweston/jamrouter - Near-Sample-Accurate JACK <-> Raw MIDI router
 * https://github.com/hselasky/jack_umidi - Raw MIDI to JACK daemon 
 * https://github.com/hires/AMidiJ - ALSA to Jack MIDI Adapter in Java
-* https://github.com/free-creations/a2jmidi - A one-way static bridge, connecting ALSA-MIDI to JACK-MIDI.
 
 # OSC
 * https://github.com/ventosus/jack_osc - Open Sound Control (OSC) via Jack
