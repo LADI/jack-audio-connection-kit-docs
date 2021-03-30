@@ -38,7 +38,7 @@ Here is a feature listing/comparison of the different JACK implementations.  Not
 | Implements the JACK C API                                  |  Yes         |  Yes       |
 | Supports multiple processors (SMP)                         |  No          |  Yes (1)   |
 | Allows apps to connect/disconnect without disrupting audio |  No          |  Yes       |
-| Interacts with PulseAudio on Linux to share soundcard      |  No (3)      |  Yes       |
+| Interacts with PulseAudio on Linux to share soundcard      |  No (2)      |  Yes       |
 | Has (optional) D-Bus support (2)                           |  No (3)      |  Yes       |
 | Can be used with [[NetJack 1\|WalkThrough_Dev_NetOne]]     |  Yes         |  Yes       |
 | Can be used with [[NetJack 2\|WalkThrough_User_NetJack2]]  |  No (4)      |  Yes       |
