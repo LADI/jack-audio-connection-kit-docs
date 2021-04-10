@@ -96,6 +96,7 @@ Other suggestions can be found at: https://wiki.linuxaudio.org/wiki/session_mana
 ## Bridges
 * [JACKRouter](https://jackaudio.org/faq/jack_on_windows.html)
 * https://github.com/madhatter68/JackRouter - alternative to jackrouter for MacOS
+* https://github.com/bgribble/silentway -  Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
 
 ## Tools
 JACK2 package commands:
