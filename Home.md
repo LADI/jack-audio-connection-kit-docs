@@ -196,6 +196,7 @@ zig-jack-examples
 ## Playback
 * [jplay2](https://gareus.org/oss/jplay2/start) - a command-line audio player that plays a single file, gluing JACK, libsamplerate, liblo (OSC control)
 * https://github.com/eeeeeta/mfl-gramophone -  A simple Rust application to play audio, using JACK, when it receives commands via OSC. 
+* https://github.com/danmbox/jack-file - Jack transport-centric utilities for audio playback
 
 ## Recording
 * https://github.com/kmatheussen/jack_capture - program for recording soundfiles with JACK
