@@ -62,10 +62,10 @@ JACK differs from other audio servers in being designed from the ground up for p
 * [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
 ## Bridges
-* [https://github.com/falkTX/FFmpeg](https://github.com/falkTX/FFmpeg) - [[LAD] FFmpeg and JACK output](https://lists.linuxaudio.org/archives/linux-audio-dev/2021-April/038027.html)
+* [falkTX/FFmpeg](https://github.com/falkTX/FFmpeg/blob/n4.4-jackoutdev/libavdevice/jack_enc.c) - [[LAD] FFmpeg and JACK output](https://lists.linuxaudio.org/archives/linux-audio-dev/2021-April/038027.html)
 * [JACKRouter](https://jackaudio.org/faq/jack_on_windows.html)
 * https://github.com/madhatter68/JackRouter - alternative to jackrouter for MacOS
-* https://github.com/bgribble/silentway -  Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
+* https://github.com/bgribble/silentway - Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
 
 ## Session management
 Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://linuxaudio.github.io/new-session-manager) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) is recommended.
