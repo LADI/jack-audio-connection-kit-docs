@@ -56,6 +56,17 @@ JACK differs from other audio servers in being designed from the ground up for p
   * https://github.com/IARI/alsa_jack_gui - a qt-based gui to manage alsa_in and alsa_out daemons
 * [Zita-ajbridge](http://kokkinizita.linuxaudio.org/linuxaudio/zita-ajbridge-doc/quickguide.html)
 
+## PulseAudio integration
+* [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
+* [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
+* [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
+
+## Bridges
+* [https://github.com/falkTX/FFmpeg](https://github.com/falkTX/FFmpeg) - [[LAD] FFmpeg and JACK output](https://lists.linuxaudio.org/archives/linux-audio-dev/2021-April/038027.html)
+* [JACKRouter](https://jackaudio.org/faq/jack_on_windows.html)
+* https://github.com/madhatter68/JackRouter - alternative to jackrouter for MacOS
+* https://github.com/bgribble/silentway -  Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
+
 ## Session management
 Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://linuxaudio.github.io/new-session-manager) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) is recommended.
 
@@ -87,16 +98,6 @@ Other suggestions can be found at: https://wiki.linuxaudio.org/wiki/session_mana
 * https://github.com/dedelala/patchy - store and recall jack audio port connections 
 * https://github.com/jacktrip/jmess-jack - save an XML file with all the current connections
 * [jack_snapshot](https://sourceforge.net/projects/heaven/files/Audio%20Applications/Jack%20Related/jack_snapshot/) 
-
-## PulseAudio integration
-* [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
-* [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
-* [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
-
-## Bridges
-* [JACKRouter](https://jackaudio.org/faq/jack_on_windows.html)
-* https://github.com/madhatter68/JackRouter - alternative to jackrouter for MacOS
-* https://github.com/bgribble/silentway -  Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
 
 ## Tools
 JACK2 package commands:
