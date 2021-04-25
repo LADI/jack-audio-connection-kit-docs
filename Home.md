@@ -426,6 +426,7 @@ Then Janus etc. can convert that RTP stream to WebRTC.
 * [x42/weakjack](https://github.com/x42/weakjack) - small library that abstracts the JACK Application Binary Interface.
 
 ## Bindings
+* https://github.com/jackaudio/pyjacklib - Python bindings for libjack using ctypes.
 * https://github.com/spatialaudio/jackclient-python - JACK Audio Connection Kit (JACK) Client for Python snake
 * [PyJack](https://sourceforge.net/projects/py-jack/) - JACK client module for Python
 * https://github.com/fphammerle/jacker - Python bindings for the JACK Audio Connection Kit C API
