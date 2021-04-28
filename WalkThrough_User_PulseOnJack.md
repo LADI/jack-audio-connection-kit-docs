@@ -59,7 +59,7 @@ On Debian-like systems, be sure to install *pulseaudio-module-jack*. (TODO: Add 
 
 Then, use the following configuration if you intend to run jackd all the time:
 
-*~/.pulse/default.pa*:
+*~/.config/pulse/default.pa*:
 
 	
 	load-module module-native-protocol-unix
@@ -74,7 +74,7 @@ Then, use the following configuration if you intend to run jackd all the time:
 	set-default-source jack_in
 	
 
-The following isn't strictly necessary but might be useful. *~/.pulse/daemon.conf*:
+The following isn't strictly necessary but might be useful. *~/.config/pulse/daemon.conf*:
 	
 	default-sample-format = float32le
 	default-sample-rate = 48000
