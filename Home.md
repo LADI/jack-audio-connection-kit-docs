@@ -59,7 +59,7 @@ JACK differs from other audio servers in being designed from the ground up for p
 ## PulseAudio integration
 * [JACK and Pulseaudio](wiki/WalkThrough_User_PulseOnJack)
 * [PulseAudio and Jack](http://0pointer.de/blog/projects/when-pa-and-when-not.html)
-* [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
+* [How to replace Pulseaudio with Jack, Jack and PulseAudio Together as Friend](https://archived.forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086) - Manjaro Linux Forum
 
 ## Bridges
 * [falkTX/FFmpeg](https://github.com/falkTX/FFmpeg/blob/n4.4-jackoutdev/libavdevice/jack_enc.c) - [[LAD] FFmpeg and JACK output](https://lists.linuxaudio.org/archives/linux-audio-dev/2021-April/038027.html)
