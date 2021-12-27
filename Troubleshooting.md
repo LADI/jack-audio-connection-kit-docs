@@ -6,7 +6,9 @@ By default, Jack starts up in realtime mode. If the user starting jack is not al
 
  `cannot use real-time scheduling (FIFO at priority 10) [for thread -1210562896, from thread -1210562896] (1: Operation not permitted)`
 
-In this case, you might want to set up your limits.conf to allow the audio group access to realtime priorities as documented at http://wiki.linuxmusicians.com/doku.php?id=system_configuration#limits.conf .
+In this case, you might want to [set up your `limits.conf`][limits] to allow the audio group access to realtime priorities.
+
+[limits]: https://wiki.linuxaudio.org/wiki/system_configuration#limitsconfaudioconf
 
 ## Invalid argument
 
