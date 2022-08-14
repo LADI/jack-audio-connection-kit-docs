@@ -68,7 +68,7 @@ JACK differs from other audio servers in being designed from the ground up for p
 * https://github.com/bgribble/silentway - Bridge from JACK audio to Expert Sleepers' Silent Way boxes 
 
 ## Session management
-Both LASH/LADISH and JACK Session are deprecated, and the use of [NSM](https://linuxaudio.github.io/new-session-manager) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) is recommended.
+Please note that JACK Session is deprecated, with the use of [NSM](https://new-session-manager.jackaudio.org/) and an NSM GUI like [Agordejo](https://laborejo.org/agordejo/) or [RaySession](https://github.com/Houston4444/RaySession) being recommended.
 
 NSM clients usually come with `jackpatch`, which automatically saves connections but isn't the most robust of software.
 
