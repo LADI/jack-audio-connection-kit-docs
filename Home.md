@@ -490,7 +490,7 @@ Then Janus etc. can convert that RTP stream to WebRTC.
 * [[Proposal for JesseChappellLooping]]
 
 # Historical
-* [https://lac.linuxaudio.org/2009/cdm/Thursday/01_Letz/JACK2_LAC_2009_slides.pdf What's new in JACK2 - LAC 2009]
+* [What's new in JACK2 - LAC 2009](https://lac.linuxaudio.org/2009/cdm/Thursday/01_Letz/JACK2_LAC_2009_slides.pdf)
 
 # See also
 * https://github.com/lv2/lv2/wiki
