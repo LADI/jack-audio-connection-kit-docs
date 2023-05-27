@@ -1,45 +1,61 @@
-There are three scenarios (use cases) for JACK, related to D-Bus, from users point of view:
-* Classic JACK only
-* D-Bus only JACK
-* D-Bus JACK and Classic JACK mixture
+:toc:
 
-*All these scenarios don't affect interaction of normal JACK programs (ardour, hydrogen, etc) with JACK server.*
+== Packaging scenarios
+There are three scenarios (use cases) for JACK, related to D-Bus, from users point of view:
+
+ * Classic JACK only (UNSUPPORTED in LADI project)
+ * D-Bus only JACK
+ * D-Bus JACK and Classic JACK mixture (UNSUPPORTED in LADI project)
+
+NOTE: All these scenarios don't affect interaction of normal JACK programs (ardour, hydrogen, etc) with JACK server.
 
 Apart from D-Bus only functionality availability, they affect JACK server auto-launching and thus overall user experience. If more than one scenario is supposed to be available for user, typically package "flavors" are used.
 
-## Scenario 1: Classic JACK only
+=== Scenario 1: Classic JACK only
+
+IMPORTANT: This scenario is not supported by LADI project and is kept for reference.
+
+This is the traditional scenario, pre jackdbus for jack1 and the one enabled with "classic" configure option of jackaudio/jack2 waf build system.
 
 Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher.
-* Pros:
-  * This is the classic environment most current JACK users are aware of.
-* Cons:
-  * User is blind about what happens with JACK server execution if it auto-started rather than manually started.
-  * No JACK D-Bus only control/monitor applications can be used.
-  * No audio card negotiation with PulseAudio.
 
-## Scenario 2: D-Bus only JACK
+ * Pros:
+ ** This is the classic environment most current JACK users are aware of.
+ * Cons:
+ ** User is blind about what happens with JACK server execution if it auto-started rather than manually started.
+ ** No JACK D-Bus only control/monitor applications can be used.
+ ** No audio card negotiation with PulseAudio.
+
+=== Scenario 2: D-Bus only JACK
 
 Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bus service, in case it is not already started, and starts the JACK server. Correct interaction with PulseAudio is done using a D-Bus based audio card "acquire/release" mechanism. When JACK server starts, it asks this D-Bus service to acquire the audio card and PulseAudio will unconditionally release it. When JACK server stops, it releases the audio card that can be grabbed again by PulseAudio.
-* Pros:
-  * JACK D-Bus aware control/monitor applications can be used, resulting in much better [Linux] end-user (especially desktop) experience.
-  * Audio card negotiation with PulseAudio.
-* Cons:
-  * This is not the classic environment most current JACK users are aware of.
-  * If D-Bus session bus gets misconfigured/non-functional, user is not able to use JACK server before fixing it.
 
-## Scenario 3: D-Bus JACK and Classic JACK mixture
+ * Pros:
+ ** JACK D-Bus aware control/monitor applications can be used, resulting in much better [Linux] end-user (especially desktop) experience.
+ ** Audio card negotiation with PulseAudio.
+ * Cons:
+ ** This is not the classic environment most current JACK users are aware of.
+ ** If D-Bus session bus gets misconfigured/non-functional, user is not able to use JACK server before fixing it.
+
+=== Scenario 3: D-Bus JACK and Classic JACK mixture
+
+IMPORTANT: This scenario is not supported by LADI project and is kept for reference.
 
 Both D-Bus launcher (jackdbus executable) and classic launcher (jackd executable) are installed. Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher. Audio card negotiation with PulseAudio in implemented in jackdbus only.
-* Pros:
-  * If D-Bus session bus gets misconfigured/non-functional, user is able to fallback to jackd, with its pros and cons.
-  * User can start the JACK server both through jackdbus and jackd (and thus through qjackctl too).
-  * Audio card negotiation with PulseAudio if and only if jackdbus is used.
-* Cons:
-   * non-dbus aware tools (like qjackctl) or auto-launching will start jackd, associated with:
-     * User is blind about what happens with JACK server execution if jackd is autolaunched.
-     * No JACK D-Bus aware control/monitor applications can be used. They will claim JACK server is not started (cannot be contacted) even when JACK server is actually running and normal JACK applications are connected and probably using it.
-     * PulseAudio will not know whether JACK server is running
-   * jackd and jackdbus will use different storage for JACK server configuration. jackd will be typically started through the ~/.jackdrc *script* or qjackctl. jackdbus reads and stores settings in ~/.config/jack/conf.xml
+
+ * Pros:
+ ** If D-Bus session bus gets misconfigured/non-functional, user is able to fallback to jackd, with its pros and cons.
+ ** User can start the JACK server both through jackdbus and jackd (and thus through qjackctl too).
+ ** Audio card negotiation with PulseAudio if and only if jackdbus is used.
+ * Cons:
+ ** non-dbus aware tools (like qjackctl) or auto-launching will start jackd, associated with:
+ *** User is blind about what happens with JACK server execution if jackd is autolaunched.
+ *** No JACK D-Bus aware control/monitor applications can be used. They will claim JACK server is not started (cannot be contacted) even when JACK server is actually running and normal JACK applications are connected and probably using it.
+ *** PulseAudio will not know whether JACK server is running
+ * jackd and jackdbus will use different storage for JACK server configuration. jackd will be typically started through the ~/.jackdrc *script* or qjackctl. jackdbus reads and stores settings in ~/.config/jack/conf.xml
+
+== How to package jack-audio-connection-kit components (LADI jackdbus and others)
+
 * "jack server frontend" - virtual package provided by "jackd" and "jackdbus" packages
 * "jack server (library)" - package containing libjackserver.so at least. Maybe also: essential tools, drivers, inprocess clients.
 * "jackd" - package containing jackd binary. This package depends on "jack server (library)"
