@@ -89,13 +89,17 @@ In case LADISH is not in effect, auto-starting behaviour of libjack depends on p
 
 This includes:
 
-* `libjack` - library that JACK-aware client applications link to
 * `jackdbus` - The D-Bus frontend for JACK server
 * `jack_control` - Commandline frontend to jackdbus
 
 They are to be installed in `<PREFIX>/bin/`.
 
 === Libraries
+
+This includes:
+
+* `libjack` - library that JACK-aware client applications link to
+* `libjackserver` - library that JACK-aware server applications link to
 
 The `libjack`, `libjacknet` and `libjackserver` libraries are to be installed in `<PREFIX>/lib64/` (for 64-bit libraries) or `<PREFIX>/lib/` (for 32-bit libraries).
 
