@@ -1,4 +1,3 @@
-:title: LADI JACK Audio Connection Kit
 :docinfo: private-header
 :keywords: LADI, JACK, jack-audio-connection-kit, packaging, linux, downstream
 :toc:
