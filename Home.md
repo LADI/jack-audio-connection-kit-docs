@@ -440,6 +440,7 @@ Then Janus etc. can convert that RTP stream to WebRTC.
 * https://github.com/unclechu/node-jack-connector - Bindings JACK-Audio-Connection-Kit for Node.JS 
 * https://github.com/markjfisher/jack-egg - CHICKEN Scheme bindings to Jack Audio 
 * https://github.com/dpzmick/rust-easyjack - Some hopefully easy to use Rust bindings for the JACK API, WIP.
+* https://github.com/SpotlightKid/jacket - A Nim wrapper for the JACK C API 
 
 ## Metadata
 * [JACK Metadata](https://jackaudio.org/metadata)
