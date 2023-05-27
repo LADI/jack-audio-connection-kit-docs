@@ -1,8 +1,7 @@
 .PHONY: html html-mkdir
 
 html: ./html/index.html
-html: ./html/jackdbus-packaging.html
-html: ./html/suggested-packaging-approach.html
+html: ./html/packaging.html
 
 html-mkdir:
 	@mkdir -vp html
