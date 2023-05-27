@@ -76,6 +76,6 @@ All different releases of JACK should be considered internally incompatible - th
 
 == JACK server auto-start behaviour of libjack.so
 
-While jackdbus can be configured with auto-start of JACK server (through jackdbus) and this will cause by creation of automatic studio in ladish, autolaunching is better to not be used in jack modular scenarios with ladish. Instead, initial auto-created studio can be achieved by starting jack server manually through "jack_control start".
+While jack2 can be configured with auto-start of JACK server (through jackdbus) and this will cause creation of automatic studio in LADISH, autolaunching is better to not be used in jack modular scenarios with LADISH. Instead, initial auto-created studio can be achieved by starting jack server manually through "jack_control start".
 
-In case ladish is not in effect, autos-tarting behaviour of libjack depends on packager's choice.
+In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section.
