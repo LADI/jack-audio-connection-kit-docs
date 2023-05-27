@@ -95,7 +95,7 @@ They are to be installed in `<PREFIX>/bin/`.
 
 === Libraries
 
-The `libjack`, `libjacknet` and `libjackserver` libraries are to installed in `<PREFIX>/lib64/` (for 64-bit libraries) or `<PREFIX>/lib/` (for 32-bit libraries).
+The `libjack`, `libjacknet` and `libjackserver` libraries are to be installed in `<PREFIX>/lib64/` (for 64-bit libraries) or `<PREFIX>/lib/` (for 32-bit libraries).
 
 SONAME of libjack is libjack.so.0, so symbolic link should be created, like this:
 	
@@ -127,7 +127,7 @@ C headers are installed in a JACK specific header directory, `<PREFIX>/include/j
 
 === pkg-config
 
-`jack.pc` is installed in `<PREFIX>/lib64/pkgconfig/` (for 64-bit) or `<PREFIX>/lib/pkgconfig/` (for 32-bit).
+`jack.pc` is to be installed installed in `<PREFIX>/lib64/pkgconfig/` (for 64-bit) or `<PREFIX>/lib/pkgconfig/` (for 32-bit).
 
 === User documentation
 
