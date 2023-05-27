@@ -2,7 +2,6 @@
 
 html: ./html/index.html
 html: ./html/packaging.html
-html: ./html/installation-filesystem-layout.html
 
 html-mkdir:
 	@mkdir -vp html

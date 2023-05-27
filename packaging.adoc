@@ -79,3 +79,70 @@ All different releases of JACK should be considered internally incompatible - th
 While jack2 can be configured with auto-start of JACK server (through jackdbus) and this will cause creation of automatic studio in LADISH, autolaunching is better to not be used in jack modular scenarios with LADISH. Instead, initial auto-created studio can be achieved by starting jack server manually through "jack_control start".
 
 In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section.
+
+
+== Installation layout on a Linux system.
+
+=== Binaries
+
+This includes:
+
+* `libjack` - library that JACK-aware client applications link to
+* `jackdbus` - The D-Bus frontend for JACK server
+* `jack_control` - Commandline frontend to jackdbus
+
+They are to be installed in `<PREFIX>/bin/`.
+
+=== Libraries
+
+The `libjack`, `libjacknet` and `libjackserver` libraries are to installed in `<PREFIX>/lib64/` (for 64-bit libraries) or `<PREFIX>/lib/` (for 32-bit libraries).
+
+SONAME of libjack is libjack.so.0, so symbolic link should be created, like this:
+	
+    libjack.so.0 --> libjack.so.0.1.0
+    libjack.so.0.1.0
+	
+Depending on JACK server version, the libjack.so.0 symlink target
+will be different. libjack.so.0.1.0 is the version from JACK2.
+
+=== Drivers
+
+Jack drivers are installed into `<PREFIX>/lib/jack/` as dynamic libraries.
+
+=== In-process clients
+
+In-process clients are installed into `<PREFIX>/lib/jack/`.
+
+=== D-Bus service file
+
+`jackdbus` service is auto-activated upon request through a D-Bus service file installed system-wide. The org.jackaudio.service file instructs the D-Bus session bus how to activate the JACK controller object upon request.
+
+By default the `org.jackaudio.service` file is installed in `<PREFIX>/share/dbus-1/services/`.
+
+NOTE: When not built as system-wide installed sesion bus dbus service, jackdbus can be configured with --enable-pkg-config-dbus-service-dir so to the system-wide D-Bus service directory. --enable-pkg-config-dbus-service-dir is unsupported in packged versions. If the service file is installed in a different prefix, the D-Bus session bus daemon configuration should be adjuste so to search in the appropriate directory.
+
+=== Headers
+
+C headers are installed in a JACK specific header directory, `<PREFIX>/include/jack/`.
+
+=== pkg-config
+
+`jack.pc` is installed in `<PREFIX>/lib64/pkgconfig/` (for 64-bit) or `<PREFIX>/lib/pkgconfig/` (for 32-bit).
+
+=== User documentation
+
+Man pages are installed in `<PREFIX>/share/man/man1/`.
+
+=== Development documentation
+
+HTML documentation is installed in a JACK specific directory `<PREFIX>/share/jack-audio-connection-kit`.
+
+The index file of the HTML documentation is in `<PREFIX>/share/jack-audio-connection-kit/reference/html/`.
+
+=== Filesystem relocation
+
+Some unusual things related to installation relocateability:
+
+ * in-process clients and drivers are loaded from a fixed path (`<PREFIX>/lib/jack/`), specified literally during build. Drivers load directory may be overridden using the `JACK_DRIVER_DIR` environment variable. At the moment there is no way to override the in-process client directory.
+ * The D-Bus session bus daemon configuration may need modification to be able to auto-activate the JACK controller service.
+ * The `jack.pc` file contains `<PREFIX>`.
