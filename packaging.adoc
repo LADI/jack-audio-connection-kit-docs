@@ -26,7 +26,7 @@ Server auto-launching is implemented as fork+exec (starting new process) of jack
  * Cons:
  ** User is blind about what happens with JACK server execution if it auto-started rather than manually started.
  ** No JACK D-Bus only control/monitor applications can be used.
- ** No audio card negotiation with PulseAudio.
+ ** [line-through]#No audio card negotiation with PulseAudio.#
 
 === Scenario 2: D-Bus only JACK
 
@@ -36,19 +36,19 @@ Server auto-launching is implemented as D-Bus call that auto-activates JACK D-Bu
  ** JACK D-Bus aware control/monitor applications can be used, resulting in much better [Linux] end-user (especially desktop) experience.
  ** Audio card negotiation with PulseAudio.
  * Cons:
- ** This is not the classic environment most current JACK users are aware of.
+ ** This is/was not the classic environment most current JACK users are/were aware of before year 2008.
  ** If D-Bus session bus gets misconfigured/non-functional, user is not able to use JACK server before fixing it.
 
 === Scenario 3: D-Bus JACK and Classic JACK mixture
 
 IMPORTANT: This scenario is not supported by LADI project and is kept for reference.
 
-Both D-Bus launcher (jackdbus executable) and classic launcher (jackd executable) are installed. Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher. Audio card negotiation with PulseAudio in implemented in jackdbus only.
+Both D-Bus launcher (jackdbus executable) and classic launcher (jackd executable) are installed. Server auto-launching is implemented as fork+exec (starting new process) of jackd executable - the classic JACK server launcher. [line-through]#Audio card negotiation with PulseAudio in implemented in jackdbus only.#
 
  * Pros:
  ** If D-Bus session bus gets misconfigured/non-functional, user is able to fallback to jackd, with its pros and cons.
  ** User can start the JACK server both through jackdbus and jackd (and also through qjackctl when configured without jackdbus supoprt).
- ** Audio card negotiation with PulseAudio if and only if jackdbus is used.
+ ** [line-through]#Audio card negotiation with PulseAudio if and only if jackdbus is used.#
  * Cons:
  ** non-dbus aware tools (like qjackctl when configured without jackdbus support) or auto-launching will start jackd, associated with:
  *** User is blind about what happens with JACK server execution if jackd is autolaunched.
