@@ -54,31 +54,31 @@ Both D-Bus launcher (jackdbus executable) and classic launcher (jackd executable
  *** User is blind about what happens with JACK server execution if jackd is autolaunched.
  *** No JACK D-Bus aware control/monitor applications can be used. They will claim JACK server is not started (cannot be contacted) even when JACK server is actually running and normal JACK applications are connected and probably using it.
  *** PulseAudio will not know whether JACK server is running
- * jackd and jackdbus will use different storage for JACK server configuration. jackd will be typically started through the ~/.jackdrc *script* or qjackctl. jackdbus reads and stores settings in ~/.config/jack/conf.xml
+ * jackd and jackdbus will use different storage for JACK server configuration. jackd will be typically started through the `~/.jackdrc` *script* or `qjackctl`. jackdbus reads and stores settings in `~/.config/jack/conf.xml`
 
 == How to package jack-audio-connection-kit components (LADI jackdbus and others)
 
-* "jack server frontend" - virtual package provided by "jackd" and "jackdbus" packages
-* "jack server (library)" - package containing libjackserver.so at least. Maybe also: essential tools, drivers, inprocess clients.
-* "jackd" - package containing jackd binary. This package depends on "jack server (library)"
-* "jackdbus" - package containing jackdbus binary and jack_control script. This package depends on "jack server (library)"
-* "jack client library" - package containing libjack.so
-* "jack client library dev" - package containging headers and pkgconfig file for libjack.so
-* "jack server library dev" - package containging headers and pkgconfig file for libjackserver.so
+* `jack server frontend` - virtual package provided by `jackd` and `jackdbus` packages
+* `jack server (library)` - package containing libjackserver.so at least. Maybe also: essential tools, drivers, inprocess clients.
+* `jackd` - package containing jackd binary. This package depends on `jack server (library)`
+* `jackdbus` - package containing jackdbus binary and jack_control script. This package depends on `jack server (library)`
+* `jack client library` - package containing libjack.so
+* `jack client library dev` - package containging headers and pkgconfig file for libjack.so
+* `jack server library dev` - package containging headers and pkgconfig file for libjackserver.so
 
-"jack client library" and "jack server (library") packages should be version coupled because they use internal IPC protocol that is not guaranteed to be compatible between versions.
+`jack client library` and `jack server (library)` packages should be version coupled because they use internal IPC protocol that is not guaranteed to be compatible between versions.
 
 All different releases of JACK should be considered internally incompatible - that is, it should never be considered possible to mix versions of the JACK server with other versions of the JACK library/ies, drivers or internal clients. Packaging should ensure that no packages associated with different releases of JACK are ever installed simultaneously. Especially, having two versions of libjack.so installed simultaneously, often causes JACK programs using one libjack version not being able to operate with JACK server of other version.
 
-* app that uses jack as only audio interfaces, (jack_keyboard for example), depends on "jack client library" package and on the "jack server frontend" virtual package
-* app that uses jack as alternative (not the only) audio interface, (mplayer for exmaple), depends on "jack client library" and suggests "jack server frontend" virtual package
-* ardour depends on "jack client library" and depends on "jackd" package, because it can start jack server through jackd binary.
-* qjackctl if built without jackdbus support (unsupported scenario in LADI project) depends on "jack client library". If built with jackdbus, it depends on "jack server frontend" package. qjackctl can start jack server through either jackd or jackdbus binary.
-* laditools depends on "jackdbus" only
+* An app that uses jack as only audio interfaces, (jack_keyboard for example), depends on `jack client library` package and on the `jack server frontend` virtual package
+* An app that uses jack as alternative (not the only) audio interface, (mplayer for exmaple), depends on `jack client library` and suggests `jack server frontend` virtual package
+* `ardour` depends on `jack client library` and depends on `jackd` package, because it can start jack server through jackd binary.
+* `qjackctl` if built without jackdbus support (unsupported scenario in LADI project) depends on `jack client library`. If built with `jackdbus`, it depends on `jack server frontend` package. qjackctl can start jack server through either `jackd` or `jackdbus` binary.
+* `laditools` depends on `jackdbus` only
 
 == JACK server auto-start behaviour of libjack.so
 
-While jack2 can be configured with auto-start of JACK server (through jackdbus) and this will cause creation of automatic studio in LADISH, autolaunching is better to not be used in jack modular scenarios with LADISH. Instead, initial auto-created studio can be achieved by starting jack server manually through "jack_control start".
+While jack2 can be configured with auto-start of JACK server (through jackdbus) and this will cause creation of automatic studio in LADISH, autolaunching is better to not be used in jack modular scenarios with LADISH. Instead, initial auto-created studio can be achieved by starting jack server manually through `jack_control start`.
 
 In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section.
 
