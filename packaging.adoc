@@ -83,7 +83,7 @@ While jack2 can be configured with auto-start of JACK server (through jackdbus) 
 In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section.
 
 
-== Installation layout on a Linux system.
+== Installation layout on a Linux system
 
 === Binaries
 
