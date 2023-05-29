@@ -80,8 +80,7 @@ All different releases of JACK should be considered internally incompatible - th
 
 While jack2 can be configured with auto-start of JACK server (through jackdbus) and this will cause creation of automatic studio in LADISH, autolaunching is better to not be used in jack modular scenarios with LADISH. Instead, initial auto-created studio can be achieved by starting jack server manually through `jack_control start`.
 
-In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section.
-
+NOTE: In case LADISH is not in effect, auto-starting behaviour of libjack depends on packager's choice. See also the Packaging scenarios section and especially consider not to package the mix of both jackd and jackdbus (scenario 3).
 
 == Installation layout on a Linux system
 
@@ -125,7 +124,7 @@ In-process clients are installed into `<PREFIX>/lib/jack/`.
 
 By default the `org.jackaudio.service` file is installed in `<PREFIX>/share/dbus-1/services/`.
 
-NOTE: When not built as system-wide installed sesion bus dbus service, jackdbus can be configured with --enable-pkg-config-dbus-service-dir so to the system-wide D-Bus service directory. --enable-pkg-config-dbus-service-dir is unsupported in packged versions. If the service file is installed in a different prefix, the D-Bus session bus daemon configuration should be adjuste so to search in the appropriate directory.
+NOTE: When not built as system-wide installed sesion bus D-Bus service, `jackdbus` build can be configured with `--enable-pkg-config-dbus-service-dir` parameter, so to use the system-wide D-Bus service directory anyway. The `--enable-pkg-config-dbus-service-dir` can be used for weird scenarios but is not supported by LADI project. Packgers are strong advised to not use it. If the service file is installed in a different prefix, the D-Bus session bus daemon configuration should be adjusted so to search in the appropriate directory.
 
 === Headers
 
