@@ -124,7 +124,7 @@ In-process clients are installed into `<PREFIX>/lib/jack/`.
 
 By default the `org.jackaudio.service` file is installed in `<PREFIX>/share/dbus-1/services/`.
 
-NOTE: When not built as system-wide installed sesion bus D-Bus service, `jackdbus` build can be configured with `--enable-pkg-config-dbus-service-dir` parameter, so to use the system-wide D-Bus service directory anyway. The `--enable-pkg-config-dbus-service-dir` can be used for weird scenarios but is not supported by LADI project. Packgers are strong advised to not use it. If the service file is installed in a different prefix, the D-Bus session bus daemon configuration should be adjusted so to search in the appropriate directory.
+NOTE: When not built as system-wide installed sesion bus D-Bus service, `jackdbus` build can be configured with `--enable-pkg-config-dbus-service-dir` parameter, so to use the system-wide D-Bus service directory anyway. The `--enable-pkg-config-dbus-service-dir` can be used for weird scenarios but is not supported by LADI project. Packgers are strongly advised to not suppy this parameter during configure stage. If the service file is installed in a different prefix, the D-Bus session bus daemon configuration should be adjusted so to search in the appropriate directory.
 
 === Headers
 
