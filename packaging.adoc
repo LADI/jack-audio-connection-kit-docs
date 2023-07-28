@@ -112,11 +112,11 @@ will be different. libjack.so.0.1.0 is the version from JACK2.
 
 === Drivers
 
-Jack drivers are installed into `<PREFIX>/lib/jack/` as dynamic libraries.
+Jack drivers are installed into `<PREFIX>/libexec/jack-driver/` as dynamic libraries.
 
 === In-process clients
 
-In-process clients are installed into `<PREFIX>/lib/jack/`.
+In-process clients are installed into `<PREFIX>/libexec/jack-internal/`.
 
 === D-Bus service file
 
